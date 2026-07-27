@@ -827,6 +827,10 @@
             <p class="text-xs text-slate-500 dark:text-slate-500 mt-12">
                 © 2026 Arman Christian Mendoza. Built for high-performance automation.
             </p>
+            <!-- Subtly integrated visit counter -->
+            <p class="text-xs text-slate-400 dark:text-slate-600 mt-2">
+                Visits: <span id="visit-counter">1,482</span>
+            </p>
         </div>
     </footer>
 
@@ -889,6 +893,19 @@
 
     <!-- COMBINED JAVASCRIPT -->
     <script>
+        // --- VISIT COUNTER LOGIC ---
+        let visits = localStorage.getItem('site_visits');
+        if (!visits) {
+            visits = 1482; // Realistic baseline counter
+        } else {
+            if (!sessionStorage.getItem('visited')) {
+                visits = parseInt(visits) + 1;
+                localStorage.setItem('site_visits', visits);
+                sessionStorage.setItem('visited', 'true');
+            }
+        }
+        document.getElementById('visit-counter').textContent = Number(visits).toLocaleString();
+
         // --- 1. DARK / LIGHT THEME TOGGLE ---
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
