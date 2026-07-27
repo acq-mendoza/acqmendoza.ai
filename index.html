@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arman Christian Mendoza | Certified AI Automation Specialist</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Arman Christian Mendoza | Certified AI Automation Specialist">
+    <meta property="og:description" content="End-to-end automated workflows and agentic AI systems using n8n, Zapier, Make, and LLMs.">
+    <meta property="og:type" content="website">
+
+    <!-- Calendly widget CSS and script -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            500: '#10b981',
+                            600: '#059669',
+                        },
+                        zapier: '#FF4F00',
+                        n8n: '#EA4B71',
+                        make: '#8b5cf6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for gallery container & modals */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
+
+    <!-- NAVBAR WITH MOBILE HAMBURGER MENU & THEME TOGGLE -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-950/80 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="font-bold text-lg tracking-tight text-slate-900 dark:text-white">
+                acqmendoza<span class="text-brand-500">.ai</span>
+            </a>
+            
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-6">
+                <a href="#services" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">Capabilities</a>
+                <a href="#tech-stack" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">Tech Stack</a>
+                <a href="#projects" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">Work</a>
+                <a href="#certifications" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">Certifications</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <!-- Direct Get in Touch CTA Button (Desktop Navbar) -->
+                <a href="#contact" class="hidden sm:inline-flex text-xs font-semibold px-4 py-2 rounded-lg bg-brand-500 hover:bg-brand-600 text-slate-950 transition-all">
+                    Get in Touch
+                </a>
+
+                <!-- Dark / Light Mode Toggle Button -->
+                <button id="theme-toggle" aria-label="Toggle theme" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
+                    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                    <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="mobile-menu-toggle" aria-label="Toggle mobile navigation menu" class="md:hidden p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
+                    <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-6 py-4 space-y-3">
+            <a href="#services" class="mobile-nav-link block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors">Capabilities</a>
+            <a href="#tech-stack" class="mobile-nav-link block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors">Tech Stack</a>
+            <a href="#projects" class="mobile-nav-link block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors">Work</a>
+            <a href="#certifications" class="mobile-nav-link block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors">Certifications</a>
+            <div class="pt-2 border-t border-slate-200 dark:border-slate-800">
+                <a href="#contact" class="mobile-nav-link block w-full text-center py-2.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-semibold transition-all">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative overflow-hidden py-16 lg:py-24 border-b border-slate-200 dark:border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 text-left overflow-x-auto sm:overflow-x-visible">
+                <!-- Status Badge -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-600 dark:text-brand-500 text-xs font-bold uppercase tracking-wider mb-6">
+                    <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                    Certified AI Automation Specialist
+                </div>
+                
+                <!-- Main Headline: Name (Forced Single Line) -->
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black tracking-tight text-slate-900 dark:text-white mb-3 leading-tight whitespace-nowrap">
+                    Arman Christian Mendoza
+                </h1>
+
+                <!-- Tagline Headline -->
+                <h2 class="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-tight text-slate-800 dark:text-slate-100 mb-6 leading-snug whitespace-nowrap">
+                    Turn <span class="text-slate-500 dark:text-slate-400 font-semibold">Manual Chaos</span> Into <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-emerald-400 to-teal-300">Automated Flow.</span>
+                </h2>
+                
+                <!-- Subheadline Pitch -->
+                <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal mb-8 max-w-2xl">
+                    I design and deploy high-performance automated workflows and custom AI agents that replace high-friction operations with streamlined, self-operating systems. By bridging your software stack to modern AI models, I turn complex, error-prone processes into a reliable digital engine that gives your business a massive efficiency advantage.
+                </p>
+
+                <!-- HERO CALL-TO-ACTION -->
+                <div class="flex flex-wrap items-center gap-3 sm:gap-4">
+                    <a href="#contact" class="px-6 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold transition-all shadow-lg shadow-brand-500/25 hover:scale-[1.02] flex items-center gap-2">
+                        <span>Hire / Contact Me</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+
+                    <a href="resume.pdf" download class="px-6 py-3.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-medium border border-slate-300 dark:border-slate-700 transition-all hover:scale-[1.02] flex items-center gap-2">
+                        <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        <span>Download PDF Resume</span>
+                    </a>
+
+                    <!-- LinkedIn Profile Icon -->
+                    <a href="https://www.linkedin.com/in/arman-christian-mendoza" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="p-2.5 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border border-white/60 dark:border-slate-700/60 shadow-[inset_1px_1px_2px_rgba(255,255,255,0.8),inset_-1px_-1px_2px_rgba(0,0,0,0.5),2px_2px_5px_rgba(0,0,0,0.2)] hover:shadow-[inset_-1px_-1px_2px_rgba(255,255,255,0.8),inset_1px_1px_2px_rgba(0,0,0,0.5)] transition-all hover:scale-105 flex items-center justify-center group" title="LinkedIn Profile">
+                        <svg class="w-9 h-9 fill-slate-700 dark:fill-slate-300 group-hover:fill-brand-500 transition-colors drop-shadow-[1px_1px_1px_rgba(0,0,0,0.4)] dark:drop-shadow-[1px_1px_2px_rgba(0,0,0,0.8)]" viewBox="0 0 24 24">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24Z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Upwork Profile Icon (Replaced with upworkIcon_2.png) -->
+                    <a href="https://www.upwork.com/freelancers/~019e0c8ba8404ceeec?mp_source=share" target="_blank" rel="noopener noreferrer" aria-label="Upwork Profile" class="p-2.5 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border border-white/60 dark:border-slate-700/60 shadow-[inset_1px_1px_2px_rgba(255,255,255,0.8),inset_-1px_-1px_2px_rgba(0,0,0,0.5),2px_2px_5px_rgba(0,0,0,0.2)] hover:shadow-[inset_-1px_-1px_2px_rgba(255,255,255,0.8),inset_1px_1px_2px_rgba(0,0,0,0.5)] transition-all hover:scale-105 flex items-center justify-center group" title="Upwork Profile">
+                        <img src="upworkIcon_2.png" alt="Upwork Profile" class="w-9 h-9 object-contain rounded-xl drop-shadow-[1px_1px_1px_rgba(0,0,0,0.4)] dark:drop-shadow-[1px_1px_2px_rgba(0,0,0,0.8)]">
+                    </a>
+                </div>
+            </div>
+
+            <!-- PROFILE PIC CONTAINER -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-sm aspect-[4/5] p-1 rounded-3xl bg-gradient-to-b from-brand-500/40 via-slate-300 dark:via-slate-800 to-transparent shadow-[0_0_40px_-10px_rgba(16,185,129,0.2)]">
+                    <div class="w-full h-full rounded-[1.375rem] overflow-hidden bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 relative group">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-500/15 via-transparent to-brand-500/5 opacity-50 group-hover:opacity-100 transition-opacity pointer-events-none z-10"></div>
+                        <div class="w-full h-full -scale-x-100">
+                            <img src="profile.png" 
+                                 alt="Arman Christian Mendoza" 
+                                 class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- CORE CAPABILITIES -->
+    <section id="services" class="py-20 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Core Capabilities</h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto">Engineered to transform repetitive processes into automated workflows.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-brand-500/30 flex flex-col justify-between">
+                    <div>
+                        <div class="w-9 h-9 bg-brand-500/10 text-brand-500 rounded-lg flex items-center justify-center font-bold text-sm mb-5">01</div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Automation & Integration</h3>
+                        <ul class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm space-y-2">
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>n8n, Make.com, Zapier</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Webhooks & REST APIs</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>JSON Data Parsing</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>HTTP Requests</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-brand-500/30 flex flex-col justify-between">
+                    <div>
+                        <div class="w-9 h-9 bg-brand-500/10 text-brand-500 rounded-lg flex items-center justify-center font-bold text-sm mb-5">02</div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">AI & Agentic Systems</h3>
+                        <ul class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm space-y-2">
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>AI Agent Design</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Multi-Agent Architecture</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>LLM Integrations</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Custom GPTs</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-brand-500/30 flex flex-col justify-between">
+                    <div>
+                        <div class="w-9 h-9 bg-brand-500/10 text-brand-500 rounded-lg flex items-center justify-center font-bold text-sm mb-5">03</div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Prompt Engineering</h3>
+                        <ul class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm space-y-2">
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>System Prompts</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Context Window Mgmt</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Conditional Logic</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Error Handling Routines</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-brand-500/30 flex flex-col justify-between">
+                    <div>
+                        <div class="w-9 h-9 bg-brand-500/10 text-brand-500 rounded-lg flex items-center justify-center font-bold text-sm mb-5">04</div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Data & Analytics</h3>
+                        <ul class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm space-y-2">
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Advanced Excel Analytics</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Data Transformation</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Database Synchronization</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-brand-500/30 flex flex-col justify-between">
+                    <div>
+                        <div class="w-9 h-9 bg-brand-500/10 text-brand-500 rounded-lg flex items-center justify-center font-bold text-sm mb-5">05</div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">System Optimization</h3>
+                        <ul class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm space-y-2">
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Process Mapping</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Workflow Auditing</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Bottleneck Analysis</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Technical Documentation</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL STACKS COMPETENCIES -->
+    <section id="tech-stack" class="py-20 bg-slate-100/50 dark:bg-slate-900/30 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Technical Stacks Competencies</h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto">The platforms, models, and tools I utilize to engineer seamless automated operations.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- CARD 1: AUTOMATION -->
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:border-brand-500/30">
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-4 text-lg flex items-center gap-2">
+                        <span class="text-brand-500">⚡</span> Automation
+                    </h3>
+                    <ul class="text-sm text-slate-600 dark:text-slate-300 space-y-3">
+                        <li class="flex items-center gap-2.5">
+                            <img src="images/n8n.png" alt="n8n" class="w-4 h-4 shrink-0 object-contain">
+                            <span class="font-medium">n8n</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <img src="images/make.png" alt="Make.com" class="w-4 h-4 shrink-0 object-contain">
+                            <span class="font-medium">Make.com</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 fill-[#FF4F00] shrink-0" viewBox="0 0 24 24"><path d="M13.5 2L3 13.5h7.5L9 22l10.5-11.5H12L13.5 2z"/></svg>
+                            <span class="font-medium">Zapier</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 stroke-brand-500 fill-none shrink-0" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            <span class="font-medium">Webhooks & REST APIs</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CARD 2: AI MODELS -->
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:border-brand-500/30">
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-4 text-lg flex items-center gap-2">
+                        <span class="text-brand-500">🤖</span> AI Models
+                    </h3>
+                    <ul class="text-sm text-slate-600 dark:text-slate-300 space-y-3">
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 fill-[#10A37F] shrink-0" viewBox="0 0 24 24"><path d="M22.28 9.82a5.98 5.98 0 00-.52-4.91 6.05 6.05 0 00-6.51-2.9 6.07 6.07 0 00-4.82-2.18 6.02 6.02 0 00-5.77 4.19 6.01 6.01 0 00-3.9 2.83 6.05 6.05 0 00.74 7.12 5.98 5.98 0 00.51 4.9 6.05 6.05 0 006.52 2.9 6.04 6.04 0 004.81 2.19 6.02 6.02 0 005.77-4.19 6.01 6.01 0 003.9-2.83 6.05 6.05 0 00-.73-7.12z"/></svg>
+                            <span class="font-medium">OpenAI (ChatGPT)</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <img src="images/anthropic.png" alt="Anthropic" class="w-4 h-4 shrink-0 object-contain dark:invert">
+                            <span class="font-medium">Anthropic</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 fill-[#4285F4] shrink-0" viewBox="0 0 24 24"><path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5z"/></svg>
+                            <span class="font-medium">Google Gemini</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 stroke-brand-500 fill-none shrink-0" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <span class="font-medium">Custom GPTs & Agents</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CARD 3: DEVELOPER TOOLS -->
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:border-brand-500/30">
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-4 text-lg flex items-center gap-2">
+                        <span class="text-brand-500">🔧</span> Developer Tools
+                    </h3>
+                    <ul class="text-sm text-slate-600 dark:text-slate-300 space-y-3">
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 stroke-sky-500 fill-none shrink-0" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                            <span class="font-medium">Custom JSON Parsing</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 stroke-brand-500 fill-none shrink-0" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <span class="font-medium">HTTP Request Headers</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 fill-[#4285F4] shrink-0" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+                            <span class="font-medium">Google Cloud Platform</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 fill-slate-800 dark:fill-slate-100 shrink-0" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                            <span class="font-medium">GitHub Pages</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CARD 4: PLATFORMS & TOOLS -->
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:border-brand-500/30">
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-4 text-lg flex items-center gap-2">
+                        <span class="text-brand-500">💼</span> Platforms & Tools
+                    </h3>
+                    <ul class="text-sm text-slate-600 dark:text-slate-300 space-y-3">
+                        <li class="flex items-center gap-2.5">
+                            <img src="images/quickbooks.png" alt="QuickBooks Online" class="w-4 h-4 shrink-0 object-contain">
+                            <span class="font-medium">QuickBooks Online</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 fill-[#FF7A59] shrink-0" viewBox="0 0 24 24"><path d="M18.8 10.3c-.8 0-1.5.5-1.8 1.2l-3.3-1.9c.1-.3.1-.6.1-.9 0-2.2-1.8-4-4-4s-4 1.8-4 4 1.8 4 4 4c.3 0 .6 0 .9-.1l1.9 3.3c-.7.3-1.2 1-1.2 1.8 0 1.1.9 2 2 2s2-.9 2-2c0-.8-.5-1.5-1.2-1.8l1.9-3.3c.3.1.6.1.9.1 2.2 0 4-1.8 4-4s-1.8-4.1-4-4.1z"/></svg>
+                            <span class="font-medium">HubSpot</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 fill-slate-800 dark:fill-slate-100 shrink-0" viewBox="0 0 24 24"><path d="M4.459 4.208c.746.606 1.026.56 2.428.462l11.233-.78c.327-.023.63.132.818.411.188.28.21.638.058.937l-2.45 4.82c-.14.275-.12.605.05.861l2.84 4.28c.205.309.21.71.01.1.024-.198.308-.532.421-.861.289l-11.45.795c-1.402.097-1.775-.188-2.241-.839L2.83 11.24c-.218-.305-.23-.712-.03-.1.028-.2.305-.53.418-.858.286L4.459 4.208z"/></svg>
+                            <span class="font-medium">Notion</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 fill-[#E01E5A] shrink-0" viewBox="0 0 24 24"><path d="M6 15a2 2 0 100 4 2 2 0 000-4zm0-6a2 2 0 100 4 2 2 0 000-4zm6 0a2 2 0 100 4 2 2 0 000-4zm6 0a2 2 0 100 4 2 2 0 000-4z"/></svg>
+                            <span class="font-medium">Slack</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 fill-[#4285F4] shrink-0" viewBox="0 0 24 24"><path d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12z"/></svg>
+                            <span class="font-medium">Google Workspace</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED WORK / PROJECTS -->
+    <section id="projects" class="py-20 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Featured Work</h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto">
+                    Explore interactive automated workflows built across key integration platforms.
+                </p>
+
+                <!-- Platform Tabs -->
+                <div class="flex items-center justify-center gap-3 mt-8 flex-wrap">
+                    <button onclick="switchWorkTab('n8n')" id="tab-n8n" class="work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-n8n text-white shadow-lg shadow-n8n/20 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-white"></span> n8n Workflows
+                    </button>
+                    <button onclick="switchWorkTab('zapier')" id="tab-zapier" class="work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span> Zapier Zaps
+                    </button>
+                    <button onclick="switchWorkTab('make')" id="tab-make" class="work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> Make.com Scenarios
+                    </button>
+                </div>
+            </div>
+
+            <!-- n8n TAB CONTENT -->
+            <div id="content-n8n" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- WORKFLOW CARD 1 -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                            <img src="workflow-leads.png" alt="Capture leads workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+                                <button onclick="openImageModal('workflow-leads.png', 'Capture leads from any form to HubSpot and notify your team in Slack')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
+                                    🔍 View Full Workflow
+                                </button>
+                                <button onclick="openStepsModal('steps-1')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                    ⚙️ How It Works
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n Template</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Lead Gen</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
+                                Capture leads from any form to HubSpot and notify your team in Slack
+                            </h3>
+                            
+                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
+                                    <p>Marketers, founders, and sales teams collecting leads via website forms needing instant HubSpot + Slack sync.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
+                                    <p>Replaces classic 3-step Zapier zaps (Form → CRM → Slack) at zero per-task execution cost.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="steps-1" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Capture leads from any form to HubSpot and notify your team in Slack</h4>
+                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Webhook:</strong> Receives lead data (name, email, message) as a POST request from any form tool.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>Set Node:</strong> Normalizes and formats input fields.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>HubSpot Node:</strong> Creates or updates the contact record.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Slack Node:</strong> Posts instant notification alert to designated team channels.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Webhook Response:</strong> Returns a 200 HTTP response to confirm lead receipt.</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- WORKFLOW CARD 2 -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                            <img src="workflow-proposals.png" alt="AI Proposals Generator workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+                                <button onclick="openImageModal('workflow-proposals.png', 'Generate and send personalized client proposals by client type via email with AI')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
+                                    🔍 View Full Workflow
+                                </button>
+                                <button onclick="openStepsModal('steps-2')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                    ⚙️ How It Works
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + OpenAI</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">AI Pipeline</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
+                                Generate and send personalized client proposals by client type via email with AI
+                            </h3>
+                            
+                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
+                                    <p>Sales teams, agencies, and freelancers sending 10+ proposals/week needing branded, tier-customized output.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
+                                    <p>Automates proposal generation: validates input, classifies budgets, applies dynamic pricing, drafts AI copy, and emails branded HTML docs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="steps-2" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Generate & Send AI Proposals Workflow Execution</h4>
+                        <ol class="space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                            <li><strong>1. Submission:</strong> Client submits request via webhook POST from CRM/form or via hourly scheduler polling.</li>
+                            <li><strong>2. Normalization:</strong> Field name variants normalized into a consistent JSON schema.</li>
+                            <li><strong>3. Validation & Tiering:</strong> JS validates required fields & classifies budget into tier (starter / growth / enterprise / enterprise+).</li>
+                            <li><strong>4. Error Handling:</strong> Invalid requests trigger a polite error email detailing missing fields.</li>
+                            <li><strong>5. Routing:</strong> Switch node routes valid requests to 1 of 5 client templates (startup, enterprise, agency, nonprofit, standard).</li>
+                            <li><strong>6. Pricing Logic:</strong> Applies base prices, line items, and dynamic client discounts.</li>
+                            <li><strong>7. AI Copywriting:</strong> AI generates a personalized 7-section proposal utilizing client context & pricing data.</li>
+                            <li><strong>8. Formatting & Delivery:</strong> JS formats output into branded HTML email sent via SendGrid, logged to Google Sheets, and alerted to Slack.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- WORKFLOW CARD 3 -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                            <img src="workflow-digest.png" alt="Daily Outbound Performance Digest workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+                                <button onclick="openImageModal('workflow-digest.png', 'Daily Outbound Performance Digest')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
+                                    🔍 View Full Workflow
+                                </button>
+                                <button onclick="openStepsModal('steps-3')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                    ⚙️ How It Works
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + Claude</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Analytics Digest</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
+                                Daily Outbound Performance Digest
+                            </h3>
+                            
+                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
+                                    <p>Outbound teams wanting a concise daily morning digest on campaign performance without manually sifting spreadsheets.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
+                                    <p>Reads campaign sheets, analyzes sentiment using Claude, ranks follow-ups, and lands a concise digest directly in your inbox.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="steps-3" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Daily Outbound Digest Execution</h4>
+                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Schedule Trigger:</strong> Fires automatically once every morning.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>Google Sheets Node:</strong> Reads active outbound campaign rows.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>Aggregate Node:</strong> Combines spreadsheet rows into a single payload.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Claude Agent:</strong> Analyzes data and returns summary, sentiment breakdown, and ranked priority follow-ups.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Gmail Node:</strong> Sends formatted email digest to user inbox.</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ZAPIER TAB CONTENT -->
+            <div id="content-zapier" class="hidden">
+                <div class="p-12 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
+                    <div class="w-12 h-12 rounded-full bg-zapier/10 text-zapier flex items-center justify-center mx-auto mb-4 font-bold text-xl">⚡</div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Zapier Workflows Coming Soon</h3>
+                    <p class="text-slate-600 dark:text-slate-400 max-w-md mx-auto text-sm">
+                        Additional automated multi-step Zapier integrations and zaps are currently being added to this tab.
+                    </p>
+                </div>
+            </div>
+
+            <!-- MAKE.COM TAB CONTENT -->
+            <div id="content-make" class="hidden">
+                <div class="p-12 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
+                    <div class="w-12 h-12 rounded-full bg-purple-500/10 text-purple-500 flex items-center justify-center mx-auto mb-4 font-bold text-xl">🟣</div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Make.com Integration & Automation Coming Soon</h3>
+                    <p class="text-slate-600 dark:text-slate-400 max-w-md mx-auto text-sm">
+                        Advanced multi-app scenarios, data routers, and custom API module integrations are currently being documented for this tab.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INTERACTIVE CERTIFICATIONS SECTION -->
+    <section id="certifications" class="py-20 bg-slate-100/50 dark:bg-slate-900/30 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-6">
+            
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Verified Certifications</h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto">
+                    Credentials in Workflow Automation, API Integrations, and AI Agents. 
+                </p>
+
+                <div class="flex items-center justify-center gap-2 md:gap-4 mt-8 flex-wrap">
+                    <button onclick="filterCerts('all')" id="btn-all" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 bg-brand-500 text-slate-950 shadow-lg shadow-brand-500/20">
+                        All Credentials (6)
+                    </button>
+                    <button onclick="filterCerts('zapier')" id="btn-zapier" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-zapier"></span> Zapier Academy (3)
+                    </button>
+                    <button onclick="filterCerts('n8n')" id="btn-n8n" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-n8n"></span> n8n Academy (2)
+                    </button>
+                    <button onclick="filterCerts('make')" id="btn-make" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> Make.com (1)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Certification Grid -->
+            <div id="cert-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="cert-card zapier group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-zapier transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-orange-500/10"
+                     data-img="images/certificate-Arman-Christian-Mendoza-Building-AI-Agents_page-0001.jpg"
+                     data-title="Building AI Agents"
+                     data-issuer="Zapier Academy"
+                     data-date="July 22, 2026"
+                     data-id="BDBB8506">
+                    
+                    <div class="relative aspect-[16/11] overflow-hidden bg-slate-950 cursor-pointer" onclick="openModal(this.parentElement)">
+                        <img src="images/certificate-Arman-Christian-Mendoza-Building-AI-Agents_page-0001.jpg" 
+                             alt="Zapier Building AI Agents Certificate" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="px-4 py-2 rounded-xl bg-zapier text-white text-xs font-bold shadow-lg flex items-center gap-2">
+                                🔍 Inspect Certificate
+                            </span>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-zapier/20 text-orange-400 border border-zapier/30 text-[10px] font-bold uppercase tracking-wider">
+                            Zapier
+                        </span>
+                    </div>
+
+                    <div class="p-5 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg group-hover:text-zapier transition-colors">Building AI Agents</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Zapier Academy • Issued July 22, 2026</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+                            <span>ID: BDBB8506</span>
+                            <button onclick="openModal(this.closest('.cert-card'))" class="text-zapier hover:underline font-medium">View Fullscreen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-card zapier group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-zapier transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-orange-500/10"
+                     data-img="images/certificate-Arman-Christian-Mendoza-Building-Intermediate-Zaps_page-0001.jpg"
+                     data-title="Building Intermediate Zaps"
+                     data-issuer="Zapier Academy"
+                     data-date="July 22, 2026"
+                     data-id="8F380EC9">
+                    
+                    <div class="relative aspect-[16/11] overflow-hidden bg-slate-950 cursor-pointer" onclick="openModal(this.parentElement)">
+                        <img src="images/certificate-Arman-Christian-Mendoza-Building-Intermediate-Zaps_page-0001.jpg" 
+                             alt="Zapier Building Intermediate Zaps Certificate" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="px-4 py-2 rounded-xl bg-zapier text-white text-xs font-bold shadow-lg flex items-center gap-2">
+                                🔍 Inspect Certificate
+                            </span>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-zapier/20 text-orange-400 border border-zapier/30 text-[10px] font-bold uppercase tracking-wider">
+                            Zapier
+                        </span>
+                    </div>
+
+                    <div class="p-5 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg group-hover:text-zapier transition-colors">Building Intermediate Zaps</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Zapier Academy • Issued July 22, 2026</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+                            <span>ID: 8F380EC9</span>
+                            <button onclick="openModal(this.closest('.cert-card'))" class="text-zapier hover:underline font-medium">View Fullscreen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-card zapier group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-zapier transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-orange-500/10"
+                     data-img="images/certificate-Arman-Christian-Mendoza-Building-Basic-Zaps_page-0001.jpg"
+                     data-title="Building Basic Zaps"
+                     data-issuer="Zapier Academy"
+                     data-date="July 21, 2026"
+                     data-id="BD7F4AEB">
+                    
+                    <div class="relative aspect-[16/11] overflow-hidden bg-slate-950 cursor-pointer" onclick="openModal(this.parentElement)">
+                        <img src="images/certificate-Arman-Christian-Mendoza-Building-Basic-Zaps_page-0001.jpg" 
+                             alt="Zapier Building Basic Zaps Certificate" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="px-4 py-2 rounded-xl bg-zapier text-white text-xs font-bold shadow-lg flex items-center gap-2">
+                                🔍 Inspect Certificate
+                            </span>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-zapier/20 text-orange-400 border border-zapier/30 text-[10px] font-bold uppercase tracking-wider">
+                            Zapier
+                        </span>
+                    </div>
+
+                    <div class="p-5 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg group-hover:text-zapier transition-colors">Building Basic Zaps</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Zapier Academy • Issued July 21, 2026</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+                            <span>ID: BD7F4AEB</span>
+                            <button onclick="openModal(this.closest('.cert-card'))" class="text-zapier hover:underline font-medium">View Fullscreen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-card n8n group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-n8n transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/10"
+                     data-img="images/n8n N8N102 Certificate _ n8n_page-0001.jpg"
+                     data-title="Integrations: APIs & Connected Workflows"
+                     data-issuer="n8n Academy"
+                     data-date="July 23, 2026"
+                     data-id="N8N-102">
+                    
+                    <div class="relative aspect-[16/11] overflow-hidden bg-slate-950 cursor-pointer" onclick="openModal(this.parentElement)">
+                        <img src="images/n8n N8N102 Certificate _ n8n_page-0001.jpg" 
+                             alt="n8n Integrations APIs Certificate" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="px-4 py-2 rounded-xl bg-n8n text-white text-xs font-bold shadow-lg flex items-center gap-2">
+                                🔍 Inspect Certificate
+                            </span>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-n8n/20 text-pink-400 border border-n8n/30 text-[10px] font-bold uppercase tracking-wider">
+                            n8n
+                        </span>
+                    </div>
+
+                    <div class="p-5 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg group-hover:text-n8n transition-colors">Integrations: APIs & Workflows</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">n8n Academy • Issued July 23, 2026</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+                            <span>Course: N8N102</span>
+                            <button onclick="openModal(this.closest('.cert-card'))" class="text-n8n hover:underline font-medium">View Fullscreen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-card n8n group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-n8n transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/10"
+                     data-img="images/n8n N8N101 Certificate _ n8n_page-0001.jpg"
+                     data-title="Essentials: Your First Workflows"
+                     data-issuer="n8n Academy"
+                     data-date="July 22, 2026"
+                     data-id="N8N-101">
+                    
+                    <div class="relative aspect-[16/11] overflow-hidden bg-slate-950 cursor-pointer" onclick="openModal(this.parentElement)">
+                        <img src="images/n8n N8N101 Certificate _ n8n_page-0001.jpg" 
+                             alt="n8n Essentials Workflows Certificate" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="px-4 py-2 rounded-xl bg-n8n text-white text-xs font-bold shadow-lg flex items-center gap-2">
+                                🔍 Inspect Certificate
+                            </span>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-n8n/20 text-pink-400 border border-n8n/30 text-[10px] font-bold uppercase tracking-wider">
+                            n8n
+                        </span>
+                    </div>
+
+                    <div class="p-5 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg group-hover:text-n8n transition-colors">Essentials: Your First Workflows</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">n8n Academy • Issued July 22, 2026</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+                            <span>Course: N8N101</span>
+                            <button onclick="openModal(this.closest('.cert-card'))" class="text-n8n hover:underline font-medium">View Fullscreen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MAKE.COM CERTIFICATION CARD -->
+                <div class="cert-card make group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-purple-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10">
+                    <div class="relative aspect-[16/11] overflow-hidden bg-slate-900 flex flex-col items-center justify-center p-6 text-center border-b border-slate-200 dark:border-slate-800">
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-purple-500/20 text-purple-400 border border-purple-500/30 text-[10px] font-bold uppercase tracking-wider">
+                            Make.com
+                        </span>
+                        <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold text-xl mb-3">🟣</div>
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 border border-amber-500/20">Status: Certificate will be uploaded soon.</span>
+                    </div>
+
+                    <div class="p-5 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg group-hover:text-purple-500 transition-colors">Make.com Automated Workflow Architecture & Integration</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Make.com Academy • Coming Soon</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+                            <span>Status: Pending Upload</span>
+                            <span class="text-purple-500 font-medium">Tab Added</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT SECTION -->
+    <footer id="contact" class="py-16 bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Let's Work Together</h2>
+            <p class="text-slate-600 dark:text-slate-400 mb-8 max-w-lg mx-auto">
+                Ready to optimize your business operations or build custom agentic AI solutions? Reach out directly to discuss your project.
+            </p>
+            
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="mailto:acq.mendoza@gmail.com" class="px-6 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold transition-all shadow-lg shadow-brand-500/20 hover:scale-[1.02]">
+                    Send Email
+                </a>
+                <a href="https://www.linkedin.com/in/arman-christian-mendoza" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-white dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-medium border border-slate-200 dark:border-slate-800 transition-all hover:scale-[1.02]">
+                    Connect on LinkedIn
+                </a>
+                <a href="https://www.upwork.com/freelancers/~019e0c8ba8404ceeec?mp_source=share" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-white dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-medium border border-slate-200 dark:border-slate-800 transition-all hover:scale-[1.02]">
+                    Upwork Profile
+                </a>
+                <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/acq-mendoza/30min'});return false;" class="px-6 py-3.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-medium border border-slate-300 dark:border-slate-700 transition-all hover:scale-[1.02]">
+                    Schedule a Call
+                </a>
+            </div>
+
+            <p class="text-xs text-slate-500 dark:text-slate-500 mt-12">
+                © 2026 Arman Christian Mendoza. Built for high-performance automation.
+            </p>
+        </div>
+    </footer>
+
+    <!-- FULLSCREEN LIGHTBOX MODAL -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden flex flex-col justify-between p-4 md:p-6 select-none">
+        
+        <div class="flex items-center justify-between w-full max-w-7xl mx-auto z-10 bg-slate-900/80 p-3 rounded-2xl border border-slate-800">
+            <div class="max-w-[60%]">
+                <h3 id="modal-title" class="font-bold text-slate-100 text-sm md:text-base truncate">Title</h3>
+                <p id="modal-sub" class="text-xs text-slate-400 truncate">Subtitle</p>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button onclick="zoomOut()" title="Zoom Out (-)" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/></svg>
+                </button>
+                <span id="zoom-level" class="text-xs font-mono font-bold text-slate-400 min-w-[45px] text-center">100%</span>
+                <button onclick="zoomIn()" title="Zoom In (+)" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                </button>
+                <button onclick="resetZoom()" title="Reset Zoom" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 transition-colors">
+                    Reset
+                </button>
+                <div class="w-px h-6 bg-slate-800 mx-1"></div>
+                <button onclick="closeModal()" title="Close (Esc)" class="p-2 rounded-xl bg-red-500/20 text-red-400 hover:bg-red-500/30 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="viewport" class="relative flex-1 w-full overflow-hidden flex items-center justify-center my-4 cursor-grab active:cursor-grabbing">
+            <img id="modal-img" src="" alt="Large Preview" class="max-w-[90vw] max-h-[75vh] object-contain rounded-xl shadow-2xl transition-transform duration-75 origin-center pointer-events-none">
+        </div>
+
+        <div class="text-center text-xs text-slate-400 z-10">
+            <span>💡 <strong>Controls:</strong> Scroll wheel to zoom • Click & drag to pan • Press <kbd class="px-1.5 py-0.5 bg-slate-800 rounded text-slate-300">Esc</kbd> to exit</span>
+        </div>
+    </div>
+
+    <!-- HOW IT WORKS MODAL -->
+    <div id="steps-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                <h3 class="font-bold text-slate-900 dark:text-white text-lg flex items-center gap-2">
+                    <span class="text-brand-500">⚙️</span> How It Works
+                </h3>
+                <button onclick="closeStepsModal()" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div id="steps-modal-content" class="p-6 overflow-y-auto custom-scrollbar">
+            </div>
+            <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/50 text-right">
+                <button onclick="closeStepsModal()" class="px-5 py-2 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-semibold text-xs transition-all">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMBINED JAVASCRIPT -->
+    <script>
+        // --- 1. DARK / LIGHT THEME TOGGLE ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        if (localStorage.getItem('color-theme') === 'light' || (!('color-theme' in localStorage) && !window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.remove('dark');
+            themeToggleDarkIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.add('dark');
+            themeToggleLightIcon.classList.remove('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // --- 2. MOBILE NAVIGATION MENU TOGGLE ---
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        }
+
+        mobileMenuToggle.addEventListener('click', toggleMenu);
+        mobileNavLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+        // --- 3. CERTIFICATION CATEGORY FILTERING ---
+        function filterCerts(category) {
+            const cards = document.querySelectorAll('.cert-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-500', 'text-slate-950', 'shadow-lg', 'shadow-brand-500/20');
+                btn.classList.add('bg-white', 'dark:bg-slate-900', 'text-slate-700', 'dark:text-slate-300', 'border', 'border-slate-200', 'dark:border-slate-800');
+            });
+
+            const activeBtn = document.getElementById(`btn-${category}`);
+            activeBtn.classList.remove('bg-white', 'dark:bg-slate-900', 'text-slate-700', 'dark:text-slate-300', 'border', 'border-slate-200', 'dark:border-slate-800');
+            activeBtn.classList.add('bg-brand-500', 'text-slate-950', 'shadow-lg', 'shadow-brand-500/20');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // --- 4. FEATURED WORK TAB SWITCHING ---
+        function switchWorkTab(platform) {
+            const tabN8n = document.getElementById('tab-n8n');
+            const tabZapier = document.getElementById('tab-zapier');
+            const tabMake = document.getElementById('tab-make');
+            const contentN8n = document.getElementById('content-n8n');
+            const contentZapier = document.getElementById('content-zapier');
+            const contentMake = document.getElementById('content-make');
+
+            contentN8n.classList.add('hidden');
+            contentZapier.classList.add('hidden');
+            contentMake.classList.add('hidden');
+
+            tabN8n.className = "work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-2";
+            tabZapier.className = "work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-2";
+            tabMake.className = "work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-2";
+
+            if (platform === 'n8n') {
+                contentN8n.classList.remove('hidden');
+                tabN8n.className = "work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-n8n text-white shadow-lg shadow-n8n/20 flex items-center gap-2";
+            } else if (platform === 'zapier') {
+                contentZapier.classList.remove('hidden');
+                tabZapier.className = "work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-zapier text-white shadow-lg shadow-zapier/20 flex items-center gap-2";
+            } else if (platform === 'make') {
+                contentMake.classList.remove('hidden');
+                tabMake.className = "work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-purple-600 text-white shadow-lg shadow-purple-600/20 flex items-center gap-2";
+            }
+        }
+
+        // --- 5. WORKFLOW MODALS ---
+        function openImageModal(imgSrc, title) {
+            modalImg.src = imgSrc;
+            modalTitle.textContent = title || "Workflow Architecture";
+            modalSub.textContent = "Interactive Diagram • Scroll to zoom, drag to pan";
+
+            resetZoom();
+            lightbox.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function openStepsModal(stepsId) {
+            const stepsElem = document.getElementById(stepsId);
+            const contentContainer = document.getElementById('steps-modal-content');
+            if (stepsElem && contentContainer) {
+                contentContainer.innerHTML = stepsElem.innerHTML;
+                document.getElementById('steps-modal').classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+            }
+        }
+
+        function closeStepsModal() {
+            document.getElementById('steps-modal').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // --- 6. LIGHTBOX & ZOOM/PAN CONTROLS ---
+        let scale = 1;
+        let pointX = 0;
+        let pointY = 0;
+        let startX = 0;
+        let startY = 0;
+        let isDragging = false;
+
+        const lightbox = document.getElementById('lightbox');
+        const viewport = document.getElementById('viewport');
+        const modalImg = document.getElementById('modal-img');
+        const modalTitle = document.getElementById('modal-title');
+        const modalSub = document.getElementById('modal-sub');
+        const zoomLevelDisplay = document.getElementById('zoom-level');
+
+        function openModal(card) {
+            const imgSrc = card.getAttribute('data-img');
+            const title = card.getAttribute('data-title');
+            const issuer = card.getAttribute('data-issuer');
+            const date = card.getAttribute('data-date');
+
+            if (!imgSrc) return; // If certification pending upload without image
+            modalImg.src = imgSrc;
+            modalTitle.textContent = title;
+            modalSub.textContent = `${issuer} • ${date}`;
+
+            resetZoom();
+            lightbox.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeModal() {
+            lightbox.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        function updateTransform() {
+            modalImg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+            zoomLevelDisplay.textContent = `${Math.round(scale * 100)}%`;
+        }
+
+        function zoomIn() {
+            scale = Math.min(scale + 0.25, 4);
+            updateTransform();
+        }
+
+        function zoomOut() {
+            scale = Math.max(scale - 0.25, 0.5);
+            if (scale === 1) { pointX = 0; pointY = 0; }
+            updateTransform();
+        }
+
+        function resetZoom() {
+            scale = 1;
+            pointX = 0;
+            pointY = 0;
+            updateTransform();
+        }
+
+        viewport.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const delta = e.deltaY < 0 ? 0.15 : -0.15;
+            scale = Math.min(Math.max(0.5, scale + delta), 4);
+            if (scale === 1) { pointX = 0; pointY = 0; }
+            updateTransform();
+        });
+
+        viewport.addEventListener('mousedown', (e) => {
+            if (scale <= 1) return;
+            e.preventDefault();
+            isDragging = true;
+            startX = e.clientX - pointX;
+            startY = e.clientY - pointY;
+            viewport.classList.add('cursor-grabbing');
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            pointX = e.clientX - startX;
+            pointY = e.clientY - startY;
+            updateTransform();
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            viewport.classList.remove('cursor-grabbing');
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeStepsModal();
+            }
+            if (!lightbox.classList.contains('hidden')) {
+                if (e.key === '+' || e.key === '=') zoomIn();
+                if (e.key === '-') zoomOut();
+                if (e.key === '0') resetZoom();
+            }
+        });
+    </script>
+</body>
+</html>
