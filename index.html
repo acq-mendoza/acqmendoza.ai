@@ -894,17 +894,36 @@
     <!-- COMBINED JAVASCRIPT -->
     <script>
         // --- VISIT COUNTER LOGIC ---
-        let visits = localStorage.getItem('site_visits');
-        if (!visits) {
-            visits = 1482; // Realistic baseline counter
-        } else {
-            if (!sessionStorage.getItem('visited')) {
-                visits = parseInt(visits) + 1;
-                localStorage.setItem('site_visits', visits);
-                sessionStorage.setItem('visited', 'true');
-            }
-        }
-        document.getElementById('visit-counter').textContent = Number(visits).toLocaleString();
+        // Uses countapi.mileshilliard.com, a free, no-signup counting API, so the
+        // number is a real shared count across every visitor, not just this browser.
+        (function () {
+            const counterKey = 'acqmendoza-ai-portfolio-visits'; // unique key for this site
+            const counterEl = document.getElementById('visit-counter');
+            const alreadyCountedThisSession = sessionStorage.getItem('visited');
+
+            // Only increment once per browser session (repeat page views/refreshes in
+            // the same session just re-display the current count instead of re-counting).
+            const endpoint = alreadyCountedThisSession
+                ? `https://countapi.mileshilliard.com/api/v1/get/${counterKey}`
+                : `https://countapi.mileshilliard.com/api/v1/hit/${counterKey}`;
+
+            fetch(endpoint)
+                .then(res => res.json())
+                .then(data => {
+                    const value = parseInt(data.value, 10);
+                    if (!isNaN(value)) {
+                        counterEl.textContent = value.toLocaleString();
+                        localStorage.setItem('site_visits_cache', value); // fallback cache only
+                        sessionStorage.setItem('visited', 'true');
+                    }
+                })
+                .catch(() => {
+                    // API unreachable (offline, blocked, etc.) — fall back to the last
+                    // known value so the counter doesn't break or reset visibly.
+                    const cached = localStorage.getItem('site_visits_cache');
+                    counterEl.textContent = cached ? Number(cached).toLocaleString() : '—';
+                });
+        })();
 
         // --- 1. DARK / LIGHT THEME TOGGLE ---
         const themeToggleBtn = document.getElementById('theme-toggle');
