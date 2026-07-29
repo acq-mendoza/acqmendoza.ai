@@ -137,7 +137,7 @@
                 
                 <!-- Subheadline Pitch -->
                 <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal mb-8 max-w-2xl">
-                    I design and deploy high-performance automated workflows and custom AI agents that replace high-friction operations with streamlined, self-operating systems. By bridging your software stack to modern AI models, I turn complex, error-prone processes into a reliable digital engine that gives your business a massive efficiency advantage.
+                    I design and deploy high-performance automated workflows and custom AI agents that replace high-friction operations with streamlined, self-operating systems. By bridging your software stack to modern AI models, I turn complex, error-prone processes into a reliable digital engine that gives your business a massive efficiency advantage[cite: 6].
                 </p>
 
                 <!-- HERO CALL-TO-ACTION -->
@@ -163,7 +163,7 @@
                         </svg>
                     </a>
 
-                    <!-- Upwork Profile Icon (Replaced with upworkIcon_2.png) -->
+                    <!-- Upwork Profile Icon -->
                     <a href="https://www.upwork.com/freelancers/~019e0c8ba8404ceeec?mp_source=share" target="_blank" rel="noopener noreferrer" aria-label="Upwork Profile" class="p-2.5 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border border-white/60 dark:border-slate-700/60 shadow-[inset_1px_1px_2px_rgba(255,255,255,0.8),inset_-1px_-1px_2px_rgba(0,0,0,0.5),2px_2px_5px_rgba(0,0,0,0.2)] hover:shadow-[inset_-1px_-1px_2px_rgba(255,255,255,0.8),inset_1px_1px_2px_rgba(0,0,0,0.5)] transition-all hover:scale-105 flex items-center justify-center group" title="Upwork Profile">
                         <img src="upworkIcon_2.png" alt="Upwork Profile" class="w-9 h-9 object-contain rounded-xl drop-shadow-[1px_1px_1px_rgba(0,0,0,0.4)] dark:drop-shadow-[1px_1px_2px_rgba(0,0,0,0.8)]">
                     </a>
@@ -310,7 +310,7 @@
                         </li>
                         <li class="flex items-center gap-2.5">
                             <img src="images/anthropic.png" alt="Anthropic" class="w-4 h-4 shrink-0 object-contain dark:invert">
-                            <span class="font-medium">Anthropic</span>
+                            <span class="font-medium">Anthropic (Claude)</span>
                         </li>
                         <li class="flex items-center gap-2.5">
                             <svg class="w-4 h-4 fill-[#4285F4] shrink-0" viewBox="0 0 24 24"><path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5z"/></svg>
@@ -355,10 +355,6 @@
                     </h3>
                     <ul class="text-sm text-slate-600 dark:text-slate-300 space-y-3">
                         <li class="flex items-center gap-2.5">
-                            <img src="images/quickbooks.png" alt="QuickBooks Online" class="w-4 h-4 shrink-0 object-contain">
-                            <span class="font-medium">QuickBooks Online</span>
-                        </li>
-                        <li class="flex items-center gap-2.5">
                             <svg class="w-4 h-4 fill-[#FF7A59] shrink-0" viewBox="0 0 24 24"><path d="M18.8 10.3c-.8 0-1.5.5-1.8 1.2l-3.3-1.9c.1-.3.1-.6.1-.9 0-2.2-1.8-4-4-4s-4 1.8-4 4 1.8 4 4 4c.3 0 .6 0 .9-.1l1.9 3.3c-.7.3-1.2 1-1.2 1.8 0 1.1.9 2 2 2s2-.9 2-2c0-.8-.5-1.5-1.2-1.8l1.9-3.3c.3.1.6.1.9.1 2.2 0 4-1.8 4-4s-1.8-4.1-4-4.1z"/></svg>
                             <span class="font-medium">HubSpot</span>
                         </li>
@@ -369,6 +365,10 @@
                         <li class="flex items-center gap-2.5">
                             <svg class="w-4 h-4 fill-[#E01E5A] shrink-0" viewBox="0 0 24 24"><path d="M6 15a2 2 0 100 4 2 2 0 000-4zm0-6a2 2 0 100 4 2 2 0 000-4zm6 0a2 2 0 100 4 2 2 0 000-4zm6 0a2 2 0 100 4 2 2 0 000-4z"/></svg>
                             <span class="font-medium">Slack</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <img src="images/quickbooks.png" alt="QuickBooks Online" class="w-4 h-4 shrink-0 object-contain">
+                            <span class="font-medium">QuickBooks Online</span>
                         </li>
                         <li class="flex items-center gap-2.5">
                             <svg class="w-4 h-4 fill-[#4285F4] shrink-0" viewBox="0 0 24 24"><path d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12z"/></svg>
@@ -560,14 +560,152 @@
             </div>
 
             <!-- ZAPIER TAB CONTENT -->
-            <div id="content-zapier" class="hidden">
-                <div class="p-12 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
-                    <div class="w-12 h-12 rounded-full bg-zapier/10 text-zapier flex items-center justify-center mx-auto mb-4 font-bold text-xl">⚡</div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Zapier Workflows Coming Soon</h3>
-                    <p class="text-slate-600 dark:text-slate-400 max-w-md mx-auto text-sm">
-                        Additional automated multi-step Zapier integrations and zaps are currently being added to this tab.
-                    </p>
+            <div id="content-zapier" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- ZAP CARD 1: Hubspot Lead Generation -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                            <img src="Zaps- Hubspot Lead.png" alt="Hubspot Lead Generation Zaps" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+                                <button onclick="openImageModal('Zaps- Hubspot Lead.png', 'Hubspot Lead Generation & AI Qualification Pipeline')" class="w-full py-2 px-4 bg-zapier hover:opacity-90 text-white font-bold text-xs rounded-lg transition-all shadow-md">
+                                    🔍 View Full Workflow
+                                </button>
+                                <button onclick="openStepsModal('steps-zap-1')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                    ⚙️ How It Works
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-zapier/10 text-zapier font-semibold text-[10px] uppercase tracking-wider border border-zapier/20">Zapier Zap</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Lead Qualification</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
+                                Hubspot Lead Generation & AI Qualification Pipeline
+                            </h3>
+                            
+                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
+                                    <p>Sales teams, revenue operations, or lead generation teams who need to automatically qualify and route new leads without manual review delays.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
+                                    <p>This is an end-to-end lead qualification pipeline that detects new contacts added to a HubSpot list, scores each lead's quality instantly using AI (Groq) based on profile data, notifies your team via email, logs everything to Google Sheets, and creates prioritized Google Tasks.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="steps-zap-1" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Hubspot Lead Generation & AI Qualification Pipeline Execution</h4>
+                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-zapier/20 text-zapier font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>HubSpot Trigger:</strong> Detects new contacts added to a specified HubSpot list.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-zapier/20 text-zapier font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>AI Scoring (Groq):</strong> Scores each lead's quality instantly using AI based on their profile data.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-zapier/20 text-zapier font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>Email Notification:</strong> Notifies your team via email with the lead summary + score.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-zapier/20 text-zapier font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Google Sheets Logging:</strong> Logs all data to Google Sheets for historical tracking and reporting.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-zapier/20 text-zapier font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Google Tasks:</strong> Creates tasks in Google Tasks with prioritized follow-up dates (High/Medium/Low tier).</span></li>
+                        </ol>
+                    </div>
                 </div>
+
+                <!-- ZAP CARD 2: Salesforce New Lead Follow-up -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                            <img src="Zaps- Salesforce  New Lead Followup.png" alt="Salesforce New Lead Follow-up" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+                                <button onclick="openImageModal('Zaps- Salesforce  New Lead Followup.png', 'Salesforce New Lead Nurture & Compliance Audit Trail')" class="w-full py-2 px-4 bg-zapier hover:opacity-90 text-white font-bold text-xs rounded-lg transition-all shadow-md">
+                                    🔍 View Full Workflow
+                                </button>
+                                <button onclick="openStepsModal('steps-zap-2')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                    ⚙️ How It Works
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-zapier/10 text-zapier font-semibold text-[10px] uppercase tracking-wider border border-zapier/20">Zapier Zap</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">CRM Audit Trail</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
+                                Salesforce New Lead Nurture & Compliance Audit Trail
+                            </h3>
+                            
+                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
+                                    <p>Sales teams using Salesforce who need automated follow-up cadence with built-in activity tracking for compliance and reporting.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
+                                    <p>A lead nurture + audit trail workflow that triggers whenever a new lead is created in Salesforce, waits 1 day for initial review, sends a team reminder email with the Salesforce Lead ID, and logs the follow-up activity to Zapier Table.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="steps-zap-2" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Salesforce New Lead Follow-up Workflow Execution</h4>
+                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-zapier/20 text-zapier font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Salesforce Trigger:</strong> Triggers whenever a new lead is created in Salesforce.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-zapier/20 text-zapier font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>Delay Step:</strong> Waits 1 day (giving time for initial manual review if needed).</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-zapier/20 text-zapier font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>Team Reminder Email:</strong> Sends a reminder email to your team with the Salesforce Lead ID for quick reference.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-zapier/20 text-zapier font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Zapier Table Logging:</strong> Logs the follow-up activity to Zapier Table for monitoring, reporting, and compliance.</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- ZAP CARD 3: Gmail Categorizer -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                            <img src="Zaps- Gmail Categorizer.png" alt="Gmail Categorizer" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+                                <button onclick="openImageModal('Zaps- Gmail Categorizer.png', 'Intelligent Gmail Email Triage & Categorization System')" class="w-full py-2 px-4 bg-zapier hover:opacity-90 text-white font-bold text-xs rounded-lg transition-all shadow-md">
+                                    🔍 View Full Workflow
+                                </button>
+                                <button onclick="openStepsModal('steps-zap-3')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                    ⚙️ How It Works
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-zapier/10 text-zapier font-semibold text-[10px] uppercase tracking-wider border border-zapier/20">Zapier Zap</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Email Triage</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
+                                Intelligent Gmail Email Triage & Categorization System
+                            </h3>
+                            
+                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
+                                    <p>Gmail users (personal or business) who want to automatically organize emails without manual labeling—especially teams managing high email volume or complex inbox workflows.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
+                                    <p>An intelligent email triage system that triggers on every new incoming Gmail email, analyzes properties (sender domain, subject keywords, content patterns, priority flag), and auto-applies the right label/category based on your rules.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="steps-zap-3" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Gmail Categorizer Workflow Execution</h4>
+                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-zapier/20 text-zapier font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Gmail Trigger:</strong> Triggers on every new incoming Gmail email.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-zapier/20 text-zapier font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>Property Analysis:</strong> Analyzes email properties (sender domain, subject keywords, content patterns, priority flag, etc.).</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-zapier/20 text-zapier font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>Auto-Labeling:</strong> Auto-applies the right label/category based on your rules. Examples: "Invoices" → flagged as bill, "Client Feedback" → from customer domains, "Internal" → company email, "Spam/Low Priority" → promotional content.</span></li>
+                        </ol>
+                    </div>
+                </div>
+
             </div>
 
             <!-- MAKE.COM TAB CONTENT -->
@@ -596,7 +734,7 @@
 
                 <div class="flex items-center justify-center gap-2 md:gap-4 mt-8 flex-wrap">
                     <button onclick="filterCerts('all')" id="btn-all" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 bg-brand-500 text-slate-950 shadow-lg shadow-brand-500/20">
-                        All Credentials (6)
+                        All Credentials (12)
                     </button>
                     <button onclick="filterCerts('zapier')" id="btn-zapier" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 flex items-center gap-2">
                         <span class="w-2.5 h-2.5 rounded-full bg-zapier"></span> Zapier Academy (3)
@@ -605,7 +743,10 @@
                         <span class="w-2.5 h-2.5 rounded-full bg-n8n"></span> n8n Academy (2)
                     </button>
                     <button onclick="filterCerts('make')" id="btn-make" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> Make.com (1)
+                        <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> Make.com (2)
+                    </button>
+                    <button onclick="filterCerts('other')" id="btn-other" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span> Other (5)
                     </button>
                 </div>
             </div>
@@ -778,24 +919,240 @@
                     </div>
                 </div>
 
-                <!-- MAKE.COM CERTIFICATION CARD -->
-                <div class="cert-card make group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-purple-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10">
-                    <div class="relative aspect-[16/11] overflow-hidden bg-slate-900 flex flex-col items-center justify-center p-6 text-center border-b border-slate-200 dark:border-slate-800">
+                <!-- MAKE.COM CERTIFICATION 1: Make Intermediate -->
+                <div class="cert-card make group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-purple-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10"
+                     data-img="images/Make.com Make Intermediate.png"
+                     data-title="Make Intermediate"
+                     data-issuer="Make.com Academy"
+                     data-date="July 2026"
+                     data-id="MAKE-INT">
+                    
+                    <div class="relative aspect-[16/11] overflow-hidden bg-slate-950 cursor-pointer" onclick="openModal(this.parentElement)">
+                        <img src="images/Make.com Make Intermediate.png" 
+                             alt="Make.com Make Intermediate Certificate" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="px-4 py-2 rounded-xl bg-purple-600 text-white text-xs font-bold shadow-lg flex items-center gap-2">
+                                🔍 Inspect Certificate
+                            </span>
+                        </div>
                         <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-purple-500/20 text-purple-400 border border-purple-500/30 text-[10px] font-bold uppercase tracking-wider">
                             Make.com
                         </span>
-                        <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold text-xl mb-3">🟣</div>
-                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 border border-amber-500/20">Status: Certificate will be uploaded soon.</span>
                     </div>
 
                     <div class="p-5 flex flex-col justify-between">
                         <div>
-                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg group-hover:text-purple-500 transition-colors">Make.com Automated Workflow Architecture & Integration</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Make.com Academy • Coming Soon</p>
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg group-hover:text-purple-500 transition-colors">Make Intermediate</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Make.com Academy • Issued July 2026</p>
                         </div>
                         <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
-                            <span>Status: Pending Upload</span>
-                            <span class="text-purple-500 font-medium">Tab Added</span>
+                            <span>Status: Verified</span>
+                            <button onclick="openModal(this.closest('.cert-card'))" class="text-purple-500 hover:underline font-medium">View Fullscreen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MAKE.COM CERTIFICATION 2: AI Agent Builder -->
+                <div class="cert-card make group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-purple-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10"
+                     data-img="images/Make.com AI Agent Builder.png"
+                     data-title="AI Agent Builder"
+                     data-issuer="Make.com Academy"
+                     data-date="July 2026"
+                     data-id="MAKE-AIB">
+                    
+                    <div class="relative aspect-[16/11] overflow-hidden bg-slate-950 cursor-pointer" onclick="openModal(this.parentElement)">
+                        <img src="images/Make.com AI Agent Builder.png" 
+                             alt="Make.com AI Agent Builder Certificate" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="px-4 py-2 rounded-xl bg-purple-600 text-white text-xs font-bold shadow-lg flex items-center gap-2">
+                                🔍 Inspect Certificate
+                            </span>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-purple-500/20 text-purple-400 border border-purple-500/30 text-[10px] font-bold uppercase tracking-wider">
+                            Make.com
+                        </span>
+                    </div>
+
+                    <div class="p-5 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg group-hover:text-purple-500 transition-colors">AI Agent Builder</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Make.com Academy • Issued July 2026</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+                            <span>Status: Verified</span>
+                            <button onclick="openModal(this.closest('.cert-card'))" class="text-purple-500 hover:underline font-medium">View Fullscreen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OTHER CERTIFICATION 1: Claude 101 -->
+                <div class="cert-card other group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
+                     data-img="images/Claude 101.png"
+                     data-title="Claude 101"
+                     data-issuer="Anthropic"
+                     data-date="July 2026"
+                     data-id="CLAUDE-101">
+                    
+                    <div class="relative aspect-[16/11] overflow-hidden bg-slate-950 cursor-pointer" onclick="openModal(this.parentElement)">
+                        <img src="images/Claude 101.png" 
+                             alt="Claude 101 Certificate" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold shadow-lg flex items-center gap-2">
+                                🔍 Inspect Certificate
+                            </span>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-blue-500/20 text-blue-400 border border-blue-500/30 text-[10px] font-bold uppercase tracking-wider">
+                            Other
+                        </span>
+                    </div>
+
+                    <div class="p-5 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg group-hover:text-blue-500 transition-colors">Claude 101</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Anthropic • Issued July 2026</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+                            <span>Status: Verified</span>
+                            <button onclick="openModal(this.closest('.cert-card'))" class="text-blue-500 hover:underline font-medium">View Fullscreen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OTHER CERTIFICATION 2: Claude Code 101 -->
+                <div class="cert-card other group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
+                     data-img="images/Claude Code 101.png"
+                     data-title="Claude Code 101"
+                     data-issuer="Anthropic"
+                     data-date="July 2026"
+                     data-id="CLAUDE-CODE-101">
+                    
+                    <div class="relative aspect-[16/11] overflow-hidden bg-slate-950 cursor-pointer" onclick="openModal(this.parentElement)">
+                        <img src="images/Claude Code 101.png" 
+                             alt="Claude Code 101 Certificate" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold shadow-lg flex items-center gap-2">
+                                🔍 Inspect Certificate
+                            </span>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-blue-500/20 text-blue-400 border border-blue-500/30 text-[10px] font-bold uppercase tracking-wider">
+                            Other
+                        </span>
+                    </div>
+
+                    <div class="p-5 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg group-hover:text-blue-500 transition-colors">Claude Code 101</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Anthropic • Issued July 2026</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+                            <span>Status: Verified</span>
+                            <button onclick="openModal(this.closest('.cert-card'))" class="text-blue-500 hover:underline font-medium">View Fullscreen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OTHER CERTIFICATION 3: Claude Code in Action -->
+                <div class="cert-card other group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
+                     data-img="images/Claude Code in Action.png"
+                     data-title="Claude Code in Action"
+                     data-issuer="Anthropic"
+                     data-date="July 2026"
+                     data-id="CLAUDE-ACTION">
+                    
+                    <div class="relative aspect-[16/11] overflow-hidden bg-slate-950 cursor-pointer" onclick="openModal(this.parentElement)">
+                        <img src="images/Claude Code in Action.png" 
+                             alt="Claude Code in Action Certificate" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold shadow-lg flex items-center gap-2">
+                                🔍 Inspect Certificate
+                            </span>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-blue-500/20 text-blue-400 border border-blue-500/30 text-[10px] font-bold uppercase tracking-wider">
+                            Other
+                        </span>
+                    </div>
+
+                    <div class="p-5 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg group-hover:text-blue-500 transition-colors">Claude Code in Action</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Anthropic • Issued July 2026</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+                            <span>Status: Verified</span>
+                            <button onclick="openModal(this.closest('.cert-card'))" class="text-blue-500 hover:underline font-medium">View Fullscreen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OTHER CERTIFICATION 4: Airtable Builder -->
+                <div class="cert-card other group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
+                     data-img="images/Airtable Builder.png"
+                     data-title="Airtable Builder Certification"
+                     data-issuer="Airtable"
+                     data-date="July 28, 2026"
+                     data-id="9sgkrmf5yksc">
+                    
+                    <div class="relative aspect-[16/11] overflow-hidden bg-slate-950 cursor-pointer" onclick="openModal(this.parentElement)">
+                        <img src="images/Airtable Builder.png" 
+                             alt="Airtable Builder Certification" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold shadow-lg flex items-center gap-2">
+                                🔍 Inspect Certificate
+                            </span>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-blue-500/20 text-blue-400 border border-blue-500/30 text-[10px] font-bold uppercase tracking-wider">
+                            Other
+                        </span>
+                    </div>
+
+                    <div class="p-5 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg group-hover:text-blue-500 transition-colors">Airtable Builder Certification</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Airtable • Issued July 28, 2026</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+                            <span>ID: 9sgkrmf5yksc</span>
+                            <button onclick="openModal(this.closest('.cert-card'))" class="text-blue-500 hover:underline font-medium">View Fullscreen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OTHER CERTIFICATION 5: HubSpot Data Integration Certified -->
+                <div class="cert-card other group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
+                     data-img="images/Hubspot Data Integration Certfied.png"
+                     data-title="HubSpot Data Integration Certified"
+                     data-issuer="HubSpot Academy"
+                     data-date="July 2026"
+                     data-id="HUBSPOT-DI">
+                    
+                    <div class="relative aspect-[16/11] overflow-hidden bg-slate-950 cursor-pointer" onclick="openModal(this.parentElement)">
+                        <img src="images/Hubspot Data Integration Certfied.png" 
+                             alt="HubSpot Data Integration Certified" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                            <span class="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold shadow-lg flex items-center gap-2">
+                                🔍 Inspect Certificate
+                            </span>
+                        </div>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-blue-500/20 text-blue-400 border border-blue-500/30 text-[10px] font-bold uppercase tracking-wider">
+                            Other
+                        </span>
+                    </div>
+
+                    <div class="p-5 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg group-hover:text-blue-500 transition-colors">HubSpot Data Integration Certified</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">HubSpot Academy • Issued July 2026</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+                            <span>Status: Verified</span>
+                            <button onclick="openModal(this.closest('.cert-card'))" class="text-blue-500 hover:underline font-medium">View Fullscreen</button>
                         </div>
                     </div>
                 </div>
