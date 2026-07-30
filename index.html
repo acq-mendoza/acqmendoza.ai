@@ -733,10 +733,7 @@
                 </p>
 
                 <div class="flex items-center justify-center gap-2 md:gap-4 mt-8 flex-wrap">
-                    <button onclick="filterCerts('all')" id="btn-all" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 bg-brand-500 text-slate-950 shadow-lg shadow-brand-500/20">
-                        All Credentials (12)
-                    </button>
-                    <button onclick="filterCerts('zapier')" id="btn-zapier" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 flex items-center gap-2">
+                    <button onclick="filterCerts('zapier')" id="btn-zapier" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 bg-brand-500 text-slate-950 shadow-lg shadow-brand-500/20 flex items-center gap-2">
                         <span class="w-2.5 h-2.5 rounded-full bg-zapier"></span> Zapier Academy (3)
                     </button>
                     <button onclick="filterCerts('n8n')" id="btn-n8n" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 flex items-center gap-2">
@@ -853,7 +850,7 @@
                     </div>
                 </div>
 
-                <div class="cert-card n8n group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-n8n transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/10"
+                <div class="cert-card n8n hidden group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-n8n transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/10"
                      data-img="images/n8n N8N102 Certificate _ n8n_page-0001.jpg"
                      data-title="Integrations: APIs & Connected Workflows"
                      data-issuer="n8n Academy"
@@ -886,7 +883,7 @@
                     </div>
                 </div>
 
-                <div class="cert-card n8n group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-n8n transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/10"
+                <div class="cert-card n8n hidden group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-n8n transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-500/10"
                      data-img="images/n8n N8N101 Certificate _ n8n_page-0001.jpg"
                      data-title="Essentials: Your First Workflows"
                      data-issuer="n8n Academy"
@@ -920,7 +917,7 @@
                 </div>
 
                 <!-- MAKE.COM CERTIFICATION 1: Make Intermediate -->
-                <div class="cert-card make group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-purple-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10"
+                <div class="cert-card make hidden group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-purple-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10"
                      data-img="images/Make.com Make Intermediate.png"
                      data-title="Make Intermediate"
                      data-issuer="Make.com Academy"
@@ -954,7 +951,7 @@
                 </div>
 
                 <!-- MAKE.COM CERTIFICATION 2: AI Agent Builder -->
-                <div class="cert-card make group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-purple-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10"
+                <div class="cert-card make hidden group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-purple-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10"
                      data-img="images/Make.com AI Agent Builder.png"
                      data-title="AI Agent Builder"
                      data-issuer="Make.com Academy"
@@ -988,7 +985,7 @@
                 </div>
 
                 <!-- OTHER CERTIFICATION 1: Claude 101 -->
-                <div class="cert-card other group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
+                <div class="cert-card other hidden group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
                      data-img="images/Claude 101.png"
                      data-title="Claude 101"
                      data-issuer="Anthropic"
@@ -1022,7 +1019,7 @@
                 </div>
 
                 <!-- OTHER CERTIFICATION 2: Claude Code 101 -->
-                <div class="cert-card other group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
+                <div class="cert-card other hidden group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
                      data-img="images/Claude Code 101.png"
                      data-title="Claude Code 101"
                      data-issuer="Anthropic"
@@ -1056,7 +1053,7 @@
                 </div>
 
                 <!-- OTHER CERTIFICATION 3: Claude Code in Action -->
-                <div class="cert-card other group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
+                <div class="cert-card other hidden group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
                      data-img="images/Claude Code in Action.png"
                      data-title="Claude Code in Action"
                      data-issuer="Anthropic"
@@ -1090,7 +1087,7 @@
                 </div>
 
                 <!-- OTHER CERTIFICATION 4: Airtable Builder -->
-                <div class="cert-card other group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
+                <div class="cert-card other hidden group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
                      data-img="images/Airtable Builder.png"
                      data-title="Airtable Builder Certification"
                      data-issuer="Airtable"
@@ -1124,7 +1121,7 @@
                 </div>
 
                 <!-- OTHER CERTIFICATION 5: HubSpot Data Integration Certified -->
-                <div class="cert-card other group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
+                <div class="cert-card other hidden group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
                      data-img="images/Hubspot Data Integration Certfied.png"
                      data-title="HubSpot Data Integration Certified"
                      data-issuer="HubSpot Academy"
