@@ -557,6 +557,203 @@
                     </div>
                 </div>
 
+                <!-- WORKFLOW CARD 4 -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                            <img src="workflow-trivia.png" alt="Trivia Generation and Facebook Posting with Telegram workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+                                <button onclick="openImageModal('workflow-trivia.png', 'Trivia Generation and Facebook Posting with Telegram Approval')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
+                                    🔍 View Full Workflow
+                                </button>
+                                <button onclick="openStepsModal('steps-4')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                    ⚙️ How It Works
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + Gemini</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Content Automation</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
+                                Trivia Generation and Facebook Posting with Telegram Approval
+                            </h3>
+                            
+                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
+                                    <p>Social media managers and page owners who want automated content curation without sacrificing manual quality control, plus automation builders connecting chat apps, generative AI, and publishing platforms.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
+                                    <p>Generates a unique trivia fact with Google Gemini, turns it into branded card art via Google Slides, routes it through a Telegram approval gate, and auto-publishes the approved post to a Facebook Page.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="steps-4" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Trivia Generation and Facebook Posting with Telegram Approval</h4>
+                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Trigger Phase:</strong> A message or callback query from Telegram activates the workflow.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>AI Processing:</strong> On a trivia command, the Google Gemini node crafts a strict JSON-formatted fact, which is parsed and paired with a randomly chosen template design.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>Asset Generation:</strong> The workflow manipulates Google Slides to insert text, takes a thumbnail screenshot of the slide, downloads it, and re-uploads it to Google Drive as a publicly accessible image.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Human-in-the-Loop Gate:</strong> Details are logged in a Google Sheets tracker as "Pending" while a photo preview with Approve/Reject inline buttons is sent to Telegram.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Execution & Feedback:</strong> Approve updates the spreadsheet row and posts the content directly to Facebook with an admin confirmation; Reject logs the rejection and halts publishing.</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- WORKFLOW CARD 5 -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                            <img src="workflow-crypto.png" alt="Telegram Crypto Analysis Bot workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+                                <button onclick="openImageModal('workflow-crypto.png', 'Telegram Crypto Analysis Bot')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
+                                    🔍 View Full Workflow
+                                </button>
+                                <button onclick="openStepsModal('steps-5')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                    ⚙️ How It Works
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + Gemini</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Trading Signals</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
+                                Telegram Crypto Analysis Bot
+                            </h3>
+                            
+                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
+                                    <p>Crypto traders looking for structured, data-driven technical analysis, and automation enthusiasts merging API data pipelines with AI-driven analytics and chat notifications.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
+                                    <p>Pulls 1D/4H kline data, tickers, and order book depth from MEXC, scores each asset 1–10 with Gemini against trading rules, and delivers a BUY/SELL/HOLD alert with entry, stop-loss, and take-profit levels to Telegram while logging results to Google Sheets.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="steps-5" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Telegram Crypto Analysis Bot</h4>
+                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Trigger & Routing:</strong> A Telegram message provides the asset symbol and timeframe, which is routed by market type (Spot vs. Futures).</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>Data Fetching & Processing:</strong> Requests kline, ticker, and order book data from MEXC in parallel, handles missing records, and computes RSI, EMA, MACD, and Bollinger Bands via JavaScript code nodes.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>Evaluation Pipeline:</strong> Compiled indicators are passed to an AI analysis node that checks volume ratios, evaluates signals, and returns a structured JSON verdict.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Output Delivery:</strong> Formats the result into a readable HTML message sent back to the Telegram user.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Data Logging:</strong> Trade signals and technical outputs are recorded into a Google Sheets watchlist.</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- WORKFLOW CARD 6 -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                            <img src="workflow-fblead.png" alt="Facebook Lead Qualification with AI workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+                                <button onclick="openImageModal('workflow-fblead.png', 'Facebook Lead Qualification with AI Voice Calling')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
+                                    🔍 View Full Workflow
+                                </button>
+                                <button onclick="openStepsModal('steps-6')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                    ⚙️ How It Works
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + ElevenLabs</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Lead Qualification</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
+                                Facebook Lead Qualification with AI Voice Calling
+                            </h3>
+                            
+                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
+                                    <p>Sales and growth teams that want instant voice follow-up on inbound leads, business owners and agencies running Facebook Lead Ads, and operations engineers orchestrating Supabase, ElevenLabs, Slack, and Gmail together.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
+                                    <p>Captures new Facebook Lead Ads submissions, stores them in Supabase, triggers an outbound AI phone call via ElevenLabs, then updates the lead record with the call outcome and routes booked/not-booked notifications to Slack and Gmail.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="steps-6" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Facebook Lead Qualification with AI Voice Calling</h4>
+                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Trigger:</strong> Listens for new form submissions from Facebook Lead Ads.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>Formatting & Storage:</strong> Cleans up the lead payload and inserts a new record into Supabase with a "new" status.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>AI Call Trigger:</strong> Places an outbound call via the ElevenLabs conversational AI API with personalized details, then updates Supabase with the active call tracking info.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Webhook Handling:</strong> Listens for the ElevenLabs call completion event and parses transcripts, duration, summary, and qualification metrics.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Database Update:</strong> Writes final call outcomes back to the lead's Supabase record.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">6</span><span><strong>Conditional Routing:</strong> Branches on whether an appointment was booked, sending tailored Slack and Gmail alerts with full transcripts and summaries either way.</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- WORKFLOW CARD 7 -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                            <img src="workflow-reply.png" alt="Auto Reply to Instagram and Facebook Ads with Lead Capture workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+                                <button onclick="openImageModal('workflow-reply.png', 'Auto Reply to Instagram and Facebook Ad Comments')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
+                                    🔍 View Full Workflow
+                                </button>
+                                <button onclick="openStepsModal('steps-7')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                    ⚙️ How It Works
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + OpenRouter</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Community Management</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
+                                Auto Reply to Instagram & Facebook Ad Comments with Lead Capture
+                            </h3>
+                            
+                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
+                                    <p>Digital agencies and marketers running service ads on Facebook and Instagram who want to scale community management, and social media managers who need automated brand-safety alerting.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
+                                    <p>Classifies incoming ad comments into query, positive review, negative review, or spam using an AI agent, drafts context-aware replies from a knowledge base for queries and positive reviews, and flags negative reviews to Slack for manual intervention.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="steps-7" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Auto Reply to Instagram & Facebook Ad Comments with Lead Capture</h4>
+                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Trigger:</strong> A webhook fires whenever a new comment is posted on an Instagram or Facebook ad.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>Filtering & Retrieval:</strong> Validates the incoming payload, then fetches full comment content and parent ad metadata such as captions and permalinks.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>Cleaning & Classification:</strong> Cleaned data is sent to an AI comment classifier (OpenRouter) that determines intent and confidence.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Routing:</strong> Queries and positive reviews go to a Comment Generator agent, which drafts a reply using a Google Docs knowledge base when needed and posts it via the Facebook API.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Escalation:</strong> Negative reviews skip automated replying and trigger a Slack alert to the team for manual review.</span></li>
+                        </ol>
+                    </div>
+                </div>
+
             </div>
 
             <!-- ZAPIER TAB CONTENT -->
