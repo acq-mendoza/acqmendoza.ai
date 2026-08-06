@@ -66,6 +66,7 @@
             
             <!-- Desktop Links -->
             <div class="hidden md:flex items-center gap-6">
+                <a href="#about" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">About</a>
                 <a href="#services" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">Capabilities</a>
                 <a href="#tech-stack" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">Tech Stack</a>
                 <a href="#projects" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">Work</a>
@@ -102,6 +103,7 @@
 
         <!-- Mobile Navigation Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-6 py-4 space-y-3">
+            <a href="#about" class="mobile-nav-link block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors">About</a>
             <a href="#services" class="mobile-nav-link block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors">Capabilities</a>
             <a href="#tech-stack" class="mobile-nav-link block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors">Tech Stack</a>
             <a href="#projects" class="mobile-nav-link block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors">Work</a>
@@ -137,7 +139,7 @@
                 
                 <!-- Subheadline Pitch -->
                 <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal mb-8 max-w-2xl">
-                    I design and deploy high-performance automated workflows and custom AI agents that replace high-friction operations with streamlined, self-operating systems. By bridging your software stack to modern AI models, I turn complex, error-prone processes into a reliable digital engine that gives your business a massive efficiency advantage.
+                    I help founders, agencies, and sales & ops teams eliminate the manual busywork slowing them down — lead follow-up, proposal generation, reporting, approvals — by building automated systems and AI agents that run the process for 24/7, with no dropped handoffs.
                 </p>
 
                 <!-- HERO CALL-TO-ACTION -->
@@ -186,6 +188,34 @@
 
         </div>
     </header>
+
+    <!-- ABOUT / BIO -->
+    <section id="about" class="py-20 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-start">
+
+            <!-- Section label / heading -->
+            <div class="lg:col-span-4">
+                <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-500 mb-3">About Me</span>
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white leading-tight">
+                    How I got here.
+                </h2>
+            </div>
+
+            <!-- Bio copy -->
+            <div class="lg:col-span-8">
+                <div class="space-y-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p class="text-slate-400 dark:text-slate-500 italic">
+                        <!-- REPLACE THIS PARAGRAPH: this is the whole section now — 2-3 sentences on how you got here. E.g. "I spent [X years] in [prior role/industry] before I started automating my own workflows out of frustration with repetitive manual work. That turned into building systems for other teams, and eventually into [X] client projects across lead gen, CRM ops, and AI-assisted content pipelines." Specifics (numbers, prior job title, a turning-point moment) do more work here than adjectives. -->
+                        I'm Arman Christian Mendoza, an automation specialist who designs and ships end-to-end workflows and AI agents for sales, marketing, and operations teams. My work sits at the intersection of no-code automation platforms — n8n, Zapier, and Make.com — and modern LLMs like Claude, GPT, and Gemini. I don't just connect apps; I build systems that make massive efficiency advantage.
+                    </p>
+                    <p>
+                        Every workflow featured on this page is a live, tested build — not a course exercise. The certifications back the work; they don't substitute for it.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <!-- CORE CAPABILITIES -->
     <section id="services" class="py-20 border-t border-slate-200 dark:border-slate-800">
@@ -907,12 +937,42 @@
 
             <!-- MAKE.COM TAB CONTENT -->
             <div id="content-make" class="hidden">
-                <div class="p-12 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
-                    <div class="w-12 h-12 rounded-full bg-purple-500/10 text-purple-500 flex items-center justify-center mx-auto mb-4 font-bold text-xl">🟣</div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Make.com Integration & Automation Coming Soon</h3>
-                    <p class="text-slate-600 dark:text-slate-400 max-w-md mx-auto text-sm">
-                        Advanced multi-app scenarios, data routers, and custom API module integrations are currently being documented for this tab.
-                    </p>
+                <div class="p-8 sm:p-12 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-purple-500/10 text-purple-500 flex items-center justify-center shrink-0 font-bold text-xl">🟣</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Make.com Scenarios — Case Studies in Progress</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm">
+                                Certified in Make Intermediate & AI Agent Builder — full scenario write-ups for this tab are being documented now.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- What's coming: sets expectations concretely instead of a bare placeholder -->
+                    <div class="grid sm:grid-cols-3 gap-4 mb-8">
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                            <div class="text-purple-500 font-bold text-sm mb-1">Multi-App Scenarios</div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Complex routers and branching logic across 5+ connected apps.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                            <div class="text-purple-500 font-bold text-sm mb-1">Data Routers</div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Conditional data flows that adapt based on record type and status.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                            <div class="text-purple-500 font-bold text-sm mb-1">Custom API Modules</div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Native integrations for platforms without a built-in Make connector.</p>
+                        </div>
+                    </div>
+
+                    <!-- Turns the gap into a lead-gen CTA rather than a dead end -->
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-xl bg-purple-500/5 border border-purple-500/20">
+                        <p class="text-sm text-slate-700 dark:text-slate-300">
+                            Have a Make.com project in mind? I'm actively building in this space — let's talk through it.
+                        </p>
+                        <a href="#contact" class="shrink-0 px-5 py-2.5 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-semibold text-sm transition-all whitespace-nowrap">
+                            Discuss Your Project
+                        </a>
+                    </div>
                 </div>
             </div>
 
