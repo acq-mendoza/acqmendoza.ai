@@ -42,6 +42,48 @@
     }
     </script>
 
+    <!-- Schema.org JSON-LD (FAQPage) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the process to start a project with Arman Christian Mendoza?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The process starts with a discovery call to map out your current manual process and where it's breaking down. From there, Arman scopes the workflow, builds and tests it in n8n, Zapier, or Make.com, and hands it off with documentation so your team can run it confidently."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who does Arman Christian Mendoza typically work with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "He typically works with founders, agencies, and sales & ops teams who need to eliminate manual busywork like lead follow-up, proposal generation, reporting, and approvals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What other platforms and tools does Arman Christian Mendoza work with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "He works with HubSpot, Notion, Slack, QuickBooks Online, Google Workspace, Airtable, GoHighLevel, Salesforce, and Pipedrive."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Arman Christian Mendoza offer support after a workflow is built, and what time zone is he in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, he offers post-launch support to fix issues and refine workflows as your business evolves. He is based in the Philippines (GMT+8), giving overlapping working hours with both Asia-Pacific and, later in the day, US-based teams."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Calendly widget CSS and script -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -1461,6 +1503,29 @@
     </section>
 
     <!-- FOOTER / CONTACT SECTION -->
+    <script>
+        function toggleFaqSection() {
+            const list = document.getElementById('faq-list');
+            const icon = document.getElementById('faq-section-icon');
+            const btn = document.getElementById('faq-section-toggle');
+            const isOpen = !list.classList.contains('hidden');
+
+            list.classList.toggle('hidden');
+            btn.setAttribute('aria-expanded', String(!isOpen));
+            icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+
+        function toggleFaq(btn) {
+            const item = btn.closest('.faq-item');
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+            const isOpen = !answer.classList.contains('hidden');
+
+            answer.classList.toggle('hidden');
+            btn.setAttribute('aria-expanded', String(!isOpen));
+            icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+    </script>
     <footer id="contact" class="py-16 bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
         <div class="max-w-3xl mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Let's Work Together</h2>
@@ -1481,6 +1546,74 @@
                 <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/acq-mendoza/30min'});return false;" class="px-6 py-3.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-medium border border-slate-300 dark:border-slate-700 transition-all hover:scale-[1.02]">
                     Schedule a Call
                 </a>
+            </div>
+
+            <!-- FAQ TAB -->
+            <div id="faq" class="mt-12 text-left">
+                <button type="button" onclick="toggleFaqSection()" aria-expanded="false" id="faq-section-toggle" class="w-full flex items-center justify-between gap-4 p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-brand-500/30 transition-all">
+                    <span class="font-bold text-slate-900 dark:text-white">Frequently Asked Questions</span>
+                    <svg id="faq-section-icon" class="w-5 h-5 shrink-0 text-brand-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+
+                <div id="faq-list" class="hidden space-y-4 mt-4">
+                    <div class="faq-item rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <button type="button" onclick="toggleFaq(this)" aria-expanded="false" class="faq-toggle w-full flex items-center justify-between gap-4 p-6 text-left">
+                            <h3 class="font-bold text-slate-900 dark:text-white text-lg">What's the process to start a project with Arman Christian Mendoza?</h3>
+                            <svg class="faq-icon w-5 h-5 shrink-0 text-brand-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                The process starts with a discovery call to map out your current manual process and where it's breaking down. From there, Arman scopes the workflow, builds and tests it in n8n, Zapier, or Make.com, and hands it off with documentation so your team can run it confidently.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <button type="button" onclick="toggleFaq(this)" aria-expanded="false" class="faq-toggle w-full flex items-center justify-between gap-4 p-6 text-left">
+                            <h3 class="font-bold text-slate-900 dark:text-white text-lg">Who does Arman Christian Mendoza typically work with?</h3>
+                            <svg class="faq-icon w-5 h-5 shrink-0 text-brand-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                He typically works with founders, agencies, and sales & ops teams who need to eliminate manual busywork like lead follow-up, proposal generation, reporting, and approvals.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <button type="button" onclick="toggleFaq(this)" aria-expanded="false" class="faq-toggle w-full flex items-center justify-between gap-4 p-6 text-left">
+                            <h3 class="font-bold text-slate-900 dark:text-white text-lg">What other platforms and tools does Arman Christian Mendoza work with?</h3>
+                            <svg class="faq-icon w-5 h-5 shrink-0 text-brand-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                He works with HubSpot, Notion, Slack, QuickBooks Online, Google Workspace, Airtable, GoHighLevel, Salesforce, and Pipedrive.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <button type="button" onclick="toggleFaq(this)" aria-expanded="false" class="faq-toggle w-full flex items-center justify-between gap-4 p-6 text-left">
+                            <h3 class="font-bold text-slate-900 dark:text-white text-lg">Does Arman Christian Mendoza offer support after a workflow is built, and what time zone is he in?</h3>
+                            <svg class="faq-icon w-5 h-5 shrink-0 text-brand-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Yes, he offers post-launch support to fix issues and refine workflows as your business evolves. He is based in the Philippines (GMT+8), giving overlapping working hours with both Asia-Pacific and, later in the day, US-based teams.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <p class="text-xs text-slate-500 dark:text-slate-500 mt-12">
