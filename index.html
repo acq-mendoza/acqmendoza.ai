@@ -528,6 +528,55 @@
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                            <img src="workflow-voice.png" alt="AI Voice Appointment Setter with Vapi and Google Calendar workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+                                <button onclick="openImageModal('workflow-voice.png', 'AI Voice Appointment Setter (Vapi + Google Calendar)')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
+                                    🔍 View Full Workflow
+                                </button>
+                                <button onclick="openStepsModal('steps-9')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                    ⚙️ How It Works
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + Vapi</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Voice Agent</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
+                                AI Voice Appointment Setter (Vapi + Google Calendar)
+                            </h3>
+
+                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
+                                    <p>Service businesses that take phone calls for bookings but don't want a human manning the phone 24/7 — roofing, HVAC, plumbing, home inspection, or similar field-service companies using Vapi as their AI voice agent.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
+                                    <p>Acts as the backend brain between a Vapi voice agent and Google Calendar — checking real availability, reading open slots back to the caller, and booking the appointment directly once they pick a time. No coding required to run; only three nodes need editing.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="steps-9" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">AI Voice Appointment Setter (Vapi + Google Calendar)</h4>
+                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Webhook:</strong> The single entry/exit point — Vapi sends every tool call here as the conversation happens, and this node sends the result back so the AI agent can speak it to the caller.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>Configuration Node:</strong> A settings panel controlling timezone, work hours, appointment length, buffer before/after, and how often slots are offered (e.g. every 30 min).</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>Route by Tool Name:</strong> A switch reads which "tool" Vapi is asking for — checkAvailability or bookAppointment — and sends the data down the matching path.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Availability Path:</strong> Pulls that day's events from Google Calendar, generates all possible time blocks for the workday, removes any that overlap existing events (plus buffer) or are in the past, then formats and returns the remaining slots to Vapi.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Booking Path:</strong> Takes the chosen start/end time and caller details, creates the calendar event directly, and confirms success back to Vapi.</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- WORKFLOW CARD 2 -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
                             <img src="workflow-qbo.png" alt="Process email invoices with OCR, GPT-4, Slack, QuickBooks and Google Sheets workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
                                 <button onclick="openImageModal('workflow-qbo.png', 'Process email invoices with OCR, GPT-4, Slack, QuickBooks and Google Sheets')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
@@ -574,58 +623,6 @@
                     </div>
                 </div>
 
-                <!-- WORKFLOW CARD 2 -->
-                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
-                            <img src="workflow-voice.png" alt="AI Voice Appointment Setter with Vapi and Google Calendar workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
-                                <button onclick="openImageModal('workflow-voice.png', 'AI Voice Appointment Setter (Vapi + Google Calendar)')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
-                                    🔍 View Full Workflow
-                                </button>
-                                <button onclick="openStepsModal('steps-9')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
-                                    ⚙️ How It Works
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + Vapi</span>
-                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Voice Agent</span>
-                            </div>
-                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
-                                AI Voice Appointment Setter (Vapi + Google Calendar)
-                            </h3>
-
-                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
-                                    <p>Service businesses that take phone calls for bookings but don't want a human manning the phone 24/7 — roofing, HVAC, plumbing, home inspection, or similar field-service companies using Vapi as their AI voice agent.</p>
-                                </div>
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
-                                    <p>Acts as the backend brain between a Vapi voice agent and Google Calendar — checking real availability, reading open slots back to the caller, and booking the appointment directly once they pick a time. No coding required to run; only three nodes need editing.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="steps-9" class="hidden">
-                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">AI Voice Appointment Setter (Vapi + Google Calendar)</h4>
-                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Webhook:</strong> The single entry/exit point — Vapi sends every tool call here as the conversation happens, and this node sends the result back so the AI agent can speak it to the caller.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>Configuration Node:</strong> A settings panel controlling timezone, work hours, appointment length, buffer before/after, and how often slots are offered (e.g. every 30 min).</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>Route by Tool Name:</strong> A switch reads which "tool" Vapi is asking for — checkAvailability or bookAppointment — and sends the data down the matching path.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Availability Path:</strong> Pulls that day's events from Google Calendar, generates all possible time blocks for the workday, removes any that overlap existing events (plus buffer) or are in the past, then formats and returns the remaining slots to Vapi.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Booking Path:</strong> Takes the chosen start/end time and caller details, creates the calendar event directly, and confirms success back to Vapi.</span></li>
-                        </ol>
-                    </div>
-                </div>
-
-            </div>
-
-                
                 <!-- WORKFLOW CARD 3 -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
@@ -675,7 +672,7 @@
                     </div>
                 </div>
 
-                <!-- WORKFLOW CARD 4-->
+                <!-- WORKFLOW CARD 4 -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -974,6 +971,9 @@
                 </div>
 
                 
+
+            </div>
+
             <!-- ZAPIER TAB CONTENT -->
             <div id="content-zapier" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
