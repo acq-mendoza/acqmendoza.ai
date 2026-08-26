@@ -500,7 +500,7 @@
 
     <!-- FEATURED WORK / PROJECTS -->
     <section id="projects" class="py-20 border-t border-slate-200 dark:border-slate-800">
-        <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Featured Work</h2>
                 <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto">
@@ -522,9 +522,108 @@
             </div>
 
             <!-- n8n TAB CONTENT -->
-            <div id="content-n8n" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="content-n8n" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
                 <!-- WORKFLOW CARD 1 -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                            <img src="workflow-ar.png" alt="Automated AR and Payment Follow-Up System workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+                                <button onclick="openImageModal('workflow-ar.png', 'Automated AR & Payment Follow-Up System (QuickBooks + Twilio + Slack)')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
+                                    🔍 View Full Workflow
+                                </button>
+                                <button onclick="openStepsModal('steps-1')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                    ⚙️ How It Works
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + QuickBooks</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Accounts Receivable</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
+                                Automated AR & Payment Follow-Up System (QuickBooks + Twilio + Slack)
+                            </h3>
+
+                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
+                                    <p>Accounting firms, bookkeeping agencies, and service businesses invoicing through QuickBooks who don't have time to manually chase overdue invoices — especially teams managing dozens of clients where follow-up falls through the cracks.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
+                                    <p>Pulls open invoices from QuickBooks daily, scores each client's risk, and escalates overdue payments through a 5-stage sequence — reminder to phone call handoff — via email and SMS. Pauses for disputes or payment plans, tracks everything on a live dashboard, and alerts the team on Slack when something needs a human.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="steps-1" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Automated AR & Payment Follow-Up System (QuickBooks + Twilio + Slack)</h4>
+                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Daily Trigger (8am):</strong> Pulls open invoices from QuickBooks and reads the Invoices and Clients tabs from Google Sheets, then merges the data into one payload.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>Compute Actions & Content:</strong> A Code node evaluates each invoice against the follow-up sequence, decides whether to skip, and determines what content and channel (email/SMS/call) is needed next.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>Skip Logic:</strong> A Switch node checks if the invoice should be skipped (e.g. disputed, on a payment plan, or already paid) before any outreach fires.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Escalation Sequence:</strong> Routes to Send Email, Send SMS (Twilio), Needs Call Task, or Needs Internal Alert branches depending on how overdue the invoice is — each branch updates the Clients/Invoices tabs and notifies the AR team on Slack when a human call is needed.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Monthly Risk Recalculation:</strong> A separate monthly trigger pulls all invoices from QuickBooks, merges with client data, recalculates each client's risk & decay score, and updates the Clients tab so the daily sequence always scores against fresh risk data.</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+<!-- WORKFLOW CARD 2 -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                            <img src="workflow-recruitment.png" alt="AI Recruiting and Hiring System workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+                                <button onclick="openImageModal('workflow-recruitment.png', 'AI Recruiting & Hiring System (Zoho Recruit + AI)')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
+                                    🔍 View Full Workflow
+                                </button>
+                                <button onclick="openStepsModal('steps-2')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                    ⚙️ How It Works
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + Zoho Recruit</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Recruiting</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
+                                AI Recruiting & Hiring System (Zoho Recruit + AI)
+                            </h3>
+
+                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
+                                    <p>HR teams, staffing agencies, and startups hiring through Zoho Recruit without the bandwidth to manually screen resumes, chase scheduling, and keep candidates updated.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
+                                    <p>An automated recruiting coordinator — screens and scores every resume, moves qualified candidates through a 6-stage pipeline (screening, interview, follow-up, offer, hire, onboarding) with AI-drafted emails, books interviews on Google Calendar, syncs status to Zoho Recruit, and tracks it all in a live Sheets dashboard. No coding needed day-to-day — thresholds and copy are editable.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="steps-2" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">AI Recruiting & Hiring System (Zoho Recruit + AI)</h4>
+                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Sourcing & Intake:</strong> A daily trigger searches job boards & LinkedIn for candidates, while a webhook captures new applications directly. Both paths normalize candidate data and log it to the Applications pipeline sheet.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>AI Screening & Scoring:</strong> An AI resume screening agent scores each candidate; a Code node parses the score, and a threshold check (Score ≥ 75) decides whether the candidate advances.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>Advance Path:</strong> Qualified candidates are upserted into Zoho Recruit, status set to Interview Scheduled, an interview is booked on Google Calendar, and an AI-drafted interview invite is sent and logged to the Interviews pipeline.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Below-Threshold Path:</strong> Candidates who don't meet the score get an AI-drafted follow-up email instead, logged to the Screened pipeline tab.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Hiring Decision Webhook:</strong> When a decision is made, the workflow drafts and sends an offer or rejection email accordingly, updates status in Zoho Recruit, and logs the outcome to the Offers pipeline.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">6</span><span><strong>Offer Response Webhook:</strong> If accepted, sets status to Hired in Zoho Recruit, schedules an onboarding day on Google Calendar, sends a welcome email, and logs to the Hired pipeline. If declined, logs the decline and closes out the record.</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+<!-- WORKFLOW CARD 3 -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -533,7 +632,7 @@
                                 <button onclick="openImageModal('workflow-voice.png', 'AI Voice Appointment Setter (Vapi + Google Calendar)')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
                                     🔍 View Full Workflow
                                 </button>
-                                <button onclick="openStepsModal('steps-9')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                <button onclick="openStepsModal('steps-3')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
                                     ⚙️ How It Works
                                 </button>
                             </div>
@@ -561,7 +660,7 @@
                         </div>
                     </div>
 
-                    <div id="steps-9" class="hidden">
+                    <div id="steps-3" class="hidden">
                         <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">AI Voice Appointment Setter (Vapi + Google Calendar)</h4>
                         <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                             <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Webhook:</strong> The single entry/exit point — Vapi sends every tool call here as the conversation happens, and this node sends the result back so the AI agent can speak it to the caller.</span></li>
@@ -573,7 +672,7 @@
                     </div>
                 </div>
 
-                <!-- WORKFLOW CARD 2 -->
+                <!-- WORKFLOW CARD 4 -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -582,7 +681,7 @@
                                 <button onclick="openImageModal('workflow-qbo.png', 'Process email invoices with OCR, GPT-4, Slack, QuickBooks and Google Sheets')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
                                     🔍 View Full Workflow
                                 </button>
-                                <button onclick="openStepsModal('steps-8')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                <button onclick="openStepsModal('steps-4')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
                                     ⚙️ How It Works
                                 </button>
                             </div>
@@ -610,7 +709,7 @@
                         </div>
                     </div>
 
-                    <div id="steps-8" class="hidden">
+                    <div id="steps-4" class="hidden">
                         <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Process Email Invoices with OCR, GPT-4, Slack, QuickBooks and Google Sheets</h4>
                         <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                             <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Intake:</strong> Gmail Trigger polls a labeled inbox (AP Inbox) every 5 minutes, pulling in new emails with attachments. Set nodes attach shared config (OCR endpoint, confidence threshold, Slack channel, sheet ID) and derive metadata like sender name, timestamp, and a file hash.</span></li>
@@ -623,7 +722,7 @@
                     </div>
                 </div>
 
-                <!-- WORKFLOW CARD 3 -->
+                <!-- WORKFLOW CARD 5 -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -632,7 +731,7 @@
                                 <button onclick="openImageModal('workflow-leads.png', 'Capture leads from any form to HubSpot and notify your team in Slack')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
                                     🔍 View Full Workflow
                                 </button>
-                                <button onclick="openStepsModal('steps-1')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                <button onclick="openStepsModal('steps-5')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
                                     ⚙️ How It Works
                                 </button>
                             </div>
@@ -660,7 +759,7 @@
                         </div>
                     </div>
 
-                    <div id="steps-1" class="hidden">
+                    <div id="steps-5" class="hidden">
                         <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Capture leads from any form to HubSpot and notify your team in Slack</h4>
                         <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                             <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Webhook:</strong> Receives lead data (name, email, message) as a POST request from any form tool.</span></li>
@@ -672,7 +771,7 @@
                     </div>
                 </div>
 
-                <!-- WORKFLOW CARD 4 -->
+                <!-- WORKFLOW CARD 6 -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -681,7 +780,7 @@
                                 <button onclick="openImageModal('workflow-proposals.png', 'Generate and send personalized client proposals by client type via email with AI')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
                                     🔍 View Full Workflow
                                 </button>
-                                <button onclick="openStepsModal('steps-2')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                <button onclick="openStepsModal('steps-6')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
                                     ⚙️ How It Works
                                 </button>
                             </div>
@@ -709,7 +808,7 @@
                         </div>
                     </div>
 
-                    <div id="steps-2" class="hidden">
+                    <div id="steps-6" class="hidden">
                         <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Generate & Send AI Proposals Workflow Execution</h4>
                         <ol class="space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                             <li><strong>1. Submission:</strong> Client submits request via webhook POST from CRM/form or via hourly scheduler polling.</li>
@@ -724,7 +823,7 @@
                     </div>
                 </div>
 
-                <!-- WORKFLOW CARD 5 -->
+                <!-- WORKFLOW CARD 7 -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -733,7 +832,7 @@
                                 <button onclick="openImageModal('workflow-digest.png', 'Daily Outbound Performance Digest')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
                                     🔍 View Full Workflow
                                 </button>
-                                <button onclick="openStepsModal('steps-3')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                <button onclick="openStepsModal('steps-7')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
                                     ⚙️ How It Works
                                 </button>
                             </div>
@@ -761,7 +860,7 @@
                         </div>
                     </div>
 
-                    <div id="steps-3" class="hidden">
+                    <div id="steps-7" class="hidden">
                         <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Daily Outbound Digest Execution</h4>
                         <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                             <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Schedule Trigger:</strong> Fires automatically once every morning.</span></li>
@@ -773,7 +872,7 @@
                     </div>
                 </div>
 
-                <!-- WORKFLOW CARD 6 -->
+                <!-- WORKFLOW CARD 8 -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -782,7 +881,7 @@
                                 <button onclick="openImageModal('workflow-trivia.png', 'Trivia Generation and Facebook Posting with Telegram Approval')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
                                     🔍 View Full Workflow
                                 </button>
-                                <button onclick="openStepsModal('steps-4')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                <button onclick="openStepsModal('steps-8')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
                                     ⚙️ How It Works
                                 </button>
                             </div>
@@ -810,7 +909,7 @@
                         </div>
                     </div>
 
-                    <div id="steps-4" class="hidden">
+                    <div id="steps-8" class="hidden">
                         <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Trivia Generation and Facebook Posting with Telegram Approval</h4>
                         <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                             <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Trigger Phase:</strong> A message or callback query from Telegram activates the workflow.</span></li>
@@ -822,7 +921,7 @@
                     </div>
                 </div>
 
-                <!-- WORKFLOW CARD 7 -->
+                <!-- WORKFLOW CARD 9 -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -831,7 +930,7 @@
                                 <button onclick="openImageModal('workflow-crypto.png', 'Telegram Crypto Analysis Bot')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
                                     🔍 View Full Workflow
                                 </button>
-                                <button onclick="openStepsModal('steps-5')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                <button onclick="openStepsModal('steps-9')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
                                     ⚙️ How It Works
                                 </button>
                             </div>
@@ -859,7 +958,7 @@
                         </div>
                     </div>
 
-                    <div id="steps-5" class="hidden">
+                    <div id="steps-9" class="hidden">
                         <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Telegram Crypto Analysis Bot</h4>
                         <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                             <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Trigger & Routing:</strong> A Telegram message provides the asset symbol and timeframe, which is routed by market type (Spot vs. Futures).</span></li>
@@ -871,7 +970,7 @@
                     </div>
                 </div>
 
-                <!-- WORKFLOW CARD 8 -->
+                <!-- WORKFLOW CARD 10 -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -880,7 +979,7 @@
                                 <button onclick="openImageModal('workflow-fblead.png', 'Facebook Lead Qualification with AI Voice Calling')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
                                     🔍 View Full Workflow
                                 </button>
-                                <button onclick="openStepsModal('steps-6')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                <button onclick="openStepsModal('steps-10')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
                                     ⚙️ How It Works
                                 </button>
                             </div>
@@ -908,7 +1007,7 @@
                         </div>
                     </div>
 
-                    <div id="steps-6" class="hidden">
+                    <div id="steps-10" class="hidden">
                         <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Facebook Lead Qualification with AI Voice Calling</h4>
                         <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                             <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Trigger:</strong> Listens for new form submissions from Facebook Lead Ads.</span></li>
@@ -921,7 +1020,7 @@
                     </div>
                 </div>
 
-                <!-- WORKFLOW CARD 9 -->
+                <!-- WORKFLOW CARD 11 -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -930,7 +1029,7 @@
                                 <button onclick="openImageModal('workflow-reply.png', 'Auto Reply to Instagram and Facebook Ad Comments')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
                                     🔍 View Full Workflow
                                 </button>
-                                <button onclick="openStepsModal('steps-7')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                <button onclick="openStepsModal('steps-11')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
                                     ⚙️ How It Works
                                 </button>
                             </div>
@@ -958,7 +1057,7 @@
                         </div>
                     </div>
 
-                    <div id="steps-7" class="hidden">
+                    <div id="steps-11" class="hidden">
                         <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Auto Reply to Instagram & Facebook Ad Comments with Lead Capture</h4>
                         <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                             <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Trigger:</strong> A webhook fires whenever a new comment is posted on an Instagram or Facebook ad.</span></li>
@@ -975,7 +1074,7 @@
             </div>
 
             <!-- ZAPIER TAB CONTENT -->
-            <div id="content-zapier" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="content-zapier" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
                 <!-- ZAP CARD 1: Hubspot Lead Generation -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
