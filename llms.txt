@@ -1,0 +1,34 @@
+# Arman Christian Mendoza — AI Automation Specialist
+
+> Arman Christian Mendoza is an AI automation specialist based in the Philippines (GMT+8) who designs and ships end-to-end workflows and AI agents for sales, marketing, finance, and operations teams. He builds on n8n, Zapier, and Make.com and integrates LLMs including Claude, GPT, and Gemini. He works remotely with founders, agencies, accounting and bookkeeping firms, and sales & ops teams worldwide.
+
+## What he automates
+
+- Lead capture, AI lead scoring, and follow-up (HubSpot, Salesforce, GoHighLevel, Facebook Lead Ads)
+- Accounts receivable follow-up and accounts payable invoice processing in QuickBooks Online
+- Recruiting pipelines: AI resume screening, interview scheduling, offers (Zoho Recruit)
+- AI voice agents for appointment setting and lead qualification (Vapi, ElevenLabs)
+- AI-generated proposals, daily performance digests, and social content with human approval
+
+## Featured workflows
+
+- Automated AR & Payment Follow-Up System (n8n + QuickBooks + Twilio + Slack): pulls open invoices daily, scores client risk, runs a 5-stage email/SMS/call escalation, pauses for disputes or payment plans, and alerts the team on Slack.
+- Email Invoice Processing (n8n + GPT-4o + QuickBooks): extracts vendor invoices from a Gmail inbox, recalculates totals, masks sensitive numbers, sends low-confidence invoices to Slack for review, then posts bills to QuickBooks with a Google Sheets audit trail.
+- AI Recruiting & Hiring System (n8n + Zoho Recruit): AI-scores resumes (advance at score 75+), books interviews on Google Calendar, sends AI-drafted emails, and tracks a 6-stage pipeline.
+- AI Voice Appointment Setter (n8n + Vapi + Google Calendar): checks real calendar availability during a live call and books the slot the caller picks.
+- Facebook Lead Qualification with AI Voice Calling (n8n + Supabase + ElevenLabs): calls new Facebook leads automatically and routes booked/not-booked outcomes to Slack and Gmail.
+- HubSpot Lead Generation & AI Qualification Pipeline (Zapier + Groq): scores new HubSpot contacts and creates prioritized follow-up tasks.
+- Also: AI proposal generator, daily outbound digest with Claude, ad-comment auto-reply with escalation, Gmail triage, Salesforce lead nurture audit trail, Telegram crypto analysis bot, Gemini trivia content with Telegram approval.
+
+## Certifications
+
+Zapier (Building AI Agents; Intermediate Zaps; Basic Zaps), n8n (N8N101, N8N102), Make.com (Make Intermediate; AI Agent Builder), Anthropic (Claude 101; Claude Code 101; Claude Code in Action), Airtable Builder, HubSpot Data Integration.
+
+## Links
+
+- [Portfolio](https://acq-mendoza.github.io/acqmendoza.ai/)
+- [Resume (PDF)](https://acq-mendoza.github.io/acqmendoza.ai/resume.pdf)
+- [LinkedIn](https://www.linkedin.com/in/arman-christian-mendoza)
+- [Upwork](https://www.upwork.com/freelancers/~019e0c8ba8404ceeec)
+- [Book a 30-minute call](https://calendly.com/acq-mendoza/30min)
+- Email: acq.mendoza@gmail.com

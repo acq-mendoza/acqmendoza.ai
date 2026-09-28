@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://acq-mendoza.github.io/acqmendoza.ai/sitemap.xml
