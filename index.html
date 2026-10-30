@@ -2393,22 +2393,22 @@
                     ai:['AI','Read intent','Claude · classify','Claude reads the message and decides what the person wants.'],
                     chk:['{}','Budget & timing','Code · score 0–100','Pulls budget and timeline out of the message and scores the lead.'],
                     gate:['?','Score ≥ 70','sales-ready gate','Sales-ready leads get a booking link. Everyone else goes to nurture, review or the spam filter.'],
-                    act:['CAL','Send booking link','Calendar + Slack','Emails a meeting link and alerts sales in Slack.'],
+                    act:['CAL','Booking link','Calendar + Slack','Emails a meeting link and alerts sales in Slack.'],
                     rec:['HS','Create contact','HubSpot','Creates the contact with the AI summary and score.'],
                     hum:['@','Nurture / review','email · Slack','Not-ready leads get helpful content, borderline ones go to a rep, spam is filtered.']}},
             inv: {title: 'Vendor invoice email → QuickBooks bill', lb: ['pass', 'review', 'approved'], back: true,
-                n: {trig:['GM','AP Inbox','Gmail trigger · 5 min','Polls a labeled Gmail inbox every 5 minutes for invoices.'],
-                    ai:['AI','Extract fields','GPT-4o · JSON schema','Reads the PDF or OCR text and returns every field with a confidence score.'],
+                n: {trig:['GM','AP Inbox','Gmail · every 5 min','Polls a labeled Gmail inbox every 5 minutes for invoices.'],
+                    ai:['AI','Extract fields','GPT-4o · JSON','Reads the PDF or OCR text and returns every field with a confidence score.'],
                     chk:['Σ','Validate totals','Code node','Re-adds line items and tax in code instead of trusting the AI.'],
-                    gate:['?','Confidence ≥ 0.85','mask bank & tax IDs','Masks sensitive numbers, then checks confidence on every field.'],
+                    gate:['?','Conf. ≥ 0.85','masks bank IDs','Masks sensitive numbers, then checks confidence on every field.'],
                     act:['QB','Create bill','QuickBooks Online','Creates the vendor bill with line items mapped to accounts.'],
                     rec:['GS','Audit log','Google Sheets','Appends an audit row with the QuickBooks ID and check results.'],
-                    hum:['#','Human review','Slack · waits for approval','Posts the invoice with the problem highlighted and waits for a person.']}},
+                    hum:['#','Human review','Slack approval','Posts the invoice with the problem highlighted and waits for a person.']}},
             hire: {title: 'Application → AI screening → interview booked', lb: ['advance', 'below 75', ''], back: false,
-                n: {trig:['WH','New application','Webhook + job boards','Captures applications from the careers page and job board searches.'],
+                n: {trig:['WH','New application','Webhook · boards','Captures applications from the careers page and job board searches.'],
                     ai:['AI','Screen resume','AI agent · score','Scores each resume against the role\'s must-haves and nice-to-haves.'],
                     chk:['{}','Check must-haves','Code node','Turns the AI response into a clean score and a must-have checklist.'],
-                    gate:['?','Score ≥ 75','threshold (editable)','Candidates at or above the threshold advance to interview.'],
+                    gate:['?','Score ≥ 75','editable threshold','Candidates at or above the threshold advance to interview.'],
                     act:['CAL','Book interview','Google Calendar','Books the interview and sends an AI-drafted invite.'],
                     rec:['ZR','Sync candidate','Zoho Recruit','Upserts the candidate and sets status to Interview Scheduled.'],
                     hum:['@','Polite follow-up','AI-drafted email','Sends a respectful reply and logs the candidate as screened.']}}
@@ -2456,12 +2456,23 @@
             };
             requestAnimationFrame(step);
         });
+        // Keep node text inside its box: shrink the font a little, then trim with an ellipsis if still too long
+        const TEXT_MAX = 92; // node width 150 minus text start 50 and an 8px right margin
+        function fitText(t, text, size) {
+            t.textContent = text; t.style.fontSize = size + 'px';
+            let s = size;
+            try {
+                while (t.getComputedTextLength() > TEXT_MAX && s > size - 2.5) { s -= .5; t.style.fontSize = s + 'px'; }
+                let str = text;
+                while (t.getComputedTextLength() > TEXT_MAX && str.length > 3) { str = str.slice(0, -1); t.textContent = str.trimEnd() + '…'; }
+            } catch (e) { /* not rendered yet */ }
+        }
         function loadWf(k) {
             gen++; wfKey = k; const w = WF[k];
             $('#wfTitle').textContent = w.title; svg.setAttribute('aria-label', 'Workflow diagram: ' + w.title);
             for (const n of Object.keys(POS)) {
                 const el = document.getElementById('n-' + n), d = w.n[n];
-                el.querySelector('.ic-t').textContent = d[0]; el.querySelector('.lbl').textContent = d[1]; el.querySelector('.sub').textContent = d[2]; mark(n);
+                el.querySelector('.ic-t').textContent = d[0]; fitText(el.querySelector('.lbl'), d[1], 12.5); fitText(el.querySelector('.sub'), d[2], 10.5); mark(n);
             }
             $$('.fl-edge').forEach(e => e.classList.remove('lit')); gP.innerHTML = '';
             $('#lb4').textContent = w.lb[0]; $('#lb6').textContent = w.lb[1]; $('#lb7').textContent = w.lb[2];
