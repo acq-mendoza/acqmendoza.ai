@@ -2116,9 +2116,9 @@
 
 
     <!-- SCRIPTED CHAT ASSISTANT -->
-    <button class="chat-fab" id="chatFab" type="button" aria-expanded="false" aria-controls="chatPanel"><span class="fl-live" aria-hidden="true"></span>Ask my assistant</button>
-    <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Chat with Arman's assistant" hidden>
-        <div class="chat-h"><div><b>Arman's assistant</b><small>Services, tools, pricing and availability</small></div><button class="chat-x" id="chatX" type="button" aria-label="Close chat">×</button></div>
+    <button class="chat-fab" id="chatFab" type="button" aria-expanded="false" aria-controls="chatPanel"><span class="fl-live" aria-hidden="true"></span>Ask me anything</button>
+    <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Chat with Arman" hidden>
+        <div class="chat-h"><div><b>Chat with Arman</b><small>Automated answers from my portfolio</small></div><button class="chat-x" id="chatX" type="button" aria-label="Close chat">×</button></div>
         <div class="chat-body" id="chatBody" aria-live="polite"></div>
         <div class="chat-chips" id="chatChips"></div>
         <form class="chat-f" id="chatForm"><label for="chatIn" class="sr-only">Message</label><input id="chatIn" autocomplete="off" placeholder="Ask about pricing, tools, timelines…"><button type="submit">Send</button></form>
@@ -2832,6 +2832,18 @@
         const link = (href, label) => `<a href="${href}" data-close>${label}</a>`;
         const contact = `Use the ${link('#contact', 'contact form')}, <a href="#" data-cal>book a call</a>, or email <b>acq.mendoza@gmail.com</b>.`;
 
+
+        // The FAQ on the page is written in third person (for search engines); speak it in first person here
+        const FIRST = [
+            [/Arman Christian Mendoza builds/g, 'I build'], [/Arman builds on all three and recommends/g, 'I build on all three and recommend'],
+            [/His portfolio includes/g, 'My portfolio includes'], [/Arman scopes the workflow, builds and tests it/g, 'I scope the workflow, build and test it'],
+            [/and hands it off/g, 'and hand it off'], [/He typically works/g, 'I typically work'], [/He works with/g, 'I work with'],
+            [/he offers/gi, 'I offer'], [/He is based/g, "I'm based"], [/he is based/g, "I'm based"],
+            [/\bArman Christian Mendoza\b/g, 'I'], [/\bArman\b/g, 'I'], [/\b[Hh]e's\b/g, "I'm"], [/\b[Hh]e is\b/g, "I'm"],
+            [/\bHe\b/g, 'I'], [/\bhe\b/g, 'I'], [/\bHis\b/g, 'My'], [/\bhis\b/g, 'my'], [/\bhim\b/g, 'me']
+        ];
+        const firstPerson = t => FIRST.reduce((s, [re, to]) => s.replace(re, to), t);
+
         /* ---------- Knowledge base, read from the portfolio itself ---------- */
         const docs = [];
         // Case studies
@@ -2851,10 +2863,10 @@
                 answer: parts['what it does'] || '', who: parts["who it's for"] || '', href: '#projects', boost: 1});
         });
         // FAQ
-        $$('.faq-item').forEach(item => docs.push({kind: 'faq', title: txt(item.querySelector('h3')), text: txt(item.querySelector('.faq-answer')), answer: txt(item.querySelector('.faq-answer')), href: '#faq', boost: 1.2}));
+        $$('.faq-item').forEach(item => docs.push({kind: 'faq', title: txt(item.querySelector('h3')), text: txt(item.querySelector('.faq-answer')), answer: firstPerson(txt(item.querySelector('.faq-answer'))), href: '#faq', boost: 1.2}));
         // What I automate
         $$('#services .grid > div').forEach(c => docs.push({kind: 'area', title: txt(c.querySelector('h3')), text: [...c.querySelectorAll('li')].map(txt).join(', '),
-            answer: `Under ${txt(c.querySelector('h3'))}, Arman automates: ${[...c.querySelectorAll('li')].map(txt).join('; ').toLowerCase()}.`, href: '#services', boost: .8}));
+            answer: `Under ${txt(c.querySelector('h3'))}, I automate: ${[...c.querySelectorAll('li')].map(txt).join('; ').toLowerCase()}.`, href: '#services', boost: .8}));
         // About
         const about = txt($('#about .lg\\:col-span-8')) || txt($('#about'));
         // Tech stack
@@ -2894,24 +2906,24 @@
         const caseTitles = () => docs.filter(d => d.kind === 'case').map(d => d.title);
         const buildTitles = () => docs.filter(d => d.kind === 'build').map(d => d.title);
         const INTENTS = [
-            [/^\s*(hi|hello|hey|yo|kumusta|good (morning|afternoon|evening))\b/i, () => "Hi! Ask me anything about Arman's work: services, past workflows, tools, certifications, pricing or availability."],
+            [/^\s*(hi|hello|hey|yo|kumusta|good (morning|afternoon|evening))\b/i, () => "Hi! Ask me anything about my work: services, past workflows, tools, certifications, pricing or availability."],
             [/thank|salamat/i, () => "You're welcome! Anything else you'd like to know?"],
             [/price|pricing|cost|rate\b|rates|budget|quote|how much|fee|charge|expensive|cheap/i, () => `Projects are quoted as a fixed scope after a free discovery call, so you know the full cost before work starts. 40% is paid upfront to begin, and payment is in USD. ${contact}`],
             [/how long|timeline|turnaround|deadline|how fast|how quickly/i, () => "Most single workflows are built and tested within days. Larger systems, like a full recruiting pipeline, take a few weeks. The exact timeline is set in the scope after the discovery call."],
-            [/time ?zone|availab|hours|when can|philippines|where (are|is) (you|he|arman)|located|location|based/i, () => "Arman is based in the Philippines (GMT+8) and works evenings, which overlap US business hours. He has 25 to 30 hours a week for client projects."],
-            [/resume|\bcv\b/i, () => 'You can download Arman\'s resume from the <b>Download PDF Resume</b> button at the top of the page.'],
+            [/time ?zone|availab|hours|when can|philippines|where (are|is) (you|he|arman)|located|location|based/i, () => "I'm based in the Philippines (GMT+8) and work evenings, which overlap US business hours. I have 25 to 30 hours a week for client projects."],
+            [/resume|\bcv\b/i, () => 'You can download my resume from the <b>Download PDF Resume</b> button at the top of the page.'],
             [/contact|reach (you|him|arman)|get in touch|talk to|book a call|discovery call|get started|start a project|hire (you|him|arman)/i, () => `The fastest way to start is a free discovery call. ${contact}`],
-            [/full.?time|part.?time|employ|job opening|open to (work|roles)|position/i, () => `Arman is open to remote automation roles as well as freelance projects. ${contact}`],
+            [/full.?time|part.?time|employ|job opening|open to (work|roles)|position/i, () => `I'm open to remote automation roles as well as freelance projects. ${contact}`],
             [/cert|certified|credential|course|academy|qualif/i, () => {
                 const ql = q => q.toLowerCase();
                 const issuers = ['zapier', 'n8n', 'make', 'anthropic', 'claude', 'hubspot', 'airtable'].filter(k => ql(lastQ).includes(k)).map(k => k === 'claude' ? 'anthropic' : k);
                 const pick = issuers.length ? certs.filter(c => issuers.some(k => (c.issuer || '').toLowerCase().includes(k))) : certs;
-                if (issuers.length && pick.length) return `Yes. Arman's ${esc(issuers.join(' / '))} certifications:<br>• ${pick.map(c => `${esc(c.title)} (${esc(c.issuer)}, ${esc(c.date || '')})`).join('<br>• ')}<br><br>See ${link('#certifications', 'certifications')}.`;
-                return `Arman holds ${certs.length} certifications on this page:<br>• ${certs.map(c => `${esc(c.title)} (${esc(c.issuer)})`).join('<br>• ')}<br><br>He's also a QuickBooks Online ProAdvisor and Advanced ProAdvisor. See ${link('#certifications', 'certifications')}.`;
+                if (issuers.length && pick.length) return `Yes. My ${esc(issuers.join(' / '))} certifications:<br>• ${pick.map(c => `${esc(c.title)} (${esc(c.issuer)}, ${esc(c.date || '')})`).join('<br>• ')}<br><br>See ${link('#certifications', 'certifications')}.`;
+                return `I hold ${certs.length} certifications, all shown on this page:<br>• ${certs.map(c => `${esc(c.title)} (${esc(c.issuer)})`).join('<br>• ')}<br><br>I'm also a QuickBooks Online ProAdvisor and Advanced ProAdvisor. See ${link('#certifications', 'certifications')}.`;
             }],
-            [/tech ?stack|tools|platforms|software|apps? (do|does|you use)|integrat|what (do you|does he) (use|work with)|stack/i, () => `${stack.map(g => `<b>${esc(g.group)}:</b> ${g.items.map(esc).join(', ')}`).join('<br>')}<br><br>He also connects any tool that has an API.`],
+            [/tech ?stack|tools|platforms|software|apps? (do|does|you use)|integrat|what (do you|does he) (use|work with)|stack/i, () => `${stack.map(g => `<b>${esc(g.group)}:</b> ${g.items.map(esc).join(', ')}`).join('<br>')}<br><br>I can also connect any tool that has an API.`],
             [/demo|try it|live/i, () => `There are three live demos on this page: AI Lead Qualifier, Invoice Extractor and Recruitment Screening. Each one shows the workflow canvas running as it processes your input. ${link('#demos', 'Try them here')}.`],
-            [/who (are you|is arman)|about (you|arman|him)|background|experience|tell me about (yourself|arman)|education|degree/i, () => `${esc(about.slice(0, 420))}${about.length > 420 ? '…' : ''}<br><br>He has a BS in Accountancy and 12+ years in finance, which is why his systems double-check their own work.`],
+            [/who (are you|is arman)|about (you|arman|him)|background|experience|tell me about (yourself|arman)|education|degree/i, () => `${esc(about.slice(0, 420))}${about.length > 420 ? '…' : ''}<br><br>I have a BS in Accountancy and 12+ years in finance, which is why my systems double-check their own work.`],
             [/\b(what|which) (can|do) (you|he) (automate|do|build|offer)|services|what do you do|help (me|us) with/i, () => `${docs.filter(d => d.kind === 'area').map(d => `<b>${esc(d.title)}:</b> ${esc(d.text)}`).join('<br>')}<br><br>If your team repeats the same steps every day, it's probably a good fit.`]
         ];
 
@@ -2927,7 +2939,7 @@
             for (const [re, fn] of INTENTS) if (re.test(q)) return fn();
             const hits = search(q);
             if (LIST[0].test(q) && !hits.length) return LIST[1]();
-            if (!hits.length) return `I don't have that one in Arman's portfolio. He can answer it directly: ${contact}`;
+            if (!hits.length) return `That one isn't covered on my portfolio, so I'd rather answer you personally. ${contact}`;
             const top = hits[0].d;
             let out;
             if (top.kind === 'faq') out = esc(top.answer);
@@ -2955,7 +2967,7 @@
         let greeted = false;
         const open = o => {
             panel.hidden = !o; fab.setAttribute('aria-expanded', o);
-            if (o && !greeted) { greeted = true; add("Hi, I'm Arman's assistant. Ask me about his workflows, tools, certifications, pricing or availability, or tap a question below."); }
+            if (o && !greeted) { greeted = true; add("Hi, I'm Arman. These are automated answers drawn from my portfolio. Ask about my workflows, tools, certifications, pricing or availability, or tap a question below."); }
             if (o) input.focus(); else fab.focus();
         };
         fab.addEventListener('click', () => open(panel.hidden));
