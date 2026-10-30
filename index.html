@@ -193,6 +193,124 @@
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: #475569;
         }
+
+        /* ===== Workflow canvas, demos, case studies, contact (added in redesign) ===== */
+        :root{--fl-bg:#f8fafc;--fl-surface:#ffffff;--fl-surface2:#f1f5f9;--fl-line:#cbd5e1;--fl-fg:#0f172a;--fl-muted:#64748b;--fl-flow:#10b981;--fl-warn:#d97706;--fl-ok:#059669;--fl-bad:#dc2626;--fl-dot:#e2e8f0}
+        .dark{--fl-bg:#020617;--fl-surface:#0f172a;--fl-surface2:#1e293b;--fl-line:#334155;--fl-fg:#f1f5f9;--fl-muted:#94a3b8;--fl-flow:#10b981;--fl-warn:#f59e0b;--fl-ok:#34d399;--fl-bad:#f87171;--fl-dot:#1e293b}
+        .fl-tabs{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:4px;padding:4px;border-radius:14px;background:var(--fl-surface2);border:1px solid var(--fl-line)}
+        .fl-tabs button{font-weight:700;font-size:.875rem;padding:.6rem 1.1rem;border-radius:10px;color:var(--fl-muted);transition:all .2s}
+        .fl-tabs button:hover{color:var(--fl-fg)}
+        .fl-tabs button[aria-selected="true"]{background:var(--fl-flow);color:#020617;box-shadow:0 8px 20px -8px rgba(16,185,129,.6)}
+        .fl-stage{perspective:1400px}
+        .fl-card{background:var(--fl-surface);border:1px solid var(--fl-line);border-radius:1rem;overflow:hidden;transform-style:preserve-3d;transition:transform .25s ease-out;box-shadow:0 30px 70px -40px rgba(2,6,23,.55)}
+        .fl-card-top{display:flex;align-items:center;gap:.6rem;padding:.75rem 1rem;border-bottom:1px solid var(--fl-line);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.75rem;color:var(--fl-muted)}
+        .fl-title{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .fl-chip{padding:.1rem .5rem;border-radius:999px;background:rgba(234,75,113,.12);color:#EA4B71;font-weight:700;font-size:.65rem;text-transform:uppercase;letter-spacing:.05em}
+        .fl-live{width:8px;height:8px;border-radius:50%;background:var(--fl-flow);flex:none;animation:flpulse 2s infinite;display:inline-block}
+        @keyframes flpulse{0%{box-shadow:0 0 0 0 rgba(16,185,129,.55)}70%{box-shadow:0 0 0 8px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
+        .fl-svg{display:block;width:100%;height:auto;background-image:radial-gradient(var(--fl-dot) 1.2px,transparent 1.3px);background-size:18px 18px;background-color:var(--fl-bg)}
+        .fl-edge{fill:none;stroke:var(--fl-line);stroke-width:2;transition:stroke .3s}
+        .fl-edge.lit{stroke:var(--fl-flow)}
+        .fl-edge.hide,.fl-elabel.hide{display:none}
+        .fl-elabel{font:500 11px ui-monospace,SFMono-Regular,Menlo,monospace;fill:var(--fl-muted)}
+        .fl-node{cursor:help;outline:none}
+        .fl-node rect.b{fill:var(--fl-surface);stroke:var(--fl-line);stroke-width:1.5;transition:stroke .2s,fill .2s}
+        .fl-node rect.ic{fill:var(--fl-surface2);stroke:var(--fl-line)}
+        .fl-node .ic-t{font:700 11px ui-monospace,SFMono-Regular,Menlo,monospace;fill:var(--fl-fg)}
+        .fl-node .lbl{font:700 12.5px ui-sans-serif,system-ui,sans-serif;fill:var(--fl-fg)}
+        .fl-node .sub{font:400 10.5px ui-monospace,SFMono-Regular,Menlo,monospace;fill:var(--fl-muted)}
+        .fl-node.active rect.b{stroke:var(--fl-flow);fill:rgba(16,185,129,.12)}
+        .fl-node.done rect.b{stroke:var(--fl-ok)}
+        .fl-node.warn rect.b{stroke:var(--fl-warn);fill:rgba(245,158,11,.12)}
+        .fl-node:focus-visible rect.b{stroke:var(--fl-flow);stroke-width:2.5}
+        .fl-packet{fill:var(--fl-flow)} .fl-glow{fill:var(--fl-flow);opacity:.25}
+        .fl-log{border-top:1px solid var(--fl-line);padding:.75rem 1rem;height:132px;overflow:auto;font:400 12px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--fl-muted);background:var(--fl-surface2)}
+        .fl-log .ln{display:flex;gap:10px;white-space:nowrap}
+        .fl-log .t{opacity:.7} .fl-log .k{color:var(--fl-fg)} .fl-log .ok{color:var(--fl-ok)} .fl-log .warn{color:var(--fl-warn)} .fl-log .bad{color:var(--fl-bad)}
+        .fl-tip{position:absolute;pointer-events:none;background:var(--fl-fg);color:var(--fl-bg);font-size:12.5px;line-height:1.45;padding:9px 11px;border-radius:8px;max-width:240px;z-index:5;opacity:0;transition:opacity .15s}
+        .fl-sample{font-size:.8rem;font-weight:600;padding:.45rem .8rem;border-radius:999px;border:1px solid var(--fl-line);background:var(--fl-surface2);color:var(--fl-fg);transition:all .2s}
+        .fl-sample[aria-pressed="true"]{border-color:var(--fl-flow);background:rgba(16,185,129,.14)}
+        .fl-input{width:100%;font-size:.9rem;color:var(--fl-fg);background:var(--fl-surface2);border:1px solid var(--fl-line);border-radius:.75rem;padding:.65rem .8rem;resize:vertical}
+        .fl-input:focus{outline:2px solid var(--fl-flow);outline-offset:0;border-color:transparent}
+        .fl-field{padding:.5rem .7rem;border-radius:.6rem;background:var(--fl-surface2);border:1px solid var(--fl-line);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--fl-fg)}
+        .fl-field small{display:block;font:700 10px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--fl-muted);text-transform:uppercase;letter-spacing:.06em}
+        .fl-scan,.fl-paper{position:relative;overflow:hidden}
+        .fl-scanline{position:absolute;left:0;right:0;height:38px;top:-40px;background:linear-gradient(transparent,rgba(16,185,129,.35),transparent);pointer-events:none;z-index:2}
+        .reading .fl-scanline{animation:flscan 1.1s ease-in-out 1}
+        @keyframes flscan{to{top:100%}}
+        .fl-paper{padding:16px;border-radius:6px;background:#FBFAF6;color:#1B2230;font-size:12.5px;line-height:1.5;box-shadow:0 1px 0 rgba(0,0,0,.05),0 12px 30px -18px rgba(0,0,0,.5)}
+        .fl-paper.scan{filter:contrast(.92) blur(.25px);transform:rotate(-.6deg)}
+        .fl-paper .ph{display:flex;justify-content:space-between;gap:10px;margin-bottom:10px}
+        .fl-paper .vendor{font-weight:800;font-size:14px}
+        .fl-paper .inv{font:500 11.5px ui-monospace,Menlo,monospace;text-align:right;color:#4a5466}
+        .fl-paper table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+        .fl-paper th{font:700 10.5px ui-monospace,Menlo,monospace;text-transform:uppercase;color:#5b6577;text-align:left;border-bottom:1px solid #d9dde4;padding:5px 0}
+        .fl-paper td{padding:5px 0;border-bottom:1px dashed #e3e6eb}
+        .fl-paper .n{text-align:right;font-family:ui-monospace,Menlo,monospace}
+        .fl-paper .tot td{border:0;padding:2px 0}
+        .fl-paper .grand td{font-weight:800;border-top:1px solid #1B2230;padding-top:5px}
+        .fl-paper .foot{margin-top:8px;font:400 11px ui-monospace,Menlo,monospace;color:#5b6577}
+        .fl-steps{list-style:none;margin:0;padding:1rem 1.25rem;display:grid;gap:.5rem}
+        .fl-steps li{display:grid;grid-template-columns:20px 1fr auto;gap:10px;align-items:center;font-size:.85rem;padding:.55rem .7rem;border-radius:.6rem;background:var(--fl-surface2);color:var(--fl-muted);transition:all .2s}
+        .fl-steps li .s{width:14px;height:14px;border-radius:50%;border:2px solid var(--fl-line)}
+        .fl-steps li.run{color:var(--fl-fg)} .fl-steps li.run .s{border-color:var(--fl-flow);border-top-color:transparent;animation:flspin .7s linear infinite}
+        .fl-steps li.ok{color:var(--fl-fg)} .fl-steps li.ok .s{border-color:var(--fl-ok);background:var(--fl-ok)}
+        .fl-steps li.flag{color:var(--fl-fg);background:rgba(245,158,11,.12)} .fl-steps li.flag .s{border-color:var(--fl-warn);background:var(--fl-warn)}
+        .fl-steps li .r{font:500 11.5px ui-monospace,Menlo,monospace}
+        @keyframes flspin{to{transform:rotate(360deg)}}
+        .fl-json{margin:1rem 1.25rem 0;padding:1rem;border-radius:.75rem;background:var(--fl-bg);border:1px solid var(--fl-line);font:400 12.5px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;overflow-x:auto;min-height:170px;color:var(--fl-fg)}
+        .fl-json .key{color:var(--fl-flow)} .fl-json .num{color:var(--fl-warn)} .fl-json .muted{color:var(--fl-muted)}
+        .fl-scores{display:grid;gap:7px;padding:1rem 1.25rem}
+        .fl-scores .row{display:grid;grid-template-columns:120px 1fr 46px;gap:10px;align-items:center;font:500 12px ui-monospace,Menlo,monospace;color:var(--fl-fg)}
+        .fl-scores .bar{height:6px;border-radius:6px;background:var(--fl-surface2);position:relative;overflow:hidden}
+        .fl-scores .bar i{position:absolute;inset:0 auto 0 0;background:var(--fl-ok);border-radius:6px;transition:width .6s ease}
+        .fl-scores .bar i.low{background:var(--fl-warn)} .fl-scores .bar i.bad{background:var(--fl-bad)}
+        .fl-scores .bar .th{position:absolute;top:0;bottom:0;width:2px;background:var(--fl-muted)}
+        .fl-decision{margin:0 1.25rem 1.25rem;padding:.9rem 1rem;border-radius:.75rem;border:1px solid var(--fl-line);display:flex;gap:12px;font-size:.85rem;color:var(--fl-muted)}
+        .fl-decision b{display:block;font-size:.95rem;color:var(--fl-fg)}
+        .fl-decision.ok{border-color:var(--fl-ok);background:rgba(16,185,129,.08)}
+        .fl-decision.flag{border-color:var(--fl-warn);background:rgba(245,158,11,.08)}
+        .fl-decision.bad{border-color:var(--fl-bad);background:rgba(239,68,68,.08)}
+        .fl-mini{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;padding:.6rem .75rem;border-radius:.6rem;background:var(--fl-surface2);font-size:.85rem;color:var(--fl-muted);transition:all .25s}
+        .fl-mini .i{font:700 10.5px ui-monospace,Menlo,monospace;width:30px;height:30px;border-radius:8px;background:var(--fl-bg);display:grid;place-items:center;color:var(--fl-fg)}
+        .fl-mini .st{font:500 11px ui-monospace,Menlo,monospace}
+        .fl-mini.on{color:var(--fl-fg);box-shadow:inset 0 0 0 1px var(--fl-flow)}
+        .fl-mini.ok{color:var(--fl-fg);box-shadow:inset 0 0 0 1px var(--fl-ok)}
+        .fl-mini.err{color:var(--fl-fg);box-shadow:inset 0 0 0 1px var(--fl-warn)}
+        /* case studies */
+        .cs-chip{font:500 11px ui-monospace,Menlo,monospace;padding:.15rem .5rem;border-radius:6px;background:var(--fl-surface2);color:var(--fl-muted);border:1px solid var(--fl-line)}
+        .cs-dt{font:700 11px ui-monospace,Menlo,monospace;text-transform:uppercase;letter-spacing:.07em;color:var(--fl-muted);margin-bottom:.15rem}
+        .cs-specs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--fl-line);border:1px solid var(--fl-line);border-radius:.75rem;overflow:hidden}
+        .cs-specs div{background:var(--fl-surface);padding:.75rem;display:grid;gap:2px}
+        .cs-specs b{font-size:1.25rem;font-weight:800;color:var(--fl-fg);font-variant-numeric:tabular-nums}
+        .cs-specs span{font-size:.75rem;color:var(--fl-muted);line-height:1.35}
+        @media (max-width:480px){.cs-specs{grid-template-columns:1fr}}
+        .cs-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1rem;border-radius:.75rem;font-size:.8rem;font-weight:600;background:var(--fl-surface2);color:var(--fl-fg);border:1px solid var(--fl-line);transition:all .2s}
+        .cs-btn:hover{transform:translateY(-1px);border-color:var(--fl-muted)}
+        .cs-btn-primary{background:var(--fl-flow);color:#020617;border-color:var(--fl-flow);font-weight:700}
+        .cs-vis-wrap{perspective:1000px}
+        .cs-vis{height:100%;display:grid;gap:.6rem;align-content:center;padding:1.1rem;border-radius:1rem;background:var(--fl-bg);border:1px solid var(--fl-line);background-image:radial-gradient(var(--fl-dot) 1.2px,transparent 1.3px);background-size:18px 18px;transform-style:preserve-3d;transition:transform .25s ease-out}
+        .cs-vis-h{font:700 11px ui-monospace,Menlo,monospace;text-transform:uppercase;letter-spacing:.07em;color:var(--fl-muted)}
+        .cs-timeline{list-style:none;margin:0;padding:0}
+        .cs-timeline li{display:grid;grid-template-columns:44px 14px 1fr;gap:10px;font-size:.85rem;padding-bottom:12px;color:var(--fl-fg)}
+        .cs-timeline .tm{font:500 11.5px ui-monospace,Menlo,monospace;color:var(--fl-muted);text-align:right}
+        .cs-timeline .pt{width:10px;height:10px;border-radius:50%;background:var(--fl-flow);margin-top:5px;position:relative}
+        .cs-timeline li:not(:last-child) .pt::after{content:"";position:absolute;left:4px;top:12px;width:2px;height:calc(100% + 14px);background:var(--fl-line)}
+        .cs-timeline small{display:block;color:var(--fl-muted);font-size:.75rem}
+        .cs-stage,.cs-row,.cs-rung,.cs-msg{background:var(--fl-surface);border:1px solid var(--fl-line);border-radius:.6rem;color:var(--fl-fg);font-size:.82rem}
+        .cs-stage{padding:.6rem .7rem;display:grid}
+        .cs-stage span{font:500 10.5px ui-monospace,Menlo,monospace;color:var(--fl-muted)}
+        .cs-stage-gate{border-color:var(--fl-flow)}
+        .cs-row{display:flex;justify-content:space-between;gap:10px;padding:.6rem .75rem}
+        .cs-row b{font-family:ui-monospace,Menlo,monospace;white-space:nowrap}
+        .cs-rung{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:.55rem .75rem}
+        .cs-rung .lvl{font:700 12px ui-monospace,Menlo,monospace;width:28px;height:28px;border-radius:7px;display:grid;place-items:center;background:var(--fl-surface2)}
+        .cs-rung .ch{font:500 10.5px ui-monospace,Menlo,monospace;color:var(--fl-muted)}
+        .cs-msg{padding:.55rem .75rem;max-width:88%;border-radius:.8rem}
+        .cs-msg small{display:block;font:600 10px ui-monospace,Menlo,monospace;color:var(--fl-muted)}
+        .cs-me{justify-self:end;background:rgba(16,185,129,.12);border-color:rgba(16,185,129,.4)}
+        .cs-tool{font:400 11.5px ui-monospace,Menlo,monospace;color:var(--fl-warn);padding:.3rem .6rem;border-left:2px solid var(--fl-warn);overflow-wrap:anywhere}
+        @media (prefers-reduced-motion: reduce){.fl-live,.reading .fl-scanline,.fl-steps li.run .s{animation:none}.fl-card,.cs-vis{transition:none}}
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
@@ -207,8 +325,9 @@
             <!-- Desktop Links -->
             <div class="hidden md:flex items-center gap-6">
                 <a href="#about" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">About</a>
-                <a href="#services" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">Capabilities</a>
+                <a href="#services" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">What I Automate</a>
                 <a href="#tech-stack" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">Tech Stack</a>
+                <a href="#demos" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">Live Demos</a>
                 <a href="#projects" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">Work</a>
                 <a href="#certifications" class="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">Certifications</a>
             </div>
@@ -244,8 +363,9 @@
         <!-- Mobile Navigation Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-6 py-4 space-y-3">
             <a href="#about" class="mobile-nav-link block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors">About</a>
-            <a href="#services" class="mobile-nav-link block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors">Capabilities</a>
+            <a href="#services" class="mobile-nav-link block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors">What I Automate</a>
             <a href="#tech-stack" class="mobile-nav-link block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors">Tech Stack</a>
+            <a href="#demos" class="mobile-nav-link block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors">Live Demos</a>
             <a href="#projects" class="mobile-nav-link block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors">Work</a>
             <a href="#certifications" class="mobile-nav-link block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors">Certifications</a>
             <div class="pt-2 border-t border-slate-200 dark:border-slate-800">
@@ -357,77 +477,55 @@
         </div>
     </section>
 
-    <!-- CORE CAPABILITIES -->
+    <!-- WHAT I AUTOMATE -->
     <section id="services" class="py-20 border-t border-slate-200 dark:border-slate-800">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">What I Automate: Core Capabilities</h2>
-                <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto">Engineered to transform repetitive processes into automated workflows.</p>
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-14">
+                <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-500 mb-3">What I Automate</span>
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Wherever your team copies, pastes, chases or waits.</h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto">Four areas where I build workflows and AI agents that run 24/7 and hand only the judgment calls to a person.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-brand-500/30 flex flex-col justify-between">
-                    <div>
-                        <div class="w-9 h-9 bg-brand-500/10 text-brand-500 rounded-lg flex items-center justify-center font-bold text-sm mb-5">01</div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Automation & Integration</h3>
-                        <ul class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm space-y-2">
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>n8n, Make.com, Zapier</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Webhooks & REST APIs</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>JSON Data Parsing</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>HTTP Requests</span></li>
-                        </ul>
-                    </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-brand-500/30">
+                    <div class="w-10 h-10 bg-brand-500/10 text-brand-500 rounded-lg flex items-center justify-center font-mono font-bold text-sm mb-5">→$</div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Sales &amp; Leads</h3>
+                    <ul class="text-slate-600 dark:text-slate-400 text-sm space-y-2">
+                        <li class="flex items-start gap-1.5"><span class="text-brand-500">→</span><span>Instant lead follow-up and AI calls</span></li>
+                        <li class="flex items-start gap-1.5"><span class="text-brand-500">→</span><span>Lead scoring and CRM sync</span></li>
+                        <li class="flex items-start gap-1.5"><span class="text-brand-500">→</span><span>Proposal generation</span></li>
+                        <li class="flex items-start gap-1.5"><span class="text-brand-500">→</span><span>Outbound performance digests</span></li>
+                    </ul>
                 </div>
-
-                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-brand-500/30 flex flex-col justify-between">
-                    <div>
-                        <div class="w-9 h-9 bg-brand-500/10 text-brand-500 rounded-lg flex items-center justify-center font-bold text-sm mb-5">02</div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">AI & Agentic Systems</h3>
-                        <ul class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm space-y-2">
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>AI Agent Design</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Multi-Agent Architecture</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>LLM Integrations</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Custom GPTs</span></li>
-                        </ul>
-                    </div>
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-brand-500/30">
+                    <div class="w-10 h-10 bg-brand-500/10 text-brand-500 rounded-lg flex items-center justify-center font-mono font-bold text-sm mb-5">CV</div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Recruiting &amp; HR</h3>
+                    <ul class="text-slate-600 dark:text-slate-400 text-sm space-y-2">
+                        <li class="flex items-start gap-1.5"><span class="text-brand-500">→</span><span>AI resume screening</span></li>
+                        <li class="flex items-start gap-1.5"><span class="text-brand-500">→</span><span>Interview scheduling</span></li>
+                        <li class="flex items-start gap-1.5"><span class="text-brand-500">→</span><span>Candidate updates and offers</span></li>
+                        <li class="flex items-start gap-1.5"><span class="text-brand-500">→</span><span>Onboarding handoffs</span></li>
+                    </ul>
                 </div>
-
-                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-brand-500/30 flex flex-col justify-between">
-                    <div>
-                        <div class="w-9 h-9 bg-brand-500/10 text-brand-500 rounded-lg flex items-center justify-center font-bold text-sm mb-5">03</div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Prompt Engineering</h3>
-                        <ul class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm space-y-2">
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>System Prompts</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Context Window Mgmt</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Conditional Logic</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Error Handling Routines</span></li>
-                        </ul>
-                    </div>
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-brand-500/30">
+                    <div class="w-10 h-10 bg-brand-500/10 text-brand-500 rounded-lg flex items-center justify-center font-mono font-bold text-sm mb-5">◉</div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Customer Comms</h3>
+                    <ul class="text-slate-600 dark:text-slate-400 text-sm space-y-2">
+                        <li class="flex items-start gap-1.5"><span class="text-brand-500">→</span><span>AI voice appointment setters</span></li>
+                        <li class="flex items-start gap-1.5"><span class="text-brand-500">→</span><span>WhatsApp and chat assistants</span></li>
+                        <li class="flex items-start gap-1.5"><span class="text-brand-500">→</span><span>Ad comment replies</span></li>
+                        <li class="flex items-start gap-1.5"><span class="text-brand-500">→</span><span>Inbox triage</span></li>
+                    </ul>
                 </div>
-
-                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-brand-500/30 flex flex-col justify-between">
-                    <div>
-                        <div class="w-9 h-9 bg-brand-500/10 text-brand-500 rounded-lg flex items-center justify-center font-bold text-sm mb-5">04</div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Data & Analytics</h3>
-                        <ul class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm space-y-2">
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Advanced Excel Analytics</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Data Transformation</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Database Synchronization</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-brand-500/30 flex flex-col justify-between">
-                    <div>
-                        <div class="w-9 h-9 bg-brand-500/10 text-brand-500 rounded-lg flex items-center justify-center font-bold text-sm mb-5">05</div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">System Optimization</h3>
-                        <ul class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm space-y-2">
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Process Mapping</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Workflow Auditing</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Bottleneck Analysis</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-brand-500 mt-0.5">•</span><span>Technical Documentation</span></li>
-                        </ul>
-                    </div>
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-brand-500/30">
+                    <div class="w-10 h-10 bg-brand-500/10 text-brand-500 rounded-lg flex items-center justify-center font-mono font-bold text-sm mb-5">Σ</div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Ops &amp; Finance</h3>
+                    <ul class="text-slate-600 dark:text-slate-400 text-sm space-y-2">
+                        <li class="flex items-start gap-1.5"><span class="text-brand-500">→</span><span>Invoice capture to QuickBooks</span></li>
+                        <li class="flex items-start gap-1.5"><span class="text-brand-500">→</span><span>Payment follow-up</span></li>
+                        <li class="flex items-start gap-1.5"><span class="text-brand-500">→</span><span>Inventory alerts</span></li>
+                        <li class="flex items-start gap-1.5"><span class="text-brand-500">→</span><span>Reports and dashboards</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -567,70 +665,281 @@
         </div>
     </section>
 
-    <!-- FEATURED WORK / PROJECTS -->
-    <section id="projects" class="py-20 border-t border-slate-200 dark:border-slate-800">
-        <div class="max-w-7xl mx-auto px-6">
+    <!-- LIVE DEMOS -->
+    <section id="demos" class="py-20 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Featured Work</h2>
-                <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto">
-                    Explore interactive automated workflows built across key integration platforms.
-                </p>
+                <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-500 mb-3">Live Demos</span>
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Try three of my workflows right here.</h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Each demo runs the same steps as the production version: AI reads the input, code checks the result, and a gate decides whether a person needs to look. Watch the workflow canvas run as it happens.</p>
+            </div>
 
-                <!-- Platform Tabs -->
-                <div class="flex items-center justify-center gap-3 mt-8 flex-wrap">
-                    <button onclick="switchWorkTab('n8n')" id="tab-n8n" class="work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-n8n text-white shadow-lg shadow-n8n/20 flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-white"></span> n8n Workflows
-                    </button>
-                    <button onclick="switchWorkTab('zapier')" id="tab-zapier" class="work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span> Zapier Zaps
-                    </button>
-                    <button onclick="switchWorkTab('make')" id="tab-make" class="work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> Make.com Scenarios
-                    </button>
+            <div class="flex justify-center mb-8">
+                <div class="fl-tabs" role="tablist" aria-label="Live demos" id="demoTabs">
+                    <button type="button" role="tab" data-d="lead" aria-selected="true">AI Lead Qualifier</button>
+                    <button type="button" role="tab" data-d="inv" aria-selected="false">Invoice Extractor</button>
+                    <button type="button" role="tab" data-d="hire" aria-selected="false">Recruitment Screening</button>
                 </div>
             </div>
 
-            <!-- n8n TAB CONTENT -->
-            <div id="content-n8n" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div class="grid lg:grid-cols-12 gap-6 items-start">
+                <!-- Animated workflow canvas -->
+                <div class="lg:col-span-7 fl-stage min-w-0" id="flStage">
+                    <div class="fl-card" id="flCard">
+                        <div class="fl-card-top">
+                            <span class="fl-live" aria-hidden="true"></span>
+                            <span class="fl-title" id="wfTitle">Website form → AI qualification → booked meeting</span>
+                            <span class="fl-chip">n8n</span>
+                        </div>
+                        <div class="relative">
+                            <svg class="fl-svg" id="flow" viewBox="0 0 610 430" role="img" aria-label="Animated workflow diagram">
+                                <path class="fl-edge" id="e1" d="M170 70 L230 70"/>
+                                <path class="fl-edge" id="e2" d="M380 70 L440 70"/>
+                                <path class="fl-edge" id="e3" d="M515 99 L515 186"/>
+                                <path class="fl-edge" id="e4" d="M440 215 L380 215"/>
+                                <path class="fl-edge" id="e5" d="M230 215 L170 215"/>
+                                <path class="fl-edge" id="e6" d="M515 244 L515 331"/>
+                                <path class="fl-edge" id="e7" d="M440 360 C 340 360, 305 330, 305 244"/>
+                                <text class="fl-elabel" id="lb4" x="386" y="206"></text>
+                                <text class="fl-elabel" id="lb6" x="523" y="292"></text>
+                                <text class="fl-elabel" id="lb7" x="322" y="352"></text>
+                                <g id="flNodes"></g>
+                                <g id="flPackets"></g>
+                            </svg>
+                            <div class="fl-tip" id="flTip" role="tooltip"></div>
+                        </div>
+                        <div class="fl-log" id="flLog" aria-live="polite"></div>
+                    </div>
+                </div>
 
-                <!-- WORKFLOW CARD 1 -->
-                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
-                            <img src="workflow-ar.png" alt="Automated AR and Payment Follow-Up System workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
-                                <button onclick="openImageModal('workflow-ar.png', 'Automated AR & Payment Follow-Up System (QuickBooks + Twilio + Slack)')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
-                                    🔍 View Full Workflow
-                                </button>
-                                <button onclick="openStepsModal('steps-1')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
-                                    ⚙️ How It Works
-                                </button>
+                <!-- Input panel -->
+                <div class="lg:col-span-5 min-w-0">
+                    <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+                        <div class="flex items-center justify-between gap-3 px-5 py-3 border-b border-slate-200 dark:border-slate-800">
+                            <span class="text-xs font-mono text-slate-500 dark:text-slate-400" id="inLabel">Website form · new submission</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">Sample data</span>
+                        </div>
+
+                        <!-- Lead input -->
+                        <div id="in-lead" class="p-5 space-y-4">
+                            <div class="flex flex-wrap gap-2" role="group" aria-label="Sample leads">
+                                <button class="fl-sample" type="button" data-l="0" aria-pressed="true">Ready to buy</button>
+                                <button class="fl-sample" type="button" data-l="1" aria-pressed="false">Just browsing</button>
+                                <button class="fl-sample" type="button" data-l="2" aria-pressed="false">Spam</button>
+                            </div>
+                            <div class="fl-scan grid grid-cols-2 gap-2 text-sm">
+                                <div class="fl-scanline"></div>
+                                <div class="fl-field"><small>Name</small><span id="lf-name"></span></div>
+                                <div class="fl-field"><small>Company</small><span id="lf-co"></span></div>
+                            </div>
+                            <div>
+                                <label for="lf-msg" class="block text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">Message (edit it or write your own)</label>
+                                <textarea id="lf-msg" rows="5" class="fl-input"></textarea>
                             </div>
                         </div>
 
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + QuickBooks</span>
-                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Accounts Receivable</span>
+                        <!-- Invoice input -->
+                        <div id="in-inv" class="p-5 space-y-4" hidden>
+                            <div class="flex flex-wrap gap-2" role="group" aria-label="Sample invoices">
+                                <button class="fl-sample" type="button" data-s="0" aria-pressed="true">Clean PDF</button>
+                                <button class="fl-sample" type="button" data-s="1" aria-pressed="false">Math doesn't add up</button>
+                                <button class="fl-sample" type="button" data-s="2" aria-pressed="false">Blurry scan</button>
                             </div>
-                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
-                                Automated AR & Payment Follow-Up System (QuickBooks + Twilio + Slack)
-                            </h3>
+                            <div class="fl-paper" id="paper"></div>
+                        </div>
 
-                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
-                                    <p>Accounting firms, bookkeeping agencies, and service businesses invoicing through QuickBooks who don't have time to manually chase overdue invoices — especially teams managing dozens of clients where follow-up falls through the cracks.</p>
-                                </div>
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
-                                    <p>Pulls open invoices from QuickBooks daily, scores each client's risk, and escalates overdue payments through a 5-stage sequence — reminder to phone call handoff — via email and SMS. Pauses for disputes or payment plans, tracks everything on a live dashboard, and alerts the team on Slack when something needs a human.</p>
-                                </div>
+                        <!-- Recruiting input -->
+                        <div id="in-hire" class="p-5 space-y-4" hidden>
+                            <div class="flex flex-wrap gap-2" role="group" aria-label="Sample candidates">
+                                <button class="fl-sample" type="button" data-c="0" aria-pressed="true">Strong match</button>
+                                <button class="fl-sample" type="button" data-c="1" aria-pressed="false">Partial match</button>
+                                <button class="fl-sample" type="button" data-c="2" aria-pressed="false">Career changer</button>
                             </div>
+                            <div class="rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 p-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div class="font-bold text-slate-900 dark:text-white text-sm mb-1">Customer Success Lead · Remote</div>
+                                <div><strong class="text-slate-700 dark:text-slate-300">Must-haves:</strong> 3+ years in customer success or account management · CRM experience · SaaS or software background</div>
+                                <div class="mt-1"><strong class="text-slate-700 dark:text-slate-300">Nice-to-haves:</strong> onboarding programs · churn or renewals · team leadership</div>
+                            </div>
+                            <div class="fl-scan">
+                                <div class="fl-scanline"></div>
+                                <div class="fl-field mb-2"><small>Candidate</small><span id="cf-name"></span></div>
+                                <label for="cf-cv" class="block text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">Resume summary (edit it or paste your own)</label>
+                                <textarea id="cf-cv" rows="5" class="fl-input"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between gap-3 flex-wrap px-5 pb-5">
+                            <span class="text-xs text-slate-500 dark:text-slate-400" id="inNote">Production version posts to an n8n webhook.</span>
+                            <button type="button" id="demoRun" class="px-5 py-2.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-brand-500/20 disabled:opacity-60">Qualify lead</button>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <div id="steps-1" class="hidden">
+            <!-- Execution output -->
+            <div class="grid lg:grid-cols-12 gap-6 mt-6">
+                <div class="lg:col-span-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden min-w-0">
+                    <div class="flex items-center justify-between px-5 py-3 border-b border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-500 dark:text-slate-400"><span>Execution</span><span id="execTime">—</span></div>
+                    <ol class="fl-steps" id="flSteps"></ol>
+                    <div class="fl-decision" id="flDecision"><span>Run the demo to see where this goes.</span></div>
+                </div>
+                <div class="lg:col-span-7 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden min-w-0">
+                    <div class="flex items-center justify-between px-5 py-3 border-b border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-500 dark:text-slate-400"><span id="outLabel">Structured output</span><span>JSON</span></div>
+                    <pre class="fl-json" id="flJson"></pre>
+                    <div class="fl-scores" id="flScores"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED WORK: CASE STUDIES + MORE BUILDS -->
+    <section id="projects" class="py-20 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-500 mb-3">Featured Work</span>
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Four systems running for clients today.</h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto">Each one replaces a job someone was doing by hand, and each one knows when to stop and ask a person.</p>
+            </div>
+
+            <div class="space-y-6">
+
+                <!-- CASE 1: LEAD VOICE QUALIFICATION -->
+                <article class="cs-card grid lg:grid-cols-2 gap-8 lg:gap-12 p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="space-y-5 min-w-0">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Sales</span>
+                            <span class="cs-chip">n8n</span><span class="cs-chip">Facebook Lead Ads</span><span class="cs-chip">ElevenLabs</span><span class="cs-chip">Supabase</span><span class="cs-chip">Slack</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white leading-tight">Every new lead gets a call before they cool off</h3>
+                        <dl class="space-y-3 text-sm">
+                            <div><dt class="cs-dt">The problem</dt><dd class="text-slate-600 dark:text-slate-300">Leads from Facebook ads waited hours or days for a callback, and most had moved on by then.</dd></div>
+                            <div><dt class="cs-dt">The system</dt><dd class="text-slate-600 dark:text-slate-300">A new lead form triggers an outbound AI phone call through ElevenLabs right away. When the call ends, the transcript, summary and qualification answers are saved to the lead record. Sales gets a Slack and email alert whether the lead booked or not.</dd></div>
+                        </dl>
+                        <div class="cs-specs">
+                            <div><b>Instant</b><span>AI call on every new lead</span></div>
+                            <div><b>100%</b><span>of calls transcribed and summarized</span></div>
+                            <div><b>2</b><span>routes: booked or follow up</span></div>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <button onclick="openImageModal('workflow-fblead.png', 'Facebook Lead Qualification with AI Voice Calling')" class="cs-btn cs-btn-primary">🔍 View Full Workflow</button>
+                            <button onclick="openStepsModal('steps-10')" class="cs-btn">⚙️ How It Works</button>
+                        </div>
+                    </div>
+                    <div class="cs-vis-wrap min-w-0"><div class="cs-vis">
+                        <span class="cs-vis-h">One lead, start to finish · sample</span>
+                        <ol class="cs-timeline">
+                            <li><span class="tm">0:00</span><span class="pt"></span><span>Form submitted<small>Facebook Lead Ad · roofing quote</small></span></li>
+                            <li><span class="tm">0:01</span><span class="pt"></span><span>Saved to Supabase<small>status: new</small></span></li>
+                            <li><span class="tm">0:02</span><span class="pt"></span><span>AI agent calls the lead<small>personalized with their form answers</small></span></li>
+                            <li><span class="tm">0:05</span><span class="pt"></span><span>Transcript and summary saved<small>budget, timeline, decision maker</small></span></li>
+                            <li><span class="tm">0:05</span><span class="pt"></span><span>Appointment booked<small>Slack + Gmail alert to sales</small></span></li>
+                        </ol>
+                    </div></div>
+                </article>
+
+                <!-- CASE 2: RECRUITING -->
+                <article class="cs-card grid lg:grid-cols-2 gap-8 lg:gap-12 p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="cs-vis-wrap min-w-0 lg:order-first order-last"><div class="cs-vis">
+                        <span class="cs-vis-h">Pipeline</span>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                            <div class="cs-stage cs-stage-gate">Screening<span>AI score</span></div><div class="cs-stage">Interview<span>auto-booked</span></div><div class="cs-stage">Follow-up<span>AI-drafted</span></div>
+                            <div class="cs-stage">Offer<span>on decision</span></div><div class="cs-stage">Hired<span>Zoho synced</span></div><div class="cs-stage">Onboarding<span>calendar day</span></div>
+                        </div>
+                        <div class="cs-row"><span>Customer success lead · applicant #214</span><b class="text-emerald-600 dark:text-emerald-400">88 · advance</b></div>
+                        <div class="cs-row"><span>Customer success lead · applicant #215</span><b class="text-amber-600 dark:text-amber-400">61 · polite reply</b></div>
+                    </div></div>
+                    <div class="space-y-5 min-w-0">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Recruiting</span>
+                            <span class="cs-chip">n8n</span><span class="cs-chip">Zoho Recruit</span><span class="cs-chip">Google Calendar</span><span class="cs-chip">AI screening</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white leading-tight">A recruiting coordinator that never sleeps</h3>
+                        <dl class="space-y-3 text-sm">
+                            <div><dt class="cs-dt">The problem</dt><dd class="text-slate-600 dark:text-slate-300">Hiring teams were screening resumes by hand, chasing interview times by email, and letting good candidates go quiet.</dd></div>
+                            <div><dt class="cs-dt">The system</dt><dd class="text-slate-600 dark:text-slate-300">An AI agent scores every applicant. Strong candidates are synced to Zoho Recruit and booked on the calendar with a personal invite. Everyone else gets a respectful reply. Offers, hires and onboarding days follow the same way.</dd></div>
+                        </dl>
+                        <div class="cs-specs">
+                            <div><b>≥ 75</b><span>score to advance (editable)</span></div>
+                            <div><b>6</b><span>stages, screen to onboarding</span></div>
+                            <div><b>0</b><span>code edits needed day to day</span></div>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <button onclick="openImageModal('workflow-recruitment.png', 'AI Recruiting & Hiring System (Zoho Recruit + AI)')" class="cs-btn cs-btn-primary">🔍 View Full Workflow</button>
+                            <button onclick="openStepsModal('steps-2')" class="cs-btn">⚙️ How It Works</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CASE 3: VOICE SETTER -->
+                <article class="cs-card grid lg:grid-cols-2 gap-8 lg:gap-12 p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="space-y-5 min-w-0">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Voice AI</span>
+                            <span class="cs-chip">n8n</span><span class="cs-chip">Vapi</span><span class="cs-chip">Google Calendar</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white leading-tight">Phone bookings answered at 2 a.m.</h3>
+                        <dl class="space-y-3 text-sm">
+                            <div><dt class="cs-dt">The problem</dt><dd class="text-slate-600 dark:text-slate-300">Field-service companies (roofing, HVAC, plumbing) missed after-hours calls, and every missed call was a missed job.</dd></div>
+                            <div><dt class="cs-dt">The system</dt><dd class="text-slate-600 dark:text-slate-300">The backend behind a Vapi voice agent. It checks real calendar availability, reads open slots to the caller, and books the job the moment they pick a time. Work hours, slot length and buffers live in one settings node.</dd></div>
+                        </dl>
+                        <div class="cs-specs">
+                            <div><b>24/7</b><span>answering with real availability</span></div>
+                            <div><b>2</b><span>tools: check and book</span></div>
+                            <div><b>3</b><span>nodes to edit for a new client</span></div>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <button onclick="openImageModal('workflow-voice.png', 'AI Voice Appointment Setter (Vapi + Google Calendar)')" class="cs-btn cs-btn-primary">🔍 View Full Workflow</button>
+                            <button onclick="openStepsModal('steps-3')" class="cs-btn">⚙️ How It Works</button>
+                        </div>
+                    </div>
+                    <div class="cs-vis-wrap min-w-0"><div class="cs-vis">
+                        <span class="cs-vis-h">Call excerpt · sample</span>
+                        <div class="cs-msg cs-me"><small>Caller</small>Hi, my AC stopped cooling. Can someone come tomorrow?</div>
+                        <div class="cs-tool">→ checkAvailability({ date: "tomorrow" })</div>
+                        <div class="cs-msg"><small>Agent</small>I have 9:00, 11:30 or 2:00 tomorrow. Which works best?</div>
+                        <div class="cs-msg cs-me"><small>Caller</small>11:30, please.</div>
+                        <div class="cs-tool">→ bookAppointment({ start: "11:30", length: 60 })</div>
+                        <div class="cs-msg"><small>Agent</small>You're booked for 11:30. You'll get a text confirmation shortly.</div>
+                    </div></div>
+                </article>
+
+                <!-- CASE 4: INVOICE-TO-CASH -->
+                <article class="cs-card grid lg:grid-cols-2 gap-8 lg:gap-12 p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="cs-vis-wrap min-w-0 lg:order-first order-last"><div class="cs-vis">
+                        <span class="cs-vis-h">Overdue reminder ladder</span>
+                        <div class="cs-rung"><span class="lvl text-emerald-600 dark:text-emerald-400">1</span><span>Friendly reminder</span><span class="ch">EMAIL</span></div>
+                        <div class="cs-rung"><span class="lvl text-teal-600 dark:text-teal-400">2</span><span>Follow-up nudge</span><span class="ch">SMS</span></div>
+                        <div class="cs-rung"><span class="lvl text-amber-600 dark:text-amber-400">3</span><span>Firm notice with balance</span><span class="ch">EMAIL</span></div>
+                        <div class="cs-rung"><span class="lvl text-red-600 dark:text-red-400">4</span><span>Call task for the team</span><span class="ch">SLACK</span></div>
+                        <span class="text-xs text-slate-500 dark:text-slate-400">Paused automatically for disputes and payment plans. Try the invoice side in the live demo above.</span>
+                    </div></div>
+                    <div class="space-y-5 min-w-0">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Ops &amp; Finance</span>
+                            <span class="cs-chip">n8n</span><span class="cs-chip">GPT-4o</span><span class="cs-chip">QuickBooks Online</span><span class="cs-chip">Twilio</span><span class="cs-chip">Slack</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white leading-tight">Invoices in, payments chased, nobody retyping</h3>
+                        <dl class="space-y-3 text-sm">
+                            <div><dt class="cs-dt">The problem</dt><dd class="text-slate-600 dark:text-slate-300">A small finance team was keying vendor bills into QuickBooks by hand and chasing overdue clients whenever they found time.</dd></div>
+                            <div><dt class="cs-dt">The system</dt><dd class="text-slate-600 dark:text-slate-300">Two connected workflows. Incoming invoices are read by GPT-4o, re-checked in code and posted to QuickBooks, with uncertain ones sent to Slack. Outgoing invoices are watched daily, and overdue clients move up a risk-based reminder ladder by email, SMS and call task.</dd></div>
+                        </dl>
+                        <div class="cs-specs">
+                            <div><b>0.85</b><span>confidence needed to post without review</span></div>
+                            <div><b>5</b><span>reminder stages, paused for disputes</span></div>
+                            <div><b>Daily</b><span>sync with live QuickBooks data</span></div>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <button onclick="openImageModal('workflow-qbo.png', 'Process Email Invoices with OCR, GPT-4, Slack, QuickBooks and Google Sheets')" class="cs-btn cs-btn-primary">🔍 Invoice Workflow</button>
+                            <button onclick="openImageModal('workflow-ar.png', 'Automated AR & Payment Follow-Up System (QuickBooks + Twilio + Slack)')" class="cs-btn cs-btn-primary">🔍 Payment Follow-Up Workflow</button>
+                            <button onclick="openStepsModal('steps-4')" class="cs-btn">⚙️ Invoice Steps</button>
+                            <button onclick="openStepsModal('steps-1')" class="cs-btn">⚙️ Follow-Up Steps</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Hidden step lists used by the How It Works modal -->
+                <div hidden>
+<div id="steps-1" class="hidden">
                         <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Automated AR & Payment Follow-Up System (QuickBooks + Twilio + Slack)</h4>
                         <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                             <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Daily Trigger (8am):</strong> Pulls open invoices from QuickBooks and reads the Invoices and Clients tabs from Google Sheets, then merges the data into one payload.</span></li>
@@ -640,46 +949,7 @@
                             <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Monthly Risk Recalculation:</strong> A separate monthly trigger pulls all invoices from QuickBooks, merges with client data, recalculates each client's risk & decay score, and updates the Clients tab so the daily sequence always scores against fresh risk data.</span></li>
                         </ol>
                     </div>
-                </div>
-
-<!-- WORKFLOW CARD 2 -->
-                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
-                            <img src="workflow-recruitment.png" alt="AI Recruiting and Hiring System workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
-                                <button onclick="openImageModal('workflow-recruitment.png', 'AI Recruiting & Hiring System (Zoho Recruit + AI)')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
-                                    🔍 View Full Workflow
-                                </button>
-                                <button onclick="openStepsModal('steps-2')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
-                                    ⚙️ How It Works
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + Zoho Recruit</span>
-                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Recruiting</span>
-                            </div>
-                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
-                                AI Recruiting & Hiring System (Zoho Recruit + AI)
-                            </h3>
-
-                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
-                                    <p>HR teams, staffing agencies, and startups hiring through Zoho Recruit without the bandwidth to manually screen resumes, chase scheduling, and keep candidates updated.</p>
-                                </div>
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
-                                    <p>An automated recruiting coordinator — screens and scores every resume, moves qualified candidates through a 6-stage pipeline (screening, interview, follow-up, offer, hire, onboarding) with AI-drafted emails, books interviews on Google Calendar, syncs status to Zoho Recruit, and tracks it all in a live Sheets dashboard. No coding needed day-to-day — thresholds and copy are editable.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="steps-2" class="hidden">
+<div id="steps-2" class="hidden">
                         <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">AI Recruiting & Hiring System (Zoho Recruit + AI)</h4>
                         <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                             <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Sourcing & Intake:</strong> A daily trigger searches job boards & LinkedIn for candidates, while a webhook captures new applications directly. Both paths normalize candidate data and log it to the Applications pipeline sheet.</span></li>
@@ -690,46 +960,7 @@
                             <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">6</span><span><strong>Offer Response Webhook:</strong> If accepted, sets status to Hired in Zoho Recruit, schedules an onboarding day on Google Calendar, sends a welcome email, and logs to the Hired pipeline. If declined, logs the decline and closes out the record.</span></li>
                         </ol>
                     </div>
-                </div>
-
-<!-- WORKFLOW CARD 3 -->
-                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
-                            <img src="workflow-voice.png" alt="AI Voice Appointment Setter with Vapi and Google Calendar workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
-                                <button onclick="openImageModal('workflow-voice.png', 'AI Voice Appointment Setter (Vapi + Google Calendar)')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
-                                    🔍 View Full Workflow
-                                </button>
-                                <button onclick="openStepsModal('steps-3')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
-                                    ⚙️ How It Works
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + Vapi</span>
-                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Voice Agent</span>
-                            </div>
-                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
-                                AI Voice Appointment Setter (Vapi + Google Calendar)
-                            </h3>
-
-                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
-                                    <p>Service businesses that take phone calls for bookings but don't want a human manning the phone 24/7 — roofing, HVAC, plumbing, home inspection, or similar field-service companies using Vapi as their AI voice agent.</p>
-                                </div>
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
-                                    <p>Acts as the backend brain between a Vapi voice agent and Google Calendar — checking real availability, reading open slots back to the caller, and booking the appointment directly once they pick a time. No coding required to run; only three nodes need editing.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="steps-3" class="hidden">
+<div id="steps-3" class="hidden">
                         <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">AI Voice Appointment Setter (Vapi + Google Calendar)</h4>
                         <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                             <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Webhook:</strong> The single entry/exit point — Vapi sends every tool call here as the conversation happens, and this node sends the result back so the AI agent can speak it to the caller.</span></li>
@@ -739,46 +970,7 @@
                             <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Booking Path:</strong> Takes the chosen start/end time and caller details, creates the calendar event directly, and confirms success back to Vapi.</span></li>
                         </ol>
                     </div>
-                </div>
-
-                <!-- WORKFLOW CARD 4 -->
-                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
-                            <img src="workflow-qbo.png" alt="Process email invoices with OCR, GPT-4, Slack, QuickBooks and Google Sheets workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
-                                <button onclick="openImageModal('workflow-qbo.png', 'Process email invoices with OCR, GPT-4, Slack, QuickBooks and Google Sheets')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
-                                    🔍 View Full Workflow
-                                </button>
-                                <button onclick="openStepsModal('steps-4')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
-                                    ⚙️ How It Works
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + GPT-4o</span>
-                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Accounts Payable</span>
-                            </div>
-                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
-                                Process Email Invoices with OCR, GPT-4, Slack, QuickBooks and Google Sheets
-                            </h3>
-
-                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
-                                    <p>Accounts payable / finance teams (or the ops person doing double duty as bookkeeper) who receive vendor invoices by email and are still keying them into QuickBooks by hand — small-to-mid businesses, agencies, or finance ops teams building internal automation with n8n.</p>
-                                </div>
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
-                                    <p>Watches a labeled inbox, reads the invoice attachment, and uses GPT-4o to turn it into structured data. It double-checks the AI's math, masks sensitive numbers, routes low-confidence invoices to Slack for human review, then posts the bill to QuickBooks and logs it to Google Sheets for an audit trail.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="steps-4" class="hidden">
+<div id="steps-4" class="hidden">
                         <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Process Email Invoices with OCR, GPT-4, Slack, QuickBooks and Google Sheets</h4>
                         <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                             <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Intake:</strong> Gmail Trigger polls a labeled inbox (AP Inbox) every 5 minutes, pulling in new emails with attachments. Set nodes attach shared config (OCR endpoint, confidence threshold, Slack channel, sheet ID) and derive metadata like sender name, timestamp, and a file hash.</span></li>
@@ -789,58 +981,28 @@
                             <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">6</span><span><strong>Bookkeeping & Audit:</strong> A QuickBooks node creates the bill, an audit record (timestamp, QuickBooks ID, validation/confidence results) is appended to Google Sheets, and a final Slack message confirms success.</span></li>
                         </ol>
                     </div>
-                </div>
-
-                <!-- WORKFLOW CARD 5 -->
-                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
-                            <img src="workflow-leads.png" alt="Capture leads workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
-                                <button onclick="openImageModal('workflow-leads.png', 'Capture leads from any form to HubSpot and notify your team in Slack')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
-                                    🔍 View Full Workflow
-                                </button>
-                                <button onclick="openStepsModal('steps-5')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
-                                    ⚙️ How It Works
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n Template</span>
-                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Lead Gen</span>
-                            </div>
-                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
-                                Capture leads from any form to HubSpot and notify your team in Slack
-                            </h3>
-                            
-                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
-                                    <p>Marketers, founders, and sales teams collecting leads via website forms needing instant HubSpot + Slack sync.</p>
-                                </div>
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
-                                    <p>Replaces classic 3-step Zapier zaps (Form → CRM → Slack) at zero per-task execution cost.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="steps-5" class="hidden">
-                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Capture leads from any form to HubSpot and notify your team in Slack</h4>
+<div id="steps-10" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Facebook Lead Qualification with AI Voice Calling</h4>
                         <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Webhook:</strong> Receives lead data (name, email, message) as a POST request from any form tool.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>Set Node:</strong> Normalizes and formats input fields.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>HubSpot Node:</strong> Creates or updates the contact record.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Slack Node:</strong> Posts instant notification alert to designated team channels.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Webhook Response:</strong> Returns a 200 HTTP response to confirm lead receipt.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Trigger:</strong> Listens for new form submissions from Facebook Lead Ads.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>Formatting & Storage:</strong> Cleans up the lead payload and inserts a new record into Supabase with a "new" status.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>AI Call Trigger:</strong> Places an outbound call via the ElevenLabs conversational AI API with personalized details, then updates Supabase with the active call tracking info.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Webhook Handling:</strong> Listens for the ElevenLabs call completion event and parses transcripts, duration, summary, and qualification metrics.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Database Update:</strong> Writes final call outcomes back to the lead's Supabase record.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">6</span><span><strong>Conditional Routing:</strong> Branches on whether an appointment was booked, sending tailored Slack and Gmail alerts with full transcripts and summaries either way.</span></li>
                         </ol>
                     </div>
                 </div>
+            </div>
 
-                <!-- WORKFLOW CARD 6 -->
+            <!-- MORE BUILDS -->
+            <div class="text-center mt-20 mb-10">
+                <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-500 mb-3">More Builds</span>
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Other workflows I've built</h3>
+                <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto text-sm">Hover a card to open the full workflow canvas (zoom and pan) or the step-by-step breakdown.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- WORKFLOW CARD 6 -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -892,7 +1054,56 @@
                     </div>
                 </div>
 
-                <!-- WORKFLOW CARD 7 -->
+<!-- WORKFLOW CARD 5 -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                            <img src="workflow-leads.png" alt="Capture leads workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+                                <button onclick="openImageModal('workflow-leads.png', 'Capture leads from any form to HubSpot and notify your team in Slack')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
+                                    🔍 View Full Workflow
+                                </button>
+                                <button onclick="openStepsModal('steps-5')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                    ⚙️ How It Works
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n Template</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Lead Gen</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
+                                Capture leads from any form to HubSpot and notify your team in Slack
+                            </h3>
+                            
+                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
+                                    <p>Marketers, founders, and sales teams collecting leads via website forms needing instant HubSpot + Slack sync.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
+                                    <p>Replaces classic 3-step Zapier zaps (Form → CRM → Slack) at zero per-task execution cost.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="steps-5" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Capture leads from any form to HubSpot and notify your team in Slack</h4>
+                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Webhook:</strong> Receives lead data (name, email, message) as a POST request from any form tool.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>Set Node:</strong> Normalizes and formats input fields.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>HubSpot Node:</strong> Creates or updates the contact record.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Slack Node:</strong> Posts instant notification alert to designated team channels.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Webhook Response:</strong> Returns a 200 HTTP response to confirm lead receipt.</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+<!-- WORKFLOW CARD 7 -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -941,155 +1152,7 @@
                     </div>
                 </div>
 
-                <!-- WORKFLOW CARD 8 -->
-                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
-                            <img src="workflow-trivia.png" alt="Trivia Generation and Facebook Posting with Telegram workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
-                                <button onclick="openImageModal('workflow-trivia.png', 'Trivia Generation and Facebook Posting with Telegram Approval')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
-                                    🔍 View Full Workflow
-                                </button>
-                                <button onclick="openStepsModal('steps-8')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
-                                    ⚙️ How It Works
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + Gemini</span>
-                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Content Automation</span>
-                            </div>
-                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
-                                Trivia Generation and Facebook Posting with Telegram Approval
-                            </h3>
-                            
-                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
-                                    <p>Social media managers and page owners who want automated content curation without sacrificing manual quality control, plus automation builders connecting chat apps, generative AI, and publishing platforms.</p>
-                                </div>
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
-                                    <p>Generates a unique trivia fact with Google Gemini, turns it into branded card art via Google Slides, routes it through a Telegram approval gate, and auto-publishes the approved post to a Facebook Page.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="steps-8" class="hidden">
-                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Trivia Generation and Facebook Posting with Telegram Approval</h4>
-                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Trigger Phase:</strong> A message or callback query from Telegram activates the workflow.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>AI Processing:</strong> On a trivia command, the Google Gemini node crafts a strict JSON-formatted fact, which is parsed and paired with a randomly chosen template design.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>Asset Generation:</strong> The workflow manipulates Google Slides to insert text, takes a thumbnail screenshot of the slide, downloads it, and re-uploads it to Google Drive as a publicly accessible image.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Human-in-the-Loop Gate:</strong> Details are logged in a Google Sheets tracker as "Pending" while a photo preview with Approve/Reject inline buttons is sent to Telegram.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Execution & Feedback:</strong> Approve updates the spreadsheet row and posts the content directly to Facebook with an admin confirmation; Reject logs the rejection and halts publishing.</span></li>
-                        </ol>
-                    </div>
-                </div>
-
-                <!-- WORKFLOW CARD 9 -->
-                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
-                            <img src="workflow-crypto.png" alt="Telegram Crypto Analysis Bot workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
-                                <button onclick="openImageModal('workflow-crypto.png', 'Telegram Crypto Analysis Bot')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
-                                    🔍 View Full Workflow
-                                </button>
-                                <button onclick="openStepsModal('steps-9')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
-                                    ⚙️ How It Works
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + Gemini</span>
-                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Trading Signals</span>
-                            </div>
-                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
-                                Telegram Crypto Analysis Bot
-                            </h3>
-                            
-                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
-                                    <p>Crypto traders looking for structured, data-driven technical analysis, and automation enthusiasts merging API data pipelines with AI-driven analytics and chat notifications.</p>
-                                </div>
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
-                                    <p>Pulls 1D/4H kline data, tickers, and order book depth from MEXC, scores each asset 1–10 with Gemini against trading rules, and delivers a BUY/SELL/HOLD alert with entry, stop-loss, and take-profit levels to Telegram while logging results to Google Sheets.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="steps-9" class="hidden">
-                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Telegram Crypto Analysis Bot</h4>
-                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Trigger & Routing:</strong> A Telegram message provides the asset symbol and timeframe, which is routed by market type (Spot vs. Futures).</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>Data Fetching & Processing:</strong> Requests kline, ticker, and order book data from MEXC in parallel, handles missing records, and computes RSI, EMA, MACD, and Bollinger Bands via JavaScript code nodes.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>Evaluation Pipeline:</strong> Compiled indicators are passed to an AI analysis node that checks volume ratios, evaluates signals, and returns a structured JSON verdict.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Output Delivery:</strong> Formats the result into a readable HTML message sent back to the Telegram user.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Data Logging:</strong> Trade signals and technical outputs are recorded into a Google Sheets watchlist.</span></li>
-                        </ol>
-                    </div>
-                </div>
-
-                <!-- WORKFLOW CARD 10 -->
-                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
-                            <img src="workflow-fblead.png" alt="Facebook Lead Qualification with AI workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
-                                <button onclick="openImageModal('workflow-fblead.png', 'Facebook Lead Qualification with AI Voice Calling')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
-                                    🔍 View Full Workflow
-                                </button>
-                                <button onclick="openStepsModal('steps-10')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
-                                    ⚙️ How It Works
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + ElevenLabs</span>
-                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Lead Qualification</span>
-                            </div>
-                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
-                                Facebook Lead Qualification with AI Voice Calling
-                            </h3>
-                            
-                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
-                                    <p>Sales and growth teams that want instant voice follow-up on inbound leads, business owners and agencies running Facebook Lead Ads, and operations engineers orchestrating Supabase, ElevenLabs, Slack, and Gmail together.</p>
-                                </div>
-                                <div>
-                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
-                                    <p>Captures new Facebook Lead Ads submissions, stores them in Supabase, triggers an outbound AI phone call via ElevenLabs, then updates the lead record with the call outcome and routes booked/not-booked notifications to Slack and Gmail.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="steps-10" class="hidden">
-                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Facebook Lead Qualification with AI Voice Calling</h4>
-                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Trigger:</strong> Listens for new form submissions from Facebook Lead Ads.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>Formatting & Storage:</strong> Cleans up the lead payload and inserts a new record into Supabase with a "new" status.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>AI Call Trigger:</strong> Places an outbound call via the ElevenLabs conversational AI API with personalized details, then updates Supabase with the active call tracking info.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Webhook Handling:</strong> Listens for the ElevenLabs call completion event and parses transcripts, duration, summary, and qualification metrics.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Database Update:</strong> Writes final call outcomes back to the lead's Supabase record.</span></li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">6</span><span><strong>Conditional Routing:</strong> Branches on whether an appointment was booked, sending tailored Slack and Gmail alerts with full transcripts and summaries either way.</span></li>
-                        </ol>
-                    </div>
-                </div>
-
-                <!-- WORKFLOW CARD 11 -->
+<!-- WORKFLOW CARD 11 -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -1138,14 +1201,7 @@
                     </div>
                 </div>
 
-                
-
-            </div>
-
-            <!-- ZAPIER TAB CONTENT -->
-            <div id="content-zapier" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-
-                <!-- ZAP CARD 1: Hubspot Lead Generation -->
+<!-- ZAP CARD 1: Hubspot Lead Generation -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -1194,7 +1250,7 @@
                     </div>
                 </div>
 
-                <!-- ZAP CARD 2: Salesforce New Lead Follow-up -->
+<!-- ZAP CARD 2: Salesforce New Lead Follow-up -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -1242,7 +1298,7 @@
                     </div>
                 </div>
 
-                <!-- ZAP CARD 3: Gmail Categorizer -->
+<!-- ZAP CARD 3: Gmail Categorizer -->
                 <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -1289,49 +1345,104 @@
                     </div>
                 </div>
 
-            </div>
+<!-- WORKFLOW CARD 8 -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                            <img src="workflow-trivia.png" alt="Trivia Generation and Facebook Posting with Telegram workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+                                <button onclick="openImageModal('workflow-trivia.png', 'Trivia Generation and Facebook Posting with Telegram Approval')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
+                                    🔍 View Full Workflow
+                                </button>
+                                <button onclick="openStepsModal('steps-8')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                    ⚙️ How It Works
+                                </button>
+                            </div>
+                        </div>
 
-            <!-- MAKE.COM TAB CONTENT -->
-            <div id="content-make" class="hidden">
-                <div class="p-8 sm:p-12 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
-                        <div class="w-12 h-12 rounded-full bg-purple-500/10 text-purple-500 flex items-center justify-center shrink-0 font-bold text-xl">🟣</div>
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Make.com Scenarios — Case Studies in Progress</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm">
-                                Certified in Make Intermediate & AI Agent Builder — full scenario write-ups for this tab are being documented now.
-                            </p>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + Gemini</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Content Automation</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
+                                Trivia Generation and Facebook Posting with Telegram Approval
+                            </h3>
+                            
+                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
+                                    <p>Social media managers and page owners who want automated content curation without sacrificing manual quality control, plus automation builders connecting chat apps, generative AI, and publishing platforms.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
+                                    <p>Generates a unique trivia fact with Google Gemini, turns it into branded card art via Google Slides, routes it through a Telegram approval gate, and auto-publishes the approved post to a Facebook Page.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- What's coming: sets expectations concretely instead of a bare placeholder -->
-                    <div class="grid sm:grid-cols-3 gap-4 mb-8">
-                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
-                            <div class="text-purple-500 font-bold text-sm mb-1">Multi-App Scenarios</div>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">Complex routers and branching logic across 5+ connected apps.</p>
+                    <div id="steps-8" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Trivia Generation and Facebook Posting with Telegram Approval</h4>
+                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Trigger Phase:</strong> A message or callback query from Telegram activates the workflow.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>AI Processing:</strong> On a trivia command, the Google Gemini node crafts a strict JSON-formatted fact, which is parsed and paired with a randomly chosen template design.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>Asset Generation:</strong> The workflow manipulates Google Slides to insert text, takes a thumbnail screenshot of the slide, downloads it, and re-uploads it to Google Drive as a publicly accessible image.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Human-in-the-Loop Gate:</strong> Details are logged in a Google Sheets tracker as "Pending" while a photo preview with Approve/Reject inline buttons is sent to Telegram.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Execution & Feedback:</strong> Approve updates the spreadsheet row and posts the content directly to Facebook with an admin confirmation; Reject logs the rejection and halts publishing.</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+<!-- WORKFLOW CARD 9 -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                            <img src="workflow-crypto.png" alt="Telegram Crypto Analysis Bot workflow" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+                                <button onclick="openImageModal('workflow-crypto.png', 'Telegram Crypto Analysis Bot')" class="w-full py-2 px-4 bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold text-xs rounded-lg transition-all shadow-md">
+                                    🔍 View Full Workflow
+                                </button>
+                                <button onclick="openStepsModal('steps-9')" class="w-full py-2 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-lg border border-slate-700 transition-all">
+                                    ⚙️ How It Works
+                                </button>
+                            </div>
                         </div>
-                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
-                            <div class="text-purple-500 font-bold text-sm mb-1">Data Routers</div>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">Conditional data flows that adapt based on record type and status.</p>
-                        </div>
-                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
-                            <div class="text-purple-500 font-bold text-sm mb-1">Custom API Modules</div>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">Native integrations for platforms without a built-in Make connector.</p>
+
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-n8n/10 text-n8n font-semibold text-[10px] uppercase tracking-wider border border-n8n/20">n8n + Gemini</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-500 font-semibold text-[10px] uppercase tracking-wider border border-brand-500/20">Trading Signals</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3 line-clamp-2">
+                                Telegram Crypto Analysis Bot
+                            </h3>
+                            
+                            <div class="space-y-3 text-xs text-slate-600 dark:text-slate-400">
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">Who it's for:</strong>
+                                    <p>Crypto traders looking for structured, data-driven technical analysis, and automation enthusiasts merging API data pipelines with AI-driven analytics and chat notifications.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-slate-200 block mb-0.5">What it does:</strong>
+                                    <p>Pulls 1D/4H kline data, tickers, and order book depth from MEXC, scores each asset 1–10 with Gemini against trading rules, and delivers a BUY/SELL/HOLD alert with entry, stop-loss, and take-profit levels to Telegram while logging results to Google Sheets.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Turns the gap into a lead-gen CTA rather than a dead end -->
-                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-xl bg-purple-500/5 border border-purple-500/20">
-                        <p class="text-sm text-slate-700 dark:text-slate-300">
-                            Have a Make.com project in mind? I'm actively building in this space — let's talk through it.
-                        </p>
-                        <a href="#contact" class="shrink-0 px-5 py-2.5 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-semibold text-sm transition-all whitespace-nowrap">
-                            Discuss Your Project
-                        </a>
+                    <div id="steps-9" class="hidden">
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-4">Telegram Crypto Analysis Bot</h4>
+                        <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span><span><strong>Trigger & Routing:</strong> A Telegram message provides the asset symbol and timeframe, which is routed by market type (Spot vs. Futures).</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span><span><strong>Data Fetching & Processing:</strong> Requests kline, ticker, and order book data from MEXC in parallel, handles missing records, and computes RSI, EMA, MACD, and Bollinger Bands via JavaScript code nodes.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span><span><strong>Evaluation Pipeline:</strong> Compiled indicators are passed to an AI analysis node that checks volume ratios, evaluates signals, and returns a structured JSON verdict.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span><span><strong>Output Delivery:</strong> Formats the result into a readable HTML message sent back to the Telegram user.</span></li>
+                            <li class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-500/20 text-brand-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span><span><strong>Data Logging:</strong> Trade signals and technical outputs are recorded into a Google Sheets watchlist.</span></li>
+                        </ol>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -1771,7 +1882,7 @@
         </div>
     </section>
 
-    <!-- FOOTER / CONTACT SECTION -->
+    <!-- FAQ TOGGLES -->
     <script>
         function toggleFaqSection() {
             const list = document.getElementById('faq-list');
@@ -1795,30 +1906,63 @@
             icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
         }
     </script>
-    <footer id="contact" class="py-16 bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
-        <div class="max-w-3xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Let's Work Together</h2>
-            <p class="text-slate-600 dark:text-slate-400 mb-8 max-w-lg mx-auto">
-                Ready to optimize your business operations or build custom agentic AI solutions? Reach out directly to discuss your project.
-            </p>
-            
-            <div class="flex flex-wrap items-center justify-center gap-4">
-                <a href="mailto:acq.mendoza@gmail.com" class="px-6 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold transition-all shadow-lg shadow-brand-500/20 hover:scale-[1.02]">
-                    Send Email
-                </a>
-                <a href="https://www.linkedin.com/in/arman-christian-mendoza" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-white dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-medium border border-slate-200 dark:border-slate-800 transition-all hover:scale-[1.02]">
-                    Connect on LinkedIn
-                </a>
-                <a href="https://www.upwork.com/freelancers/~019e0c8ba8404ceeec?mp_source=share" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-white dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-medium border border-slate-200 dark:border-slate-800 transition-all hover:scale-[1.02]">
-                    Upwork Profile
-                </a>
-                <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/acq-mendoza/30min'});return false;" class="px-6 py-3.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-medium border border-slate-300 dark:border-slate-700 transition-all hover:scale-[1.02]">
-                    Schedule a Call
-                </a>
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-500 mb-3">Let's Work Together</span>
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Tell me what's eating your team's week.</h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-lg mx-auto">This form is itself an automation. Send it and watch the workflow run.</p>
             </div>
 
+            <div class="grid lg:grid-cols-2 gap-6 items-start">
+                <form id="cform" novalidate class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+                    <div>
+                        <label for="c-name" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Name</label>
+                        <input id="c-name" name="name" autocomplete="name" placeholder="Jane Cruz" class="fl-input" required>
+                    </div>
+                    <div>
+                        <label for="c-email" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Work email</label>
+                        <input id="c-email" name="email" type="email" autocomplete="email" placeholder="jane@company.com" class="fl-input" required>
+                    </div>
+                    <div>
+                        <label for="c-what" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">What would you automate first?</label>
+                        <textarea id="c-what" name="what" rows="4" placeholder="Our team follows up on 200 leads a week by hand…" class="fl-input" required></textarea>
+                    </div>
+                    <p id="c-err" class="text-sm text-red-600 dark:text-red-400" hidden>Add your name, a valid email and a short description, then send again.</p>
+                    <button type="submit" id="c-send" class="w-full px-6 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold transition-all shadow-lg shadow-brand-500/20 disabled:opacity-60">Send and run the workflow</button>
+                </form>
+
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+                    <div class="flex items-center justify-between px-5 py-3 border-b border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-500 dark:text-slate-400"><span>contact-intake workflow</span><span class="flex items-center gap-2"><span class="fl-live" aria-hidden="true"></span>n8n</span></div>
+                    <div class="p-5 space-y-2" id="mini">
+                        <div class="fl-mini"><span class="i">WH</span><span>Webhook receives your form</span><span class="st">idle</span></div>
+                        <div class="fl-mini"><span class="i">AI</span><span>Claude classifies the request</span><span class="st">idle</span></div>
+                        <div class="fl-mini"><span class="i">@</span><span>Personal reply drafted to you</span><span class="st">idle</span></div>
+                        <div class="fl-mini"><span class="i">#</span><span>Arman pinged in Slack</span><span class="st">idle</span></div>
+                        <div class="fl-mini"><span class="i">CAL</span><span>Booking link attached</span><span class="st">idle</span></div>
+                    </div>
+                    <p class="px-5 pb-4 text-sm text-slate-600 dark:text-slate-400" id="miniNote" aria-live="polite">Your message goes straight to Arman. You'll hear back by email.</p>
+                    <div class="px-5 pb-5 pt-4 border-t border-slate-200 dark:border-slate-800 space-y-3">
+                        <span class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Or reach me directly</span>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="mailto:acq.mendoza@gmail.com" class="cs-btn cs-btn-primary">Send Email</a>
+                            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/acq-mendoza/30min'});return false;" class="cs-btn">Schedule a Call</a>
+                            <a href="https://www.linkedin.com/in/arman-christian-mendoza" target="_blank" rel="noopener noreferrer" class="cs-btn">LinkedIn ↗</a>
+                            <a href="https://www.upwork.com/freelancers/~019e0c8ba8404ceeec?mp_source=share" target="_blank" rel="noopener noreferrer" class="cs-btn">Upwork ↗</a>
+                        </div>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono select-all">acq.mendoza@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-slate-100 dark:bg-slate-950">
+        <div class="max-w-3xl mx-auto px-6">
             <!-- FAQ TAB -->
-            <div id="faq" class="mt-12 text-left">
+            <div id="faq" class="text-left">
                 <button type="button" onclick="toggleFaqSection()" aria-expanded="false" id="faq-section-toggle" class="w-full flex items-center justify-between gap-4 p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-brand-500/30 transition-all">
                     <span class="font-bold text-slate-900 dark:text-white">Frequently Asked Questions</span>
                     <svg id="faq-section-icon" class="w-5 h-5 shrink-0 text-brand-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -1927,10 +2071,14 @@
                 </div>
             </div>
 
-            <p class="text-xs text-slate-500 dark:text-slate-500 mt-12">
+        </div>
+    </section>
+
+    <footer class="py-8 bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <p class="text-xs text-slate-500 dark:text-slate-500">
                 © 2026 Arman Christian Mendoza. Built for high-performance automation.
             </p>
-            <!-- Subtly integrated visit counter -->
             <p class="text-xs text-slate-400 dark:text-slate-600 mt-2">
                 Visits: <span id="visit-counter">1,482</span>
             </p>
@@ -2093,35 +2241,6 @@
             });
         }
 
-        // --- 4. FEATURED WORK TAB SWITCHING ---
-        function switchWorkTab(platform) {
-            const tabN8n = document.getElementById('tab-n8n');
-            const tabZapier = document.getElementById('tab-zapier');
-            const tabMake = document.getElementById('tab-make');
-            const contentN8n = document.getElementById('content-n8n');
-            const contentZapier = document.getElementById('content-zapier');
-            const contentMake = document.getElementById('content-make');
-
-            contentN8n.classList.add('hidden');
-            contentZapier.classList.add('hidden');
-            contentMake.classList.add('hidden');
-
-            tabN8n.className = "work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-2";
-            tabZapier.className = "work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-2";
-            tabMake.className = "work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-2";
-
-            if (platform === 'n8n') {
-                contentN8n.classList.remove('hidden');
-                tabN8n.className = "work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-n8n text-white shadow-lg shadow-n8n/20 flex items-center gap-2";
-            } else if (platform === 'zapier') {
-                contentZapier.classList.remove('hidden');
-                tabZapier.className = "work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-zapier text-white shadow-lg shadow-zapier/20 flex items-center gap-2";
-            } else if (platform === 'make') {
-                contentMake.classList.remove('hidden');
-                tabMake.className = "work-tab-btn px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-purple-600 text-white shadow-lg shadow-purple-600/20 flex items-center gap-2";
-            }
-        }
-
         // --- 5. WORKFLOW MODALS ---
         function openImageModal(imgSrc, title) {
             modalImg.src = imgSrc;
@@ -2248,6 +2367,404 @@
                 if (e.key === '0') resetZoom();
             }
         });
+    </script>
+
+    <!-- LIVE DEMOS + CANVAS + CONTACT (added in redesign) -->
+    <script>
+    (() => {
+        // Paste your n8n webhook URL here to make the contact form post to n8n.
+        // Leave it empty and the form opens the visitor's email app instead.
+        const CONTACT_WEBHOOK_URL = '';
+
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+        const sleep = ms => new Promise(r => setTimeout(r, reduce ? Math.min(ms, 60) : ms));
+        const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+        const money = n => '$' + n.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        const jsonHtml = o => JSON.stringify(o, null, 2).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+            .replace(/"([^"]+)":/g, '<span class="key">"$1"</span>:').replace(/: (-?\d+\.?\d*)/g, ': <span class="num">$1</span>');
+
+        /* ---------- WORKFLOW CANVAS ---------- */
+        const NS = 'http://www.w3.org/2000/svg';
+        const POS = {trig:[95,70], ai:[305,70], chk:[515,70], gate:[515,215], act:[305,215], rec:[95,215], hum:[515,360]};
+        const WF = {
+            lead: {title: 'Website form → AI qualification → booked meeting', lb: ['sales-ready', 'not ready', ''], back: false,
+                n: {trig:['WH','Form submitted','Webhook','The website form posts the lead to an n8n webhook.'],
+                    ai:['AI','Read intent','Claude · classify','Claude reads the message and decides what the person wants.'],
+                    chk:['{}','Budget & timing','Code · score 0–100','Pulls budget and timeline out of the message and scores the lead.'],
+                    gate:['?','Score ≥ 70','sales-ready gate','Sales-ready leads get a booking link. Everyone else goes to nurture, review or the spam filter.'],
+                    act:['CAL','Send booking link','Calendar + Slack','Emails a meeting link and alerts sales in Slack.'],
+                    rec:['HS','Create contact','HubSpot','Creates the contact with the AI summary and score.'],
+                    hum:['@','Nurture / review','email · Slack','Not-ready leads get helpful content, borderline ones go to a rep, spam is filtered.']}},
+            inv: {title: 'Vendor invoice email → QuickBooks bill', lb: ['pass', 'review', 'approved'], back: true,
+                n: {trig:['GM','AP Inbox','Gmail trigger · 5 min','Polls a labeled Gmail inbox every 5 minutes for invoices.'],
+                    ai:['AI','Extract fields','GPT-4o · JSON schema','Reads the PDF or OCR text and returns every field with a confidence score.'],
+                    chk:['Σ','Validate totals','Code node','Re-adds line items and tax in code instead of trusting the AI.'],
+                    gate:['?','Confidence ≥ 0.85','mask bank & tax IDs','Masks sensitive numbers, then checks confidence on every field.'],
+                    act:['QB','Create bill','QuickBooks Online','Creates the vendor bill with line items mapped to accounts.'],
+                    rec:['GS','Audit log','Google Sheets','Appends an audit row with the QuickBooks ID and check results.'],
+                    hum:['#','Human review','Slack · waits for approval','Posts the invoice with the problem highlighted and waits for a person.']}},
+            hire: {title: 'Application → AI screening → interview booked', lb: ['advance', 'below 75', ''], back: false,
+                n: {trig:['WH','New application','Webhook + job boards','Captures applications from the careers page and job board searches.'],
+                    ai:['AI','Screen resume','AI agent · score','Scores each resume against the role\'s must-haves and nice-to-haves.'],
+                    chk:['{}','Check must-haves','Code node','Turns the AI response into a clean score and a must-have checklist.'],
+                    gate:['?','Score ≥ 75','threshold (editable)','Candidates at or above the threshold advance to interview.'],
+                    act:['CAL','Book interview','Google Calendar','Books the interview and sends an AI-drafted invite.'],
+                    rec:['ZR','Sync candidate','Zoho Recruit','Upserts the candidate and sets status to Interview Scheduled.'],
+                    hum:['@','Polite follow-up','AI-drafted email','Sends a respectful reply and logs the candidate as screened.']}}
+        };
+
+        const svg = $('#flow');
+        if (!svg) return;
+        const gN = $('#flNodes'), gP = $('#flPackets'), tip = $('#flTip'), logEl = $('#flLog');
+        let wfKey = 'lead', gen = 0;
+        for (const k of Object.keys(POS)) {
+            const [x, y] = POS[k], g = document.createElementNS(NS, 'g');
+            g.setAttribute('class', 'fl-node'); g.setAttribute('id', 'n-' + k); g.setAttribute('tabindex', '0');
+            g.setAttribute('transform', `translate(${x - 75},${y - 29})`);
+            g.innerHTML = '<rect class="b" width="150" height="58" rx="11"/><rect class="ic" x="10" y="14" width="30" height="30" rx="7"/><text class="ic-t" x="25" y="33" text-anchor="middle"></text><text class="lbl" x="50" y="27"></text><text class="sub" x="50" y="43"></text>';
+            gN.appendChild(g);
+            const show = () => {
+                tip.textContent = WF[wfKey].n[k][3];
+                const sc = svg.getBoundingClientRect().width / 610, w = svg.parentElement.getBoundingClientRect().width;
+                tip.style.left = Math.max(6, Math.min((x - 75) * sc, w - 250)) + 'px'; tip.style.top = (y + 33) * sc + 'px'; tip.style.opacity = 1;
+            };
+            const hide = () => tip.style.opacity = 0;
+            g.addEventListener('pointerenter', show); g.addEventListener('focus', show);
+            g.addEventListener('pointerleave', hide); g.addEventListener('blur', hide);
+        }
+        const mark = (k, cls) => { const el = document.getElementById('n-' + k); el.classList.remove('active', 'done', 'warn'); if (cls) el.classList.add(cls); };
+        let clock = new Date(); clock.setHours(9, 0, 2, 0);
+        const log = (who, msg, cls = '') => {
+            clock = new Date(clock.getTime() + 400 + Math.random() * 900);
+            const d = document.createElement('div'); d.className = 'ln';
+            d.innerHTML = `<span class="t">${clock.toTimeString().slice(0, 8)}</span><span class="k">${esc(who)}</span><span class="${cls}">${esc(msg)}</span>`;
+            logEl.appendChild(d); logEl.scrollTop = logEl.scrollHeight;
+        };
+        const packet = (id, my, dur = 600) => new Promise(res => {
+            const p = document.getElementById(id), L = p.getTotalLength(); p.classList.add('lit');
+            if (reduce) return setTimeout(res, 40);
+            const glow = document.createElementNS(NS, 'circle'), dot = document.createElementNS(NS, 'circle');
+            glow.setAttribute('r', '11'); glow.setAttribute('class', 'fl-glow'); dot.setAttribute('r', '5'); dot.setAttribute('class', 'fl-packet');
+            gP.append(glow, dot);
+            const t0 = performance.now();
+            const step = now => {
+                if (my !== gen) { glow.remove(); dot.remove(); return res(); }
+                const k = Math.min(1, (now - t0) / dur), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2, pt = p.getPointAtLength(e * L);
+                for (const c of [dot, glow]) { c.setAttribute('cx', pt.x); c.setAttribute('cy', pt.y); }
+                if (k < 1) requestAnimationFrame(step); else { glow.remove(); dot.remove(); res(); }
+            };
+            requestAnimationFrame(step);
+        });
+        function loadWf(k) {
+            gen++; wfKey = k; const w = WF[k];
+            $('#wfTitle').textContent = w.title; svg.setAttribute('aria-label', 'Workflow diagram: ' + w.title);
+            for (const n of Object.keys(POS)) {
+                const el = document.getElementById('n-' + n), d = w.n[n];
+                el.querySelector('.ic-t').textContent = d[0]; el.querySelector('.lbl').textContent = d[1]; el.querySelector('.sub').textContent = d[2]; mark(n);
+            }
+            $$('.fl-edge').forEach(e => e.classList.remove('lit')); gP.innerHTML = '';
+            $('#lb4').textContent = w.lb[0]; $('#lb6').textContent = w.lb[1]; $('#lb7').textContent = w.lb[2];
+            $('#e7').classList.toggle('hide', !w.back); $('#lb7').classList.toggle('hide', !w.back);
+            logEl.innerHTML = ''; log('Workflow', 'active · waiting for input');
+        }
+        async function runCanvas(r) {
+            const my = ++gen, w = WF[wfKey], n = w.n;
+            const alive = () => my === gen;
+            Object.keys(POS).forEach(k => mark(k)); $$('.fl-edge').forEach(e => e.classList.remove('lit'));
+            const node = async (k, msg, cls = '', wait = 450, end = 'done') => {
+                if (!alive()) throw 0; mark(k, 'active'); log(n[k][1], msg, cls); await sleep(wait); if (!alive()) throw 0; mark(k, end);
+            };
+            try {
+                await node('trig', r.trig); await packet('e1', my);
+                await node('ai', r.ai, '', 650); await packet('e2', my);
+                await node('chk', r.chk[1], r.chk[0], 450, r.chk[0] === 'ok' ? 'done' : 'warn'); await packet('e3', my);
+                const review = r.gate[0] !== 'ok';
+                await node('gate', r.gate[1], r.gate[0], 400, review ? 'warn' : 'done');
+                if (review) {
+                    await packet('e6', my);
+                    await node('hum', r.hum, r.humCls || 'warn', 900, w.back ? 'active' : 'done');
+                    if (!w.back) { log('Run', 'finished · ' + r.finish, 'ok'); return; }
+                    log(n.hum[1], r.humDone, 'ok'); mark('hum', 'done'); await packet('e7', my, 800);
+                } else await packet('e4', my);
+                await node('act', r.act, 'ok'); await packet('e5', my);
+                await node('rec', r.rec, '', 350);
+                log('Run', 'finished · ' + (review ? 'one human touch' : 'no human needed'), 'ok');
+            } catch (e) { /* run replaced by a newer one */ }
+        }
+        const tilt = (wrap, card, max) => {
+            if (reduce || !matchMedia('(hover:hover)').matches || !wrap || !card) return;
+            wrap.addEventListener('pointermove', e => {
+                const b = wrap.getBoundingClientRect(), x = (e.clientX - b.left) / b.width - .5, y = (e.clientY - b.top) / b.height - .5;
+                card.style.transform = `rotateY(${x * max}deg) rotateX(${-y * max}deg)`;
+            });
+            wrap.addEventListener('pointerleave', () => card.style.transform = '');
+        };
+        tilt($('#flStage'), $('#flCard'), 5);
+        $$('.cs-vis-wrap').forEach(w => tilt(w, w.querySelector('.cs-vis'), 7));
+
+        /* ---------- SHARED EXECUTION PANEL ---------- */
+        let runId = 0, busy = false;
+        const stepsEl = $('#flSteps'), jsonEl = $('#flJson'), scoresEl = $('#flScores'), decEl = $('#flDecision');
+        const setSteps = names => stepsEl.innerHTML = names.map(t => `<li><span class="s"></span><span>${t}</span><span class="r"></span></li>`).join('');
+        const setStep = (i, cls, r = '') => { const li = stepsEl.querySelectorAll('li')[i]; if (!li) return; li.className = cls; li.querySelector('.r').textContent = r; };
+        const scoreRows = rows => {
+            scoresEl.innerHTML = rows.map(r => `<div class="row"><span>${r.label}</span><span class="bar"><i class="${r.cls}" style="width:0"></i><span class="th" style="left:${r.th}%"></span></span><span>${r.text}</span></div>`).join('');
+            requestAnimationFrame(() => $$('#flScores .bar i').forEach((b, i) => b.style.width = rows[i].pct + '%'));
+        };
+        const decide = (cls, icon, title, body) => { decEl.className = 'fl-decision ' + cls; decEl.innerHTML = `<span>${icon}</span><span><b>${title}</b>${body}</span>`; };
+        const scan = el => { el.classList.remove('reading'); void el.offsetWidth; el.classList.add('reading'); };
+
+        /* ---------- LEAD QUALIFIER ---------- */
+        const LEADS = [
+            {name: 'Dana Reyes', co: 'Ridgeline Roofing', msg: "Hi! We're a 12-person roofing company and we miss a lot of calls after 5pm. Looking for an AI that can answer and book jobs into our calendar. Budget is around $3,000 and we'd like it live this month."},
+            {name: 'Sam Patel', co: '—', msg: 'Just curious what n8n is. Do you have any free tutorials or a course I can watch?'},
+            {name: 'Promo Bot', co: 'getfollowers.biz', msg: 'BUY 10,000 FOLLOWERS NOW!!! Cheap SEO backlinks, guaranteed rank #1. Click here: bit.ly/xx'}
+        ];
+        let lcur = 0;
+        function analyzeLead(t) {
+            const spamHits = (t.match(/(buy|cheap|guaranteed|followers|backlink|click here|bit\.ly|!!!)/gi) || []).length;
+            const spam = spamHits >= 2;
+            const bm = t.match(/\$\s?([\d,]+(?:\.\d+)?)\s?(k)?/i) || t.match(/([\d,]+)\s?(k)?\s?(usd|dollars)/i);
+            const budget = bm ? parseFloat(bm[1].replace(/,/g, '')) * (bm[2] ? 1000 : 1) : null;
+            const tl = (t.match(/(asap|urgent|this (week|month|quarter)|next (week|month)|right away|immediately|in \d+ (days|weeks))/i) || [])[0] || null;
+            const biz = /\b(we|our|team|company|business|clients|customers|agency|store)\b/i.test(t);
+            const auto = /(automat|\bai\b|workflow|book|crm|lead|follow.?up|invoice|calendar|whatsapp|zapier|n8n|integrat|agent|calls?\b)/i.test(t);
+            const learn = /(tutorial|course|learn|curious|free|student|what is)/i.test(t);
+            const intent = spam ? 'spam' : (learn && !budget) ? 'learning / info request' : auto ? 'automation project' : 'general inquiry';
+            let score = spam ? 3 : 18 + (biz ? 20 : 0) + (auto ? 18 : 0) + (budget ? (budget >= 1000 ? 25 : 12) : 0) + (tl ? 18 : 0) - (learn ? 15 : 0);
+            score = Math.max(spam ? 1 : 5, Math.min(99, score));
+            const conf = spam ? .97 : Math.min(.96, .62 + (budget ? .12 : 0) + (tl ? .1 : 0) + (biz ? .08 : 0));
+            return {spam, budget, tl, biz, intent, score, conf};
+        }
+        async function runLead(my) {
+            const t = $('#lf-msg').value.trim(); if (!t) { $('#lf-msg').focus(); return; }
+            const L = LEADS[lcur], a = analyzeLead(t), w = async ms => { await sleep(ms); if (my !== runId) throw 0; };
+            const route = a.spam ? 'spam' : a.score >= 70 ? 'sales' : (a.conf < .75 && a.score >= 35) ? 'review' : 'nurture';
+            const spec = {
+                trig: `form submitted · ${L.name}`, ai: `intent: ${a.intent}`,
+                chk: [a.spam ? 'warn' : (a.budget || a.tl) ? 'ok' : 'warn', a.spam ? '✗ skipped · spam signals' : `${a.budget ? '✓ budget ' + money(a.budget).replace('.00', '') : '✗ no budget'} · ${a.tl ? 'timeline: ' + a.tl : 'no timeline'} · score ${a.score}`],
+                gate: [route === 'sales' ? 'ok' : 'warn', `${a.score} ${a.score >= 70 ? '≥' : '<'} 70 · ${route === 'sales' ? 'sales-ready' : route}`],
+                hum: route === 'spam' ? 'filtered as spam · nothing sent' : route === 'review' ? 'posted to #sales for a rep to review' : 'added to nurture sequence', humCls: route === 'spam' ? 'bad' : 'warn',
+                finish: route === 'spam' ? 'spam blocked' : 'no sales time used',
+                act: 'booking link sent · #sales alerted', rec: `contact created · score ${a.score}`
+            };
+            const canvas = runCanvas(spec);
+            scan($('#in-lead .fl-scan'));
+            setStep(0, 'run'); await w(450); setStep(0, 'ok', '200 OK');
+            setStep(1, 'run'); await w(800); a.spam ? setStep(1, 'flag', 'spam') : setStep(1, 'ok', a.intent.split(' ')[0]);
+            const out = {name: L.name, company: L.co, intent: a.intent, budget_usd: a.budget ?? 'not stated', timeline: a.tl ?? 'not stated', is_business: a.biz};
+            jsonEl.innerHTML = jsonHtml(out);
+            setStep(2, 'run'); await w(700); setStep(2, (a.budget || a.tl) && !a.spam ? 'ok' : 'flag', a.spam ? 'skipped' : `${a.budget ? 'budget' : 'no budget'} · ${a.tl ? 'timeline' : 'no timeline'}`);
+            setStep(3, 'run'); await w(700);
+            out.score = a.score; out.confidence = +a.conf.toFixed(2); jsonEl.innerHTML = jsonHtml(out);
+            scoreRows([
+                {label: 'lead score', pct: a.score, th: 70, text: a.score, cls: a.score >= 70 ? '' : a.score >= 35 ? 'low' : 'bad'},
+                {label: 'confidence', pct: a.conf * 100, th: 75, text: a.conf.toFixed(2), cls: a.conf < .75 ? 'low' : ''}
+            ]);
+            setStep(3, a.score >= 70 ? 'ok' : 'flag', `${a.score}/100`);
+            setStep(4, 'run'); await w(500);
+            if (route === 'spam') { setStep(4, 'flag', '→ filtered'); decide('bad', '✕', 'Filtered as spam', 'Nothing reaches the CRM or the sales team. The submission is logged in case it needs a second look.'); }
+            else if (route === 'sales') { setStep(4, 'ok', '→ sales'); decide('ok', '✓', 'Sales-ready: booking link sent, rep alerted', `Contact created in HubSpot, a meeting link emailed to ${esc(L.name.split(' ')[0])}, and #sales gets a Slack summary${a.budget ? ' with the ' + money(a.budget).replace('.00', '') + ' budget' : ''}.`); }
+            else if (route === 'review') { setStep(4, 'flag', '→ review'); decide('flag', '⚑', 'Borderline: sent to a rep for review', 'The AI wasn\'t sure enough to decide, so a person reads it in Slack before anything is sent.'); }
+            else { setStep(4, 'flag', '→ nurture'); decide('flag', '→', 'Not sales-ready: added to nurture', 'Gets a helpful resource email and a monthly newsletter. No sales time spent.'); }
+            await canvas;
+        }
+
+        /* ---------- INVOICE EXTRACTOR ---------- */
+        const INV = [
+            {vendor: 'Northwind Office Supply', addr: '214 Ortigas Ave, Pasig City', inv: 'INV-1042', date: '2026-10-14', due: '2026-11-13', terms: 'Net 30',
+             lines: [['Copy paper A4, 10 boxes', 10, 62], ['Toner cartridge TN-2480', 4, 89], ['Ergonomic chairs', 2, 132]], tax: 148.80, stated: 1388.80, bank: 'BDO 0042-1187-6621', scan: false,
+             conf: {vendor: .99, invoice_no: .98, dates: .97, line_items: .96, total: .99}},
+            {vendor: 'Harbor Print Co.', addr: '88 Pier Road, Cebu City', inv: 'INV-2207', date: '2026-10-20', due: '2026-11-04', terms: 'Net 15',
+             lines: [['Trade show banners 3x8 ft', 6, 210], ['Brochures, 2,000 pcs', 1, 980], ['Rush fee', 1, 575]], tax: 260, stated: 3125, bank: 'BPI 3391-0457-22', scan: false,
+             conf: {vendor: .98, invoice_no: .97, dates: .95, line_items: .93, total: .91}},
+            {vendor: 'Mabuhay Logistics', addr: 'Km 21 Aguinaldo Hwy, Cavite', inv: 'ML-0381', date: '2026-10-22', due: '2026-11-2?', terms: 'Net 30',
+             lines: [['Freight, Manila → Davao', 1, 480], ['Fuel surcharge', 1, 93.66]], tax: 68.84, stated: 642.50, bank: 'Metrobank 117-3-11702', scan: true,
+             conf: {vendor: .92, invoice_no: .88, dates: .71, line_items: .9, total: .94}}
+        ];
+        let icur = 0;
+        function renderPaper() {
+            const s = INV[icur], p = $('#paper'), sub = s.lines.reduce((a, l) => a + l[1] * l[2], 0);
+            p.className = 'fl-paper' + (s.scan ? ' scan' : '');
+            p.innerHTML = `<div class="fl-scanline"></div><div class="ph"><div><div class="vendor">${esc(s.vendor)}</div><div style="font-size:11px;color:#5b6577">${esc(s.addr)}</div></div>
+                <div class="inv">${s.inv}<br>Issued ${s.date}<br>Due ${s.due} · ${s.terms}</div></div>
+                <table><thead><tr><th>Item</th><th class="n">Qty</th><th class="n">Amount</th></tr></thead><tbody>
+                ${s.lines.map(l => `<tr><td>${esc(l[0])}</td><td class="n">${l[1]}</td><td class="n">${money(l[1] * l[2])}</td></tr>`).join('')}
+                </tbody><tbody class="tot"><tr><td></td><td class="n">Subtotal</td><td class="n">${money(sub)}</td></tr>
+                <tr><td></td><td class="n">VAT</td><td class="n">${money(s.tax)}</td></tr>
+                <tr class="grand"><td></td><td class="n">Total due</td><td class="n">${money(s.stated)}</td></tr></tbody></table>
+                <div class="foot">Remit to ${esc(s.bank)}</div>`;
+        }
+        async function runInv(my) {
+            const s = INV[icur], w = async ms => { await sleep(ms); if (my !== runId) throw 0; };
+            const sub = s.lines.reduce((a, l) => a + l[1] * l[2], 0), calc = Math.round((sub + s.tax) * 100) / 100;
+            const diff = Math.round((s.stated - calc) * 100) / 100, bad = Math.abs(diff) > .009;
+            const low = Object.entries(s.conf).filter(([, v]) => v < .85), min = Math.min(...Object.values(s.conf));
+            const review = bad || low.length;
+            const canvas = runCanvas({
+                trig: `1 new email · ${s.inv}${s.scan ? '.jpg' : '.pdf'}`, ai: `14 fields · ${s.vendor}`,
+                chk: [bad ? 'warn' : 'ok', bad ? `✗ stated total off by ${money(Math.abs(diff))}` : `✓ line items + tax = ${money(calc)}`],
+                gate: [review ? 'warn' : 'ok', review ? (bad ? 'validation failed · review' : `min confidence ${min.toFixed(2)} · review`) : `min confidence ${min.toFixed(2)} · pass`],
+                hum: '#ap-review · waiting on approval', humDone: 'approved by @finance (simulated)',
+                act: `bill created · ${money(bad ? calc : s.stated)}`, rec: 'audit row appended'
+            });
+            scan($('#paper'));
+            setStep(0, 'run'); await w(800); setStep(0, 'ok', s.scan ? 'OCR' : 'pdf-text');
+            setStep(1, 'run'); await w(900);
+            const out = {vendor: s.vendor, invoice_no: s.inv, issue_date: s.date, due_date: s.due, line_items: s.lines.map(l => ({desc: l[0], qty: l[1], unit: l[2]})), tax: s.tax, total_stated: s.stated};
+            jsonEl.innerHTML = jsonHtml(out); setStep(1, 'ok', '14 fields');
+            setStep(2, 'run'); await w(650); bad ? setStep(2, 'flag', `off by ${money(Math.abs(diff))}`) : setStep(2, 'ok', `= ${money(calc)}`);
+            setStep(3, 'run'); await w(450); out.remit_to = s.bank.replace(/\d(?=[\d-]{4})/g, '•'); jsonEl.innerHTML = jsonHtml(out); setStep(3, 'ok', '1 masked');
+            setStep(4, 'run'); await w(550);
+            scoreRows(Object.entries(s.conf).map(([k, v]) => ({label: k, pct: v * 100, th: 85, text: v.toFixed(2), cls: v < .85 ? 'low' : ''})));
+            low.length ? setStep(4, 'flag', `${low[0][0]} ${low[0][1].toFixed(2)}`) : setStep(4, 'ok', 'all pass');
+            setStep(5, 'run'); await w(450);
+            if (review) {
+                setStep(5, 'flag', '→ Slack');
+                const why = bad ? `The stated total ${money(s.stated)} doesn't match line items plus VAT (${money(calc)}).` : `The due date was hard to read (confidence ${low[0][1].toFixed(2)}).`;
+                decide('flag', '⚑', 'Sent to #ap-review in Slack', `${why} A person approves or corrects it before anything reaches QuickBooks.`);
+            } else {
+                setStep(5, 'ok', '→ QuickBooks');
+                decide('ok', '✓', 'Bill created in QuickBooks Online', `${esc(s.vendor)} · ${money(s.stated)} · due ${s.due}. Audit row added to Google Sheets. No human needed.`);
+            }
+            await canvas;
+        }
+
+        /* ---------- RECRUITMENT SCREENING ---------- */
+        const CANDS = [
+            {name: 'Maria Santos', cv: 'Customer Success Manager at CloudLedger (SaaS), 2021–present. 5 years in customer success and account management. Manage 60 accounts in HubSpot, built the onboarding program for new clients, and cut churn 18% with a renewal playbook. Led a team of 3 CSMs.'},
+            {name: 'Jordan Lee', cv: 'Account coordinator at a marketing agency for 2 years. Used Salesforce daily to update client records. Helped onboard new clients and handled renewal paperwork.'},
+            {name: 'Alex Cruz', cv: 'Retail store supervisor for 6 years. Completed a HubSpot CRM certification and did volunteer support work for a small software startup. Supervised a team of 8 and trained new hires.'}
+        ];
+        let ccur = 0;
+        function analyzeCv(t) {
+            let years = 0;
+            for (const m of t.matchAll(/(\d+)\+?\s*(?:years|yrs)/gi)) years = Math.max(years, +m[1]);
+            for (const m of t.matchAll(/(20\d\d)\s*[–-]\s*(present|20\d\d)/gi)) years = Math.max(years, (m[2].toLowerCase() === 'present' ? new Date().getFullYear() : +m[2]) - +m[1]);
+            const csRole = /(customer success|account manag|client success|\bcsms?\b|account executive)/i.test(t);
+            const must = {
+                cs_experience_3y: csRole && years >= 3,
+                crm_experience: /(hubspot|salesforce|zoho|pipedrive|\bcrm\b|gohighlevel)/i.test(t),
+                saas_background: /(saas|software|\bplatform\b|cloud|\bapps?\b|tech company)/i.test(t)
+            };
+            const nice = [];
+            if (/onboard/i.test(t)) nice.push('onboarding');
+            if (/(churn|renewal|retention)/i.test(t)) nice.push('churn / renewals');
+            if (/(led a team|team lead|managed a team|supervis|led \d)/i.test(t)) nice.push('leadership');
+            const mc = Object.values(must).filter(Boolean).length;
+            const score = Math.min(97, 12 + mc * 22 + nice.length * 6 + (years >= 5 ? 3 : 0));
+            return {years, must, nice, mc, score};
+        }
+        async function runHire(my) {
+            const t = $('#cf-cv').value.trim(); if (!t) { $('#cf-cv').focus(); return; }
+            const c = CANDS[ccur], a = analyzeCv(t), w = async ms => { await sleep(ms); if (my !== runId) throw 0; }, pass = a.score >= 75;
+            const canvas = runCanvas({
+                trig: `application · ${c.name}`, ai: `resume scored · ${a.score}`,
+                chk: [a.mc === 3 ? 'ok' : 'warn', `${a.mc === 3 ? '✓' : '✗'} must-haves ${a.mc} of 3 · ${a.years} yrs experience`],
+                gate: [pass ? 'ok' : 'warn', `${a.score} ${pass ? '≥' : '<'} 75 · ${pass ? 'advance' : 'follow-up'}`],
+                hum: 'polite reply sent · logged to Screened', finish: 'candidate handled, no recruiter time used',
+                act: 'interview booked · Wed 3:00 PM', rec: 'status → Interview Scheduled'
+            });
+            scan($('#in-hire .fl-scan'));
+            setStep(0, 'run'); await w(450); setStep(0, 'ok', '200 OK');
+            setStep(1, 'run'); await w(900); setStep(1, 'ok', `${a.years} yrs found`);
+            const out = {candidate: c.name, role: 'Customer Success Lead', years_experience: a.years, must_haves: a.must, nice_to_haves: a.nice};
+            jsonEl.innerHTML = jsonHtml(out);
+            setStep(2, 'run'); await w(700); setStep(2, a.mc === 3 ? 'ok' : 'flag', `${a.mc} of 3 met`);
+            setStep(3, 'run'); await w(700);
+            out.score = a.score; jsonEl.innerHTML = jsonHtml(out);
+            scoreRows([
+                {label: 'match score', pct: a.score, th: 75, text: a.score, cls: pass ? '' : a.score >= 40 ? 'low' : 'bad'},
+                {label: 'must-haves', pct: a.mc / 3 * 100, th: 100, text: `${a.mc}/3`, cls: a.mc === 3 ? '' : 'low'},
+                {label: 'nice-to-haves', pct: a.nice.length / 3 * 100, th: 0, text: `${a.nice.length}/3`, cls: ''}
+            ]);
+            setStep(3, pass ? 'ok' : 'flag', `${a.score}/100`);
+            setStep(4, 'run'); await w(500);
+            if (pass) { setStep(4, 'ok', '→ interview'); decide('ok', '✓', 'Interview booked', `${esc(c.name.split(' ')[0])} is synced to Zoho Recruit as Interview Scheduled, booked on Google Calendar, and sent an AI-drafted invite.`); }
+            else { setStep(4, 'flag', '→ follow-up'); decide('flag', '→', 'Polite follow-up sent', `${esc(c.name.split(' ')[0])} gets a respectful AI-drafted reply and is logged as Screened. A recruiter can still advance them in Zoho.`); }
+            await canvas;
+        }
+
+        /* ---------- DEMO TABS ---------- */
+        const DEMOS = {
+            lead: {label: 'Website form · new submission', btn: 'Qualify lead', out: 'Structured lead', note: 'Production version posts to an n8n webhook.', steps: ['Webhook receives the form', 'AI reads intent', 'Extract budget and timeline', 'Score the lead (0–100)', 'Route the lead'], run: runLead},
+            inv: {label: 'AP Inbox · 1 attachment', btn: 'Extract invoice', out: 'Extracted invoice', note: 'Production version reads real PDFs and scans.', steps: ['Read attachment (PDF text / OCR)', 'Extract fields with GPT-4o', 'Re-add totals in code', 'Mask bank and tax numbers', 'Check confidence ≥ 0.85', 'Route invoice'], run: runInv},
+            hire: {label: 'Careers page · new application', btn: 'Screen candidate', out: 'Candidate profile', note: 'Production version syncs to Zoho Recruit.', steps: ['Webhook receives the application', 'AI reads the resume', 'Check must-haves', 'Score the match (0–100)', 'Route the candidate'], run: runHire}
+        };
+        let demoKey = 'lead';
+        function resetOutput() {
+            setSteps(DEMOS[demoKey].steps);
+            jsonEl.innerHTML = '<span class="muted">// structured output appears here</span>';
+            scoresEl.innerHTML = ''; decEl.className = 'fl-decision'; decEl.innerHTML = '<span>Run the demo to see where this goes.</span>';
+            $('#execTime').textContent = '—';
+        }
+        function showDemo(k) {
+            runId++; busy = false; demoKey = k; const d = DEMOS[k];
+            $$('#demoTabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.d === k));
+            for (const x of ['lead', 'inv', 'hire']) $('#in-' + x).hidden = x !== k;
+            $('#inLabel').textContent = d.label; $('#inNote').textContent = d.note; $('#outLabel').textContent = d.out;
+            const btn = $('#demoRun'); btn.textContent = d.btn; btn.disabled = false;
+            loadWf(k); resetOutput();
+        }
+        async function runDemo() {
+            if (busy) return; busy = true; const my = ++runId, btn = $('#demoRun'); btn.disabled = true;
+            resetOutput(); const t0 = performance.now();
+            try { await DEMOS[demoKey].run(my); } catch (e) { /* replaced by a newer run */ }
+            if (my === runId) { $('#execTime').textContent = ((performance.now() - t0) / 1000).toFixed(1) + 's'; busy = false; btn.disabled = false; }
+        }
+        $$('#demoTabs button').forEach(b => b.addEventListener('click', () => { showDemo(b.dataset.d); setTimeout(runDemo, 250); }));
+        $('#demoRun').addEventListener('click', runDemo);
+        const pick = (attr, cb) => $$(`[data-${attr}]`).forEach(b => b.addEventListener('click', () => {
+            if (busy) return; $$(`[data-${attr}]`).forEach(x => x.setAttribute('aria-pressed', x === b)); cb(+b.dataset[attr]); resetOutput(); loadWf(demoKey);
+        }));
+        const loadLead = () => { const l = LEADS[lcur]; $('#lf-name').textContent = l.name; $('#lf-co').textContent = l.co; $('#lf-msg').value = l.msg; };
+        const loadCand = () => { const c = CANDS[ccur]; $('#cf-name').textContent = c.name; $('#cf-cv').value = c.cv; };
+        pick('l', i => { lcur = i; loadLead(); });
+        pick('s', i => { icur = i; renderPaper(); });
+        pick('c', i => { ccur = i; loadCand(); });
+        loadLead(); renderPaper(); loadCand(); showDemo('lead');
+
+        // Play the first demo once when the section scrolls into view
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); runDemo(); } }, {threshold: .35});
+            io.observe($('#flStage'));
+        }
+
+        /* ---------- CONTACT FORM ---------- */
+        const form = $('#cform');
+        if (form) form.addEventListener('submit', async e => {
+            e.preventDefault();
+            const name = $('#c-name').value.trim(), email = $('#c-email').value.trim(), what = $('#c-what').value.trim();
+            const ok = name && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && what;
+            $('#c-err').hidden = !!ok; if (!ok) return;
+            const rows = $$('#mini .fl-mini'), note = $('#miniNote'), btn = $('#c-send');
+            const set = (i, cls, st) => { rows[i].className = 'fl-mini ' + cls; rows[i].querySelector('.st').textContent = st; };
+            rows.forEach((r, i) => set(i, '', 'idle'));
+            const mailto = () => {
+                const body = `${what}\n\n— ${name} (${email})`;
+                window.location.href = `mailto:acq.mendoza@gmail.com?subject=${encodeURIComponent('Automation project: ' + name)}&body=${encodeURIComponent(body)}`;
+                note.textContent = 'Your email app should open with your message filled in. If it doesn\'t, email acq.mendoza@gmail.com directly.';
+            };
+            if (!CONTACT_WEBHOOK_URL) { mailto(); return; }
+            btn.disabled = true; set(0, 'on', 'sending');
+            try {
+                const res = await fetch(CONTACT_WEBHOOK_URL, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({name, email, message: what, source: 'portfolio'})});
+                if (!res.ok) throw new Error(res.status);
+                let data = {}; try { data = await res.json(); } catch (_) {}
+                set(0, 'ok', '200 OK');
+                const labels = [data.category ? `"${data.category}"` : 'triggered', 'triggered', 'triggered', 'triggered'];
+                for (let i = 1; i < rows.length; i++) { set(i, 'on', 'running'); await sleep(550); set(i, 'ok', labels[i - 1]); }
+                note.textContent = `Thanks, ${name}. Your message is in, and Arman will reply to ${email}.`;
+                form.reset();
+            } catch (err) {
+                set(0, 'err', 'failed');
+                note.textContent = 'The form couldn\'t reach the server, so I\'m opening your email app instead.';
+                mailto();
+            }
+            btn.disabled = false;
+        });
+    })();
     </script>
 </body>
 </html>
