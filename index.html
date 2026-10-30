@@ -1929,6 +1929,11 @@
                         <label for="c-what" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">What would you automate first?</label>
                         <textarea id="c-what" name="what" rows="4" placeholder="Our team follows up on 200 leads a week by hand…" class="fl-input" required></textarea>
                     </div>
+                    <!-- Spam trap: hidden from people, bots fill it in -->
+                    <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+                        <label for="c-website">Website</label>
+                        <input id="c-website" name="website" type="text" tabindex="-1" autocomplete="off">
+                    </div>
                     <p id="c-err" class="text-sm text-red-600 dark:text-red-400" hidden>Add your name, a valid email and a short description, then send again.</p>
                     <button type="submit" id="c-send" class="w-full px-6 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold transition-all shadow-lg shadow-brand-500/20 disabled:opacity-60">Send and run the workflow</button>
                 </form>
@@ -2760,7 +2765,7 @@
             if (!CONTACT_WEBHOOK_URL) { mailto(); return; }
             btn.disabled = true; set(0, 'on', 'sending');
             try {
-                const res = await fetch(CONTACT_WEBHOOK_URL, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({name, email, message: what, source: 'portfolio'})});
+                const res = await fetch(CONTACT_WEBHOOK_URL, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({name, email, message: what, source: 'portfolio', website: $('#c-website').value})});
                 if (!res.ok) throw new Error(res.status);
                 let data = {}; try { data = await res.json(); } catch (_) {}
                 set(0, 'ok', '200 OK');
