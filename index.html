@@ -670,7 +670,7 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-10">
                 <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-500 mb-3">Live Demos</span>
-                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Try three of my workflows right here.</h2>
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Try my workflows right here.</h2>
                 <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Each demo runs the same steps as the production version: AI reads the input, code checks the result, and a gate decides whether a person needs to look. Watch the workflow canvas run as it happens.</p>
             </div>
 
@@ -797,7 +797,7 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-12">
                 <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-500 mb-3">Featured Work</span>
-                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Four systems running for clients today.</h2>
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Systems running for clients.</h2>
                 <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto">Each one replaces a job someone was doing by hand, and each one knows when to stop and ask a person.</p>
             </div>
 
@@ -1942,7 +1942,7 @@
                     <div class="flex items-center justify-between px-5 py-3 border-b border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-500 dark:text-slate-400"><span>contact-intake workflow</span><span class="flex items-center gap-2"><span class="fl-live" aria-hidden="true"></span>n8n</span></div>
                     <div class="p-5 space-y-2" id="mini">
                         <div class="fl-mini"><span class="i">WH</span><span>Webhook receives your form</span><span class="st">idle</span></div>
-                        <div class="fl-mini"><span class="i">AI</span><span>Claude classifies the request</span><span class="st">idle</span></div>
+                        <div class="fl-mini"><span class="i">AI</span><span>AI classifies the request</span><span class="st">idle</span></div>
                         <div class="fl-mini"><span class="i">@</span><span>Personal reply drafted to you</span><span class="st">idle</span></div>
                         <div class="fl-mini"><span class="i">#</span><span>Arman pinged in Slack</span><span class="st">idle</span></div>
                         <div class="fl-mini"><span class="i">CAL</span><span>Booking link attached</span><span class="st">idle</span></div>
@@ -2395,7 +2395,7 @@
         const WF = {
             lead: {title: 'Website form → AI qualification → booked meeting', lb: ['sales-ready', 'not ready', ''], back: false,
                 n: {trig:['WH','Form submitted','Webhook','The website form posts the lead to an n8n webhook.'],
-                    ai:['AI','Read intent','Claude · classify','Claude reads the message and decides what the person wants.'],
+                    ai:['AI','Read intent','AI · classify','AI reads the message and decides what the person wants.'],
                     chk:['{}','Budget & timing','Code · score 0–100','Pulls budget and timeline out of the message and scores the lead.'],
                     gate:['?','Score ≥ 70','sales-ready gate','Sales-ready leads get a booking link. Everyone else goes to nurture, review or the spam filter.'],
                     act:['CAL','Booking link','Calendar + Slack','Emails a meeting link and alerts sales in Slack.'],
